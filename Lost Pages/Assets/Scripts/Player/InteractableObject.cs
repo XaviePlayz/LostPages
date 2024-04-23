@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class InteractableObject : MonoBehaviour
 {
-    private bool isPlayerInvisible = false;
-    private Renderer playerRenderer;
-
     public SpriteRenderer spriteRenderer;
     public Sprite glowSprite;
     public float glowIntensity = 0.5f;
@@ -26,14 +23,6 @@ public class InteractableObject : MonoBehaviour
 
     private void Start()
     {
-        if (playerController != null)
-        {
-            playerRenderer = playerController.GetComponent<Renderer>();
-        }
-        else
-        {
-            Debug.LogError("PlayerController not found!");
-        }
         originalSprite = spriteRenderer.sprite;
         originalColor = spriteRenderer.color;
 
@@ -79,24 +68,6 @@ public class InteractableObject : MonoBehaviour
 
     public void Interact()
     {
-        if (playerController.isUsingDoor == false)
-        {
-            isPlayerInvisible = !isPlayerInvisible;
-            playerRenderer.enabled = !isPlayerInvisible;
-
-            if (isPlayerInvisible)
-            {
-                playerController.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                playerController.GetComponent<Collider2D>().enabled = false;
-            }
-            else
-            {
-                playerController.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-                playerController.GetComponent<Collider2D>().enabled = true;
-                playerController.isPlayerVisible = true;
-            }
-        }
-        
         TeleportPlayer();
     }
 
