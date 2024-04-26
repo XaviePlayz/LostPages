@@ -19,18 +19,18 @@ public class PlayerController : MonoBehaviour
     private string walkAnimationTrigger = "Walk";
     private string jumpAnimationTrigger = "Jump";
     private string fallAnimationTrigger = "Fall";
-    private string hideAnimationTrigger = "Hide";
     private string hurtAnimationTrigger = "Hurt";
+
+    [Header("PageInventory")]
+    public int pagesCollected;
 
     [Header("Booleans")]
     public bool isJumping = false;
     private bool isWalking = false;
     private bool isFacingRight = true;
     private bool isRespawning = false;
-    public bool isHiding = false;
-    public bool isPlayerVisible = true;
     public bool isHurt = false;
-    public bool inDialogue = false;
+    public bool isInDialogue = false;
 
     [Header("Scripts")]
     [SerializeField] private InteractableObject currentInteractable;
@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
     {
         player = this.gameObject;
 
-        Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -57,7 +56,7 @@ public class PlayerController : MonoBehaviour
             // Move the player horizontally
             rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
 
-            if (!inDialogue)
+            if (!isInDialogue)
                 {
 
                 if (moveX > 0 && !isFacingRight)
@@ -82,35 +81,18 @@ public class PlayerController : MonoBehaviour
                     anim.SetTrigger(idleAnimationTrigger);
                 }
 
-                if (Input.GetButtonDown("Jump") && !isJumping && isPlayerVisible || Input.GetKeyDown(KeyCode.W) && !isJumping && isPlayerVisible || Input.GetKeyDown(KeyCode.UpArrow) && !isJumping && isPlayerVisible)
+                if (Input.GetButtonDown("Jump") && !isJumping || Input.GetKeyDown(KeyCode.W) && !isJumping || Input.GetKeyDown(KeyCode.UpArrow) && !isJumping)
                 {
                     // Jump when the Jump button is pressed
                     rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
                     isJumping = true;
                     anim.SetTrigger(jumpAnimationTrigger);
                 }
-
-                //Start Crouching (Hiding)
-                if (Input.GetKeyDown(KeyCode.S) && !isJumping && moveX == 0 || Input.GetKeyDown(KeyCode.DownArrow) && !isJumping && moveX == 0)
-                {
-                    // Hide animation triggered when the S key is pressed and the player is on the ground and standing still
-                    anim.SetBool(hideAnimationTrigger, true);
-                    isHiding = true;
-                    player.tag = "HidingPlayer";
-                }
             }
             else
             {
                 anim.SetTrigger(idleAnimationTrigger);
             }
-        }
-        //Stop Crouching (Hiding)
-        if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
-        {
-            isHiding = false;
-            anim.SetBool(hideAnimationTrigger, false);
-            anim.SetTrigger(idleAnimationTrigger);
-            player.tag = "Player";
         }
 
         //Interact
@@ -126,7 +108,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Page"))
+        {
+            Destroy(other.gameObject);
+            pagesCollected++;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Interactable_Object"))
         {
@@ -136,7 +127,7 @@ private void OnTriggerStay2D(Collider2D other)
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Interactable_Object") && isPlayerVisible)
+        if (other.CompareTag("Interactable_Object"))
         {
             currentInteractable = null;
         }

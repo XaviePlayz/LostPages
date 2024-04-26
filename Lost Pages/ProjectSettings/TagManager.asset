@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Page
+  - Interactable_Object
   layers:
   - Default
   - TransparentFX
