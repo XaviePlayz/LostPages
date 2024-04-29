@@ -30,6 +30,9 @@ public class DialogueManager : MonoBehaviour
 
     #endregion
 
+    public GameObject visualNovelCanvas;
+    public GameObject introDialogue;
+
     public TextMeshProUGUI dialogueText;
     public Image characterShowcaseImage;
     public TextMeshProUGUI characterNameText;
@@ -58,6 +61,7 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+        visualNovelCanvas.SetActive(true);
         findAvailableDialogueTrigger = FindObjectOfType<DialogueTrigger>();
         PlayFoundDialogue();
     }
@@ -166,6 +170,19 @@ public class DialogueManager : MonoBehaviour
         characterShowcaseImage.sprite = null;
         characterShowcaseImage.gameObject.SetActive(false);
         characterNameText.text = "";
+
+        RemoveCanvas();
+    }
+
+    void RemoveCanvas()
+    {
+        visualNovelCanvas.SetActive(false);
+        if (introDialogue.activeSelf)
+        {
+            introDialogue.SetActive(false);
+            Tutorial.Instance.startTutorialDialogue.SetActive(true);
+            StartCoroutine(Tutorial.Instance.StartTutorial());
+        }       
     }
 
     private IEnumerator DisplayLines()
@@ -196,6 +213,7 @@ public class DialogueManager : MonoBehaviour
 
     public void PlayFoundDialogue()
     {
+        findAvailableDialogueTrigger = FindObjectOfType<DialogueTrigger>();
         findAvailableDialogueTrigger.PlayDialogue();
     }
 }
