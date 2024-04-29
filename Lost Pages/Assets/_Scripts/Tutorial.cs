@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tutorial : MonoBehaviour
@@ -32,9 +33,20 @@ public class Tutorial : MonoBehaviour
     public GameObject showTutorialDialogueCanvas;
     public GameObject novelBackground;
 
+    public GameObject firstPage;
+
+    public bool tutorialStarted = false;
+
     void Start()
     {
         startTutorialDialogue.SetActive(false);
+    }
+    private void Update()
+    {
+        if (tutorialStarted == true && firstPage != null)
+        {
+            firstPage.SetActive(true);
+        }
     }
 
     public IEnumerator StartTutorial()
@@ -45,6 +57,7 @@ public class Tutorial : MonoBehaviour
             showTutorialDialogueCanvas.SetActive(true);
             novelBackground.SetActive(false);
             DialogueManager.Instance.PlayFoundDialogue();
+            tutorialStarted = true;
         }
     }
 }

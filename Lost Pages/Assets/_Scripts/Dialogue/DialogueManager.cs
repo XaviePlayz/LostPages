@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -182,7 +183,7 @@ public class DialogueManager : MonoBehaviour
             introDialogue.SetActive(false);
             Tutorial.Instance.startTutorialDialogue.SetActive(true);
             StartCoroutine(Tutorial.Instance.StartTutorial());
-        }       
+        }
     }
 
     private IEnumerator DisplayLines()

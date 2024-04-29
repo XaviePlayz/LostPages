@@ -5,6 +5,32 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+
+    #region Singleton
+
+    private static PlayerController _instance;
+    public static PlayerController Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<PlayerController>();
+
+                if (_instance == null)
+                {
+                    GameObject obj = new GameObject();
+                    obj.name = typeof(PlayerController).Name;
+                    _instance = obj.AddComponent<PlayerController>();
+                }
+            }
+            return _instance;
+        }
+    }
+
+    #endregion
+
+
     private GameObject player;
     private Rigidbody2D rb;
 
@@ -113,6 +139,11 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Page"))
         {
             Destroy(other.gameObject);
+
+            if (pagesCollected == 0)
+            {
+                DialogueManager.Instance.visualNovelCanvas.SetActive(true);
+            }
             pagesCollected++;
         }
     }
