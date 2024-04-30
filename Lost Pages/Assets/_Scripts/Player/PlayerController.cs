@@ -143,6 +143,7 @@ public class PlayerController : MonoBehaviour
             if (pagesCollected == 0)
             {
                 DialogueManager.Instance.visualNovelCanvas.SetActive(true);
+                InventoryManager.Instance.hasAccessToInventory = true;
             }
             pagesCollected++;
         }
