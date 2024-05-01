@@ -31,6 +31,7 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject inventoryCanvas;
     public bool hasAccessToInventory;
+    public bool inventoryAlreadyOpened;
     public Color currentViewButtonColor;
     public Color canBeViewButtonColor;
 
@@ -47,6 +48,7 @@ public class InventoryManager : MonoBehaviour
     {
         inventoryCanvas.SetActive(false);
         hasAccessToInventory = false;
+        inventoryAlreadyOpened = false;
         ViewPages();
     }
 
@@ -54,11 +56,11 @@ public class InventoryManager : MonoBehaviour
     {
         if (hasAccessToInventory)
         {
-            if (inventoryCanvas != null && Input.GetKeyDown(KeyCode.Tab))
+            if (inventoryCanvas != null && Input.GetKeyDown(KeyCode.Tab) && !inventoryAlreadyOpened)
             {
+                ResetScrollBars();
                 inventoryCanvas.SetActive(true);
-                pageScrollbar.value = 1;
-                dialogueScrollbar.value = 1;
+                inventoryAlreadyOpened = true;
             }
 
             if (inventoryCanvas.activeSelf && Input.GetKeyDown(KeyCode.Escape))
@@ -74,29 +76,32 @@ public class InventoryManager : MonoBehaviour
 
     public void CloseInventory()
     {
+        ResetScrollBars();
         inventoryCanvas.SetActive(false);
+        inventoryAlreadyOpened = false;
     }
 
     public void ViewPages()
     {
+        ResetScrollBars();
         viewPagesButton.color = currentViewButtonColor;
         viewDialoguesButton.color = canBeViewButtonColor;
 
         pagesCollection.SetActive(true);
         dialoguesCollection.SetActive(false);
-
-        pageScrollbar.value = 1;
-        dialogueScrollbar.value = 1;
     }
 
     public void ViewDialogues()
     {
+        ResetScrollBars();
         viewPagesButton.color = canBeViewButtonColor;
         viewDialoguesButton.color = currentViewButtonColor;
 
         pagesCollection.SetActive(false);
         dialoguesCollection.SetActive(true);
-
+    }
+    public void ResetScrollBars()
+    {
         pageScrollbar.value = 1;
         dialogueScrollbar.value = 1;
     }
