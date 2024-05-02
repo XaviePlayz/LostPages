@@ -13,21 +13,23 @@ MonoBehaviour:
   m_Name: Tutorial #1
   m_EditorClassIdentifier: 
   lines:
-  - Welcome to my imagination
+  - Welcome to my imagination....
   - I'll quickly go through the controls with you, so pay good attention!
   - Firstly you can press [A] or [Left-Arrow] to move LEFT and [D] or [Right-Arrow]
     to move RIGHT.
   - Did you get that?
   - What are you doing, who are you talking to?
   - Just getting warmed up, let's retrieve those pages!
-  - '{Alexander Walks Away*}'
-  - Secondly, press [W], [Up-Arrow] or [Space] to jump
+  - ...
+  - Secondly, press [W], [Up-Arrow] or [Space] to jump.
+  - That should be all for now.
   Character_Showcases:
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: 7a0ffdc1af9f7614cb182fe3a2e4f13a, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
@@ -39,4 +41,5 @@ MonoBehaviour:
   - Alexander
   - You
   - 
+  - You [Whispering]
   - You [Whispering]

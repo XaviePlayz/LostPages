@@ -39,6 +39,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public Image characterShowcaseImage;
     public TextMeshProUGUI characterNameText;
+    public GameObject characterNameHolder;
 
     private Queue<string> dialogueQueue;
     private Queue<Sprite> CharacterShowcaseQueue;
@@ -131,6 +132,15 @@ public class DialogueManager : MonoBehaviour
             characterShowcaseImage.sprite = characterShowcase;
 
             characterShowcaseImage.gameObject.SetActive(true);
+        }
+
+        if (characterNameText.text == "")
+        {
+            characterNameHolder.SetActive(false);
+        }
+        else
+        {
+            characterNameHolder.SetActive(true);
         }
 
         if (InventoryManager.Instance.inventoryAlreadyOpened)

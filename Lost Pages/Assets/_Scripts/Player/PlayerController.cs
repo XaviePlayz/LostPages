@@ -55,7 +55,6 @@ public class PlayerController : MonoBehaviour
     private bool isFacingRight = true;
     private bool isRespawning = false;
     public bool isHurt = false;
-    public bool isInDialogue = false;
 
     public bool allowedToWalk = false;
     public bool allowedToJump = false;
@@ -77,7 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         isWalking = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow);
 
-        if (!isRespawning && !DialogueManager.Instance.isDialogueActive)
+        if (!isRespawning && !DialogueManager.Instance.isDialogueActive || !Tutorial.Instance.tutorialSequenceEnded)
         {
             float moveX = Input.GetAxis("Horizontal");
             // Reset speed to walking speed
@@ -89,7 +88,7 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
             }
 
-            if (!isInDialogue)
+            if (!DialogueManager.Instance.isDialogueActive || !Tutorial.Instance.tutorialSequenceEnded)
             {
                 if (allowedToWalk)
                 {
@@ -133,7 +132,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (DialogueManager.Instance.isDialogueActive)
+        if (DialogueManager.Instance.isDialogueActive && Tutorial.Instance.tutorialSequenceEnded)
         {
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
             anim.SetTrigger(idleAnimationTrigger);

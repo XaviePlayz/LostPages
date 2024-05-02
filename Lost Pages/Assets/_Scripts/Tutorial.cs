@@ -36,7 +36,9 @@ public class Tutorial : MonoBehaviour
     public GameObject firstPage;
 
     public bool tutorialStarted;
+    public bool tutorialSequenceEnded;
     public int tutorialSentenceCount;
+
     public int firstTimeOpeningInventoryCount;
     public bool requiredToOpenInventory;
 
@@ -44,6 +46,7 @@ public class Tutorial : MonoBehaviour
     {
         startTutorialDialogue.SetActive(false);
         tutorialStarted = false;
+        tutorialSequenceEnded = false;
         tutorialSentenceCount = 0;
     }
     private void Update()
@@ -56,6 +59,11 @@ public class Tutorial : MonoBehaviour
         if (requiredToOpenInventory && InventoryManager.Instance.inventoryCanvas.activeSelf)
         {
             DialogueManager.Instance.EndDialogue();
+        }
+
+        if (tutorialStarted && tutorialSentenceCount == 8)
+        {
+            tutorialSequenceEnded = true;
         }
     }
 
