@@ -11,4 +11,5 @@ public class DialogueData : ScriptableObject
 
     public string[] CharacterNameline;
 
+    public Color[] DialogueBoxColorAppearance;
 }

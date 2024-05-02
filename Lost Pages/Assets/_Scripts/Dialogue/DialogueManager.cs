@@ -39,11 +39,14 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public Image characterShowcaseImage;
     public TextMeshProUGUI characterNameText;
+
     public GameObject characterNameHolder;
+    public GameObject dialogueHolder;
 
     private Queue<string> dialogueQueue;
     private Queue<Sprite> CharacterShowcaseQueue;
     private Queue<string> CharacterNameQueue;
+    private Queue<Color> DialogueBoxColorAppearanceQueue;
 
     public bool isDialogueActive;
     private bool isPressToContinue;
@@ -61,6 +64,7 @@ public class DialogueManager : MonoBehaviour
         characterShowcaseImage.gameObject.SetActive(false);
 
         CharacterNameQueue = new Queue<string>();
+        DialogueBoxColorAppearanceQueue = new Queue<Color>();
     }
 
     void Start()
@@ -80,6 +84,7 @@ public class DialogueManager : MonoBehaviour
             dialogueQueue.Clear();
             CharacterShowcaseQueue.Clear();
             CharacterNameQueue.Clear();
+            DialogueBoxColorAppearanceQueue.Clear();
 
             // Enqueue new lines of dialogue
             foreach (string line in dialogueData.lines)
@@ -95,6 +100,11 @@ public class DialogueManager : MonoBehaviour
             foreach (string characterName in dialogueData.CharacterNameline)
             {
                 CharacterNameQueue.Enqueue(characterName);
+            }
+
+            foreach (Color dialogueBoxColorAppearance in dialogueData.DialogueBoxColorAppearance)
+            {
+                DialogueBoxColorAppearanceQueue.Enqueue(dialogueBoxColorAppearance);
             }
 
             // Set the boolean for "Press E" dialogue
@@ -127,6 +137,10 @@ public class DialogueManager : MonoBehaviour
 
             string Characterline = CharacterNameQueue.Dequeue();
             characterNameText.text = Characterline;
+
+            Color DialogueBox = DialogueBoxColorAppearanceQueue.Dequeue();
+            dialogueHolder.GetComponent<Image>().color = DialogueBox;
+            characterNameHolder.GetComponent<Image>().color = DialogueBox;
 
             Sprite characterShowcase = CharacterShowcaseQueue.Dequeue();
             characterShowcaseImage.sprite = characterShowcase;
@@ -179,6 +193,10 @@ public class DialogueManager : MonoBehaviour
 
                 string Characterline = CharacterNameQueue.Dequeue();
                 characterNameText.text = Characterline;
+
+                Color DialogueBox = DialogueBoxColorAppearanceQueue.Dequeue();
+                dialogueHolder.GetComponent<Image>().color = DialogueBox;
+                characterNameHolder.GetComponent<Image>().color = DialogueBox;
 
                 if (Tutorial.Instance.tutorialStarted)
                 {
@@ -242,6 +260,10 @@ public class DialogueManager : MonoBehaviour
 
             string Characterline = CharacterNameQueue.Dequeue();
             characterNameText.text = Characterline;
+
+            Color DialogueBox = DialogueBoxColorAppearanceQueue.Dequeue();
+            dialogueHolder.GetComponent<Image>().color = DialogueBox;
+            characterNameHolder.GetComponent<Image>().color = DialogueBox;
 
             if (isPressToContinue)
             {

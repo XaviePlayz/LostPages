@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - Welcome to my imagination....
-  - I'll quickly go through the controls with you, so pay good attention!
+  - I'll quickly go through the controls with you, so pay close attention!
   - Firstly you can press [A] or [Left-Arrow] to move LEFT and [D] or [Right-Arrow]
     to move RIGHT.
   - Did you get that?
   - What are you doing, who are you talking to?
   - Just getting warmed up, let's retrieve those pages!
   - ...
-  - Secondly, press [W], [Up-Arrow] or [Space] to jump.
-  - That should be all for now.
+  - '*Whispers* Secondly, press [W], [Up-Arrow] or [Space] to jump.'
+  - '*Whispers* That should be all for now.'
   Character_Showcases:
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: 7a0ffdc1af9f7614cb182fe3a2e4f13a, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
@@ -41,5 +41,15 @@ MonoBehaviour:
   - Alexander
   - You
   - 
-  - You [Whispering]
-  - You [Whispering]
+  - You
+  - You
+  DialogueBoxColorAppearance:
+  - {r: 1, g: 0.9019608, b: 0.9019608, a: 0.78431374}
+  - {r: 1, g: 0.9019608, b: 0.9019608, a: 0.78431374}
+  - {r: 1, g: 0.9019608, b: 0.9019608, a: 0.78431374}
+  - {r: 1, g: 0.9019608, b: 0.9019608, a: 0.78431374}
+  - {r: 0.50980395, g: 0.5803922, b: 0.76862746, a: 0.78431374}
+  - {r: 1, g: 0.90196085, b: 0.90196085, a: 0.78431374}
+  - {r: 0.50980395, g: 0.5803922, b: 0.7686275, a: 0.78431374}
+  - {r: 1, g: 0.90196085, b: 0.90196085, a: 0.78431374}
+  - {r: 1, g: 0.90196085, b: 0.90196085, a: 0.78431374}
