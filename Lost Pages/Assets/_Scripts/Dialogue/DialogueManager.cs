@@ -42,7 +42,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<Sprite> CharacterShowcaseQueue;
     private Queue<string> CharacterNameQueue;
 
-    private bool isDialogueActive;
+    public bool isDialogueActive;
     private bool isPressToContinue;
     private bool isAutoDisplaying;
     private bool isFirstLine;
@@ -131,6 +131,17 @@ public class DialogueManager : MonoBehaviour
             characterShowcaseImage.gameObject.SetActive(true);
         }
 
+        if (InventoryManager.Instance.inventoryAlreadyOpened)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = false;
+        }
+
         // Check for key press to advance dialogue for "Press LEFT MOUSE CLICK" dialogue
         if (isDialogueActive && isPressToContinue && Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -144,24 +155,39 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextLine()
     {
-        if (dialogueQueue.Count > 0)
+        if (!Tutorial.Instance.requiredToOpenInventory)
         {
-            string line = dialogueQueue.Dequeue();
-            dialogueText.text = line;
+            if (dialogueQueue.Count > 0)
+            {
+                string line = dialogueQueue.Dequeue();
+                dialogueText.text = line;
 
-            Sprite characterShowcase = CharacterShowcaseQueue.Dequeue();
-            characterShowcaseImage.sprite = characterShowcase;
+                Sprite characterShowcase = CharacterShowcaseQueue.Dequeue();
+                characterShowcaseImage.sprite = characterShowcase;
 
-            string Characterline = CharacterNameQueue.Dequeue();
-            characterNameText.text = Characterline;
-        }
-        else
-        {
-            EndDialogue();
-        }
+                string Characterline = CharacterNameQueue.Dequeue();
+                characterNameText.text = Characterline;
+
+                if (Tutorial.Instance.tutorialStarted)
+                {
+                    Tutorial.Instance.tutorialSentenceCount++;
+                    Tutorial.Instance.CheckForAllowedInputDuringTutorial();
+                }
+
+                if (InventoryManager.Instance.hasAccessToInventory)
+                {
+                    Tutorial.Instance.firstTimeOpeningInventoryCount++;
+                    Tutorial.Instance.CheckForAllowedInputDuringInventoryExplanation();
+                }
+            }
+            else
+            {
+                EndDialogue();
+            }
+        }        
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         isDialogueActive = false;
 
@@ -171,6 +197,11 @@ public class DialogueManager : MonoBehaviour
         characterShowcaseImage.sprite = null;
         characterShowcaseImage.gameObject.SetActive(false);
         characterNameText.text = "";
+
+        if (InventoryManager.Instance.hasAccessToInventory)
+        {
+            Tutorial.Instance.requiredToOpenInventory = false;
+        }
 
         RemoveCanvas();
     }

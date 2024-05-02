@@ -7,8 +7,11 @@ public class CameraFollow : MonoBehaviour
     public Transform player;
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
-    public float maxLeftOffset = 5f;
-    public float maxRightOffset = 5f;
+    public float maxLeftOffset = 3f;
+    public float maxRightOffset = 32f;
+
+    public float maxBottomOffset = 0f;
+    public float maxTopOffset = 3f;
 
     private float minPosX;
     private float maxPosX;
@@ -20,7 +23,9 @@ public class CameraFollow : MonoBehaviour
         // Calculate the minimum and maximum positions based on the map's boundaries
         minPosX = offset.x - maxLeftOffset;
         maxPosX = offset.x + maxRightOffset;
-        minPosY = offset.y;
+
+        minPosY = offset.y - maxTopOffset;
+        maxPosY = offset.y + maxBottomOffset;
     }
 
     private void LateUpdate()

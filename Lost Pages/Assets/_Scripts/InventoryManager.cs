@@ -54,7 +54,7 @@ public class InventoryManager : MonoBehaviour
 
     void Update()
     {
-        if (hasAccessToInventory)
+        if (hasAccessToInventory && !DialogueManager.Instance.isDialogueActive || Tutorial.Instance.requiredToOpenInventory)
         {
             if (inventoryCanvas != null && Input.GetKeyDown(KeyCode.Tab) && !inventoryAlreadyOpened)
             {

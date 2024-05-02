@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-
     private GameObject player;
     private Rigidbody2D rb;
 
@@ -58,6 +57,11 @@ public class PlayerController : MonoBehaviour
     public bool isHurt = false;
     public bool isInDialogue = false;
 
+    public bool allowedToWalk = false;
+    public bool allowedToJump = false;
+
+    public Transform currentRespawnPoint;
+
     [Header("Scripts")]
     [SerializeField] private InteractableObject currentInteractable;
 
@@ -80,39 +84,47 @@ public class PlayerController : MonoBehaviour
             moveSpeed = 3.5f;
 
             // Move the player horizontally
-            rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
+            if (allowedToWalk)
+            {
+                rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
+            }
 
             if (!isInDialogue)
+            {
+                if (allowedToWalk)
                 {
+                    if (moveX > 0 && !isFacingRight)
+                    {
+                        // Player is moving right and facing left, flip the character
+                        FlipCharacter();
+                    }
+                    else if (moveX < 0 && isFacingRight)
+                    {
+                        // Player is moving left and facing right, flip the character
+                        FlipCharacter();
+                    }
 
-                if (moveX > 0 && !isFacingRight)
-                {
-                    // Player is moving right and facing left, flip the character
-                    FlipCharacter();
-                }
-                else if (moveX < 0 && isFacingRight)
-                {
-                    // Player is moving left and facing right, flip the character
-                    FlipCharacter();
-                }
+                    if (moveX != 0 && !isJumping)
+                    {
+                        // Player is walking
+                        anim.SetTrigger(walkAnimationTrigger);
+                    }
+                    else if (!isJumping)
+                    {
+                        // Player is idle and on the ground, trigger the Idle animation
+                        anim.SetTrigger(idleAnimationTrigger);
+                    }
 
-                if (moveX != 0 && !isJumping)
-                {
-                    // Player is walking
-                    anim.SetTrigger(walkAnimationTrigger);
-                }
-                else if (!isJumping)
-                {
-                    // Player is idle and on the ground, trigger the Idle animation
-                    anim.SetTrigger(idleAnimationTrigger);
-                }
-
-                if (Input.GetButtonDown("Jump") && !isJumping || Input.GetKeyDown(KeyCode.W) && !isJumping || Input.GetKeyDown(KeyCode.UpArrow) && !isJumping)
-                {
-                    // Jump when the Jump button is pressed
-                    rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-                    isJumping = true;
-                    anim.SetTrigger(jumpAnimationTrigger);
+                    if (allowedToJump)
+                    {
+                        if (Input.GetButtonDown("Jump") && !isJumping || Input.GetKeyDown(KeyCode.W) && !isJumping || Input.GetKeyDown(KeyCode.UpArrow) && !isJumping)
+                        {
+                            // Jump when the Jump button is pressed
+                            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+                            isJumping = true;
+                            anim.SetTrigger(jumpAnimationTrigger);
+                        }
+                    }
                 }
             }
             else
@@ -146,6 +158,11 @@ public class PlayerController : MonoBehaviour
                 InventoryManager.Instance.hasAccessToInventory = true;
             }
             pagesCollected++;
+        }
+
+        if (other.CompareTag("DeathZone"))
+        {
+            this.gameObject.transform.position = currentRespawnPoint.position;
         }
     }
 

@@ -35,17 +35,47 @@ public class Tutorial : MonoBehaviour
 
     public GameObject firstPage;
 
-    public bool tutorialStarted = false;
+    public bool tutorialStarted;
+    public int tutorialSentenceCount;
+    public int firstTimeOpeningInventoryCount;
+    public bool requiredToOpenInventory;
 
     void Start()
     {
         startTutorialDialogue.SetActive(false);
+        tutorialStarted = false;
+        tutorialSentenceCount = 0;
     }
     private void Update()
     {
         if (tutorialStarted == true && firstPage != null)
         {
             firstPage.SetActive(true);
+        }
+
+        if (requiredToOpenInventory && InventoryManager.Instance.inventoryCanvas.activeSelf)
+        {
+            DialogueManager.Instance.EndDialogue();
+        }
+    }
+
+    public void CheckForAllowedInputDuringTutorial()
+    {
+        if (tutorialStarted && tutorialSentenceCount == 2)
+        {
+            PlayerController.Instance.allowedToWalk = true;
+        }
+        if (tutorialStarted && tutorialSentenceCount == 7)
+        {
+            PlayerController.Instance.allowedToJump = true;
+        }
+    }
+
+    public void CheckForAllowedInputDuringInventoryExplanation()
+    {
+        if (InventoryManager.Instance.hasAccessToInventory && firstTimeOpeningInventoryCount == 1)
+        {
+            requiredToOpenInventory = true;
         }
     }
 
