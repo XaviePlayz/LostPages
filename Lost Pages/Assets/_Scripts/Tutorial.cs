@@ -76,6 +76,7 @@ public class Tutorial : MonoBehaviour
         if (InventoryManager.Instance.hasAccessToInventory && firstTimeOpeningInventoryCount == 1)
         {
             requiredToOpenInventory = true;
+            DialogueManager.Instance.clickToContinueMouse.SetActive(false);
         }
     }
 

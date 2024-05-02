@@ -34,6 +34,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject visualNovelCanvas;
     public GameObject introDialogue;
 
+    public GameObject clickToContinueMouse;
+
     public TextMeshProUGUI dialogueText;
     public Image characterShowcaseImage;
     public TextMeshProUGUI characterNameText;
@@ -201,6 +203,7 @@ public class DialogueManager : MonoBehaviour
         if (InventoryManager.Instance.hasAccessToInventory)
         {
             Tutorial.Instance.requiredToOpenInventory = false;
+            DialogueManager.Instance.clickToContinueMouse.SetActive(true);
         }
 
         RemoveCanvas();

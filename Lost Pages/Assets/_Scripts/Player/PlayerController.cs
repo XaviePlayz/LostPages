@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
     {
         isWalking = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow);
 
-        if (!isRespawning)
+        if (!isRespawning && !DialogueManager.Instance.isDialogueActive)
         {
             float moveX = Input.GetAxis("Horizontal");
             // Reset speed to walking speed
@@ -131,6 +131,16 @@ public class PlayerController : MonoBehaviour
             {
                 anim.SetTrigger(idleAnimationTrigger);
             }
+        }
+
+        if (DialogueManager.Instance.isDialogueActive)
+        {
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+            anim.SetTrigger(idleAnimationTrigger);
+        }
+        else
+        {
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
         //Interact
