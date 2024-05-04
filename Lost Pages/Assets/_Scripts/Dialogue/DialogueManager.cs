@@ -267,7 +267,7 @@ public class DialogueManager : MonoBehaviour
 
             if (isPressToContinue)
             {
-                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Mouse0));
             }
             else
             {

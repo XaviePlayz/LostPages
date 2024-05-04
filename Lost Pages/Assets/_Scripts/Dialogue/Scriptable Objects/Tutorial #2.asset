@@ -13,16 +13,19 @@ MonoBehaviour:
   m_Name: Tutorial #2
   m_EditorClassIdentifier: 
   lines:
-  - 'Ah, you found one of my pages!
-
-'
-  - '[Press TAB to view your COLLECTION]'
+  - Dude, you found one of my pages!
+  - "[Hit TAB, it\u2019s like checking your backpack!]"
+  - "Inside your backpack, you\u2019ll see the page you just picked up.\nGive the
+    page a click!"
   Character_Showcases:
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   CharacterNameline:
   - Alexander
-  - You
+  - Narrator
+  - Narrator
   DialogueBoxColorAppearance:
   - {r: 0.50980395, g: 0.5803922, b: 0.76862746, a: 0.78431374}
   - {r: 1, g: 0.9019608, b: 0.9019608, a: 0.78431374}
+  - {r: 0.827451, g: 0.827451, b: 0.827451, a: 0.78431374}

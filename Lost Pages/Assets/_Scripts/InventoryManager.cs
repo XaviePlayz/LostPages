@@ -32,6 +32,9 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventoryCanvas;
     public bool hasAccessToInventory;
     public bool inventoryAlreadyOpened;
+    public bool allowedToCloseInventory;
+    public bool allowedToView;
+
     public Color currentViewButtonColor;
     public Color canBeViewButtonColor;
 
@@ -49,26 +52,28 @@ public class InventoryManager : MonoBehaviour
         inventoryCanvas.SetActive(false);
         hasAccessToInventory = false;
         inventoryAlreadyOpened = false;
+        allowedToCloseInventory = false;
+        allowedToView = false;
         ViewPages();
     }
 
     void Update()
     {
-        if (hasAccessToInventory && !DialogueManager.Instance.isDialogueActive || Tutorial.Instance.requiredToOpenInventory)
+        if (hasAccessToInventory)
         {
-            if (inventoryCanvas != null && Input.GetKeyDown(KeyCode.Tab) && !inventoryAlreadyOpened)
+            if (inventoryCanvas != null && Input.GetKeyDown(KeyCode.Tab) && !inventoryAlreadyOpened && !DialogueManager.Instance.isDialogueActive)
             {
                 ResetScrollBars();
                 inventoryCanvas.SetActive(true);
                 inventoryAlreadyOpened = true;
             }
-
-            if (inventoryCanvas.activeSelf && Input.GetKeyDown(KeyCode.Escape))
-            {
-                CloseInventory();
-            }
         }
         else
+        {
+            CloseInventory();
+        }
+
+        if (inventoryCanvas.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
             CloseInventory();
         }
@@ -76,9 +81,12 @@ public class InventoryManager : MonoBehaviour
 
     public void CloseInventory()
     {
-        ResetScrollBars();
-        inventoryCanvas.SetActive(false);
-        inventoryAlreadyOpened = false;
+        if (allowedToCloseInventory)
+        {
+            ResetScrollBars();
+            inventoryCanvas.SetActive(false);
+            inventoryAlreadyOpened = false;
+        }
     }
 
     public void ViewPages()
@@ -93,16 +101,27 @@ public class InventoryManager : MonoBehaviour
 
     public void ViewDialogues()
     {
-        ResetScrollBars();
-        viewPagesButton.color = canBeViewButtonColor;
-        viewDialoguesButton.color = currentViewButtonColor;
+        if (allowedToView)
+        {
+            ResetScrollBars();
+            viewPagesButton.color = canBeViewButtonColor;
+            viewDialoguesButton.color = currentViewButtonColor;
 
-        pagesCollection.SetActive(false);
-        dialoguesCollection.SetActive(true);
+            pagesCollection.SetActive(false);
+            dialoguesCollection.SetActive(true);
+        }       
     }
     public void ResetScrollBars()
     {
         pageScrollbar.value = 1;
         dialogueScrollbar.value = 1;
+    }
+
+    public void ViewPageOne()
+    {
+        allowedToCloseInventory = true;
+        allowedToView = true;
+        Tutorial.Instance.requiredToOpenInventory = false;
+        DialogueManager.Instance.DisplayNextLine();
     }
 }

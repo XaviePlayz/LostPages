@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: Tutorial #1
   m_EditorClassIdentifier: 
   lines:
-  - Welcome to my imagination....
-  - I'll quickly go through the controls with you, so pay close attention!
-  - Firstly you can press [A] or [Left-Arrow] to move LEFT and [D] or [Right-Arrow]
-    to move RIGHT.
-  - Did you get that?
-  - What are you doing, who are you talking to?
-  - Just getting warmed up, let's retrieve those pages!
-  - ...
-  - '*Whispers* Secondly, press [W], [Up-Arrow] or [Space] to jump.'
-  - '*Whispers* That should be all for now.'
+  - And just like that, we're not in Kansas anymore! Welcome to the wild and whimsical
+    world of your imagination...
+  - Before we dive in, let's get you familiar with the controls. Trust me, it's as
+    easy as ABC!
+  - To move LEFT, you can press [A] or [Left-Arrow]. To move RIGHT, press [D] or
+    [Right-Arrow]. Got it?
+  - Wait, what's happening? Who are you talking to?
+  - Oh, don't mind me, Alexander. Just getting our friend here up to speed. Now,
+    let's go on our page hunt!
+  - '*Whispers* Oh, and one more thing. Press [W], [Up-Arrow] or [Space] to jump.
+    That''s about it for now. Happy adventuring!'
   Character_Showcases:
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
@@ -30,26 +31,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   CharacterNameline:
-  - You
-  - You
-  - You
-  - You
+  - Narrator
+  - Narrator
+  - Narrator
   - Alexander
-  - You
-  - 
-  - You
-  - You
+  - Narrator
+  - Narrator
   DialogueBoxColorAppearance:
-  - {r: 1, g: 0.9019608, b: 0.9019608, a: 0.78431374}
-  - {r: 1, g: 0.9019608, b: 0.9019608, a: 0.78431374}
-  - {r: 1, g: 0.9019608, b: 0.9019608, a: 0.78431374}
-  - {r: 1, g: 0.9019608, b: 0.9019608, a: 0.78431374}
+  - {r: 0.827451, g: 0.827451, b: 0.827451, a: 0.78431374}
+  - {r: 0.82745105, g: 0.82745105, b: 0.82745105, a: 0.78431374}
+  - {r: 0.82745105, g: 0.82745105, b: 0.82745105, a: 0.78431374}
   - {r: 0.50980395, g: 0.5803922, b: 0.76862746, a: 0.78431374}
-  - {r: 1, g: 0.90196085, b: 0.90196085, a: 0.78431374}
-  - {r: 0.50980395, g: 0.5803922, b: 0.7686275, a: 0.78431374}
-  - {r: 1, g: 0.90196085, b: 0.90196085, a: 0.78431374}
-  - {r: 1, g: 0.90196085, b: 0.90196085, a: 0.78431374}
+  - {r: 0.82745105, g: 0.82745105, b: 0.82745105, a: 0.78431374}
+  - {r: 0.82745105, g: 0.82745105, b: 0.82745105, a: 0.78431374}

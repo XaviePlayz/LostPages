@@ -56,9 +56,13 @@ public class Tutorial : MonoBehaviour
             firstPage.SetActive(true);
         }
 
-        if (requiredToOpenInventory && InventoryManager.Instance.inventoryCanvas.activeSelf)
+        if (requiredToOpenInventory && Input.GetKeyDown(KeyCode.Tab) && !InventoryManager.Instance.inventoryAlreadyOpened)
         {
-            DialogueManager.Instance.EndDialogue();
+            requiredToOpenInventory = false;
+            InventoryManager.Instance.ResetScrollBars();
+            InventoryManager.Instance.inventoryCanvas.SetActive(true);
+            InventoryManager.Instance.inventoryAlreadyOpened = true;
+            DialogueManager.Instance.DisplayNextLine();
         }
 
         if (tutorialStarted && tutorialSentenceCount == 8)
@@ -73,7 +77,7 @@ public class Tutorial : MonoBehaviour
         {
             PlayerController.Instance.allowedToWalk = true;
         }
-        if (tutorialStarted && tutorialSentenceCount == 7)
+        if (tutorialStarted && tutorialSentenceCount == 5)
         {
             PlayerController.Instance.allowedToJump = true;
         }
@@ -85,6 +89,10 @@ public class Tutorial : MonoBehaviour
         {
             requiredToOpenInventory = true;
             DialogueManager.Instance.clickToContinueMouse.SetActive(false);
+        }
+        if (InventoryManager.Instance.hasAccessToInventory && firstTimeOpeningInventoryCount == 2)
+        {
+            requiredToOpenInventory = true;
         }
     }
 
