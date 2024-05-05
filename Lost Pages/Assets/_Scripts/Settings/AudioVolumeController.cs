@@ -12,6 +12,7 @@ public class AudioVolumeController : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject mainMenu, options;
     float gameVolume;
+    public string url;
 
     private void Start()
     {
@@ -101,6 +102,11 @@ public class AudioVolumeController : MonoBehaviour
     public void StartNewGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void SeeMore()
+    {
+        Application.OpenURL(url);
     }
 
     public void ExitGame()

@@ -15,8 +15,8 @@ MonoBehaviour:
   lines:
   - Dude, you found one of my pages!
   - "[Hit TAB, it\u2019s like checking your backpack!]"
-  - "Inside your backpack, you\u2019ll see the page you just picked up.\nGive the
-    page a click!"
+  - "Inside your backpack, you\u2019ll see the page you have just picked up.\nJust
+    click on the page!"
   Character_Showcases:
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
