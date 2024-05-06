@@ -168,11 +168,6 @@ public class PlayerController : MonoBehaviour
             }
             pagesCollected++;
         }
-
-        if (other.CompareTag("DeathZone"))
-        {
-            this.gameObject.transform.position = currentRespawnPoint.position;
-        }
     }
 
     private void OnTriggerStay2D(Collider2D other)

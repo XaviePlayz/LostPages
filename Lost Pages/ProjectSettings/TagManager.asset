@@ -8,6 +8,7 @@ TagManager:
   - Page
   - Interactable_Object
   - DeathZone
+  - Traps
   layers:
   - Default
   - TransparentFX

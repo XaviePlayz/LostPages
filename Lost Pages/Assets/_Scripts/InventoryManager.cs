@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,6 +48,8 @@ public class InventoryManager : MonoBehaviour
     public Scrollbar pageScrollbar;
     public Scrollbar dialogueScrollbar;
 
+    public TextMeshProUGUI pageContent;
+
     void Start()
     {
         inventoryCanvas.SetActive(false);
@@ -54,6 +57,7 @@ public class InventoryManager : MonoBehaviour
         inventoryAlreadyOpened = false;
         allowedToCloseInventory = false;
         allowedToView = false;
+        pageContent.text = "";
         ViewPages();
     }
 
@@ -123,5 +127,17 @@ public class InventoryManager : MonoBehaviour
         allowedToView = true;
         Tutorial.Instance.requiredToOpenInventory = false;
         DialogueManager.Instance.DisplayNextLine();
+    }
+
+    public void UpdatePageContent()
+    {
+        if (pageContent.text == "")
+        {
+            pageContent.text = "Chapter 3 - Page 16";
+        }
+        else
+        {
+            pageContent.text = "";
+        }
     }
 }
