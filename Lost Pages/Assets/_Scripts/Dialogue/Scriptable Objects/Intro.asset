@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Intro
   m_EditorClassIdentifier: 
   lines:
+  - "Welcome to \u2018Geulssugi-ui Hakgyo\u2019, the School of Writing. Here, young
+    minds become tomorrow\u2019s writers. "
+  - But beware, freshmen! One gust of wind, and your story could be all over the
+    place....
   - Excuse me?
   - Hi there!
   - Got a sec to help me out with a little crisis?
@@ -28,6 +32,8 @@ MonoBehaviour:
   - Of course, I'll help you! I've got some spare time before my class starts.
   - Oh, you're a lifesaver! Seriously, thank you so much!
   Character_Showcases:
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: 7a0ffdc1af9f7614cb182fe3a2e4f13a, type: 3}
   - {fileID: 21300000, guid: 7a0ffdc1af9f7614cb182fe3a2e4f13a, type: 3}
   - {fileID: 21300000, guid: 81cb38b92e0a7aa47b2cfe733aa014dd, type: 3}
@@ -39,6 +45,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: 44b78ef6557f00947b4fdcbb55c31d2a, type: 3}
   CharacterNameline:
+  - Narrator
+  - Narrator
   - 
   - 
   - 
@@ -50,6 +58,8 @@ MonoBehaviour:
   - You
   - Alexander
   DialogueBoxColorAppearance:
+  - {r: 0.827451, g: 0.827451, b: 0.827451, a: 0.78431374}
+  - {r: 0.827451, g: 0.827451, b: 0.827451, a: 0.78431374}
   - {r: 0.50980395, g: 0.5803922, b: 0.76862746, a: 0.78431374}
   - {r: 0.50980395, g: 0.5803922, b: 0.76862746, a: 0.78431374}
   - {r: 0.50980395, g: 0.5803922, b: 0.7686275, a: 0.78431374}
