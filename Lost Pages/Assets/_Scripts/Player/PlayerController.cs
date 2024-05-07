@@ -46,9 +46,6 @@ public class PlayerController : MonoBehaviour
     private string fallAnimationTrigger = "Fall";
     private string hurtAnimationTrigger = "Hurt";
 
-    [Header("PageInventory")]
-    public int pagesCollected;
-
     [Header("Booleans")]
     public bool isJumping = false;
     private bool isWalking = false;
@@ -161,12 +158,12 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
 
-            if (pagesCollected == 0)
+            if (InventoryManager.Instance.currentPage == 0)
             {
                 DialogueManager.Instance.visualNovelCanvas.SetActive(true);
                 InventoryManager.Instance.hasAccessToInventory = true;
             }
-            pagesCollected++;
+            InventoryManager.Instance.PageCollected();
         }
     }
 

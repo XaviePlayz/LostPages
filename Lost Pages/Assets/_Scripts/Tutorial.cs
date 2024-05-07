@@ -41,6 +41,7 @@ public class Tutorial : MonoBehaviour
 
     public int firstTimeOpeningInventoryCount;
     public bool requiredToOpenInventory;
+    public bool TutorialComplete;
 
     void Start()
     {
@@ -48,6 +49,7 @@ public class Tutorial : MonoBehaviour
         tutorialStarted = false;
         tutorialSequenceEnded = false;
         tutorialSentenceCount = 0;
+        TutorialComplete = false;
     }
     private void Update()
     {

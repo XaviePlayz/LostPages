@@ -37,18 +37,41 @@ public class InventoryManager : MonoBehaviour
     public bool allowedToView;
 
     public Color currentViewButtonColor;
-    public Color canBeViewButtonColor;
+    public Color canBeViewedButtonColor;
+    public Color canBeViewedTextButtonColor;
 
     public Image viewPagesButton;
-    public Image viewDialoguesButton;
+    public Image viewSettingsButton;
+    public TextMeshProUGUI viewPagesButtonText;
+    public TextMeshProUGUI viewSettingsButtonText;
 
     public GameObject pagesCollection;
-    public GameObject dialoguesCollection;
+    public GameObject settingsMenu;
 
     public Scrollbar pageScrollbar;
-    public Scrollbar dialogueScrollbar;
+    public Scrollbar settingsScrollbar;
+    public Scrollbar inspectPageScrollbar;
+
+    [Header("PageContent")]
+    public GameObject pageInspection;
+    public GameObject additionalpageInspectionItem1;
+    public GameObject additionalpageInspectionItem2;
+
 
     public TextMeshProUGUI pageContent;
+    public GameObject[] pages;
+
+    [TextArea(3, 10)]
+    public string[] pageLines;
+    public TextMeshProUGUI pageLinesText;
+    public RectTransform pageRectTransform;
+    public float[] newYPosition;
+    public float[] newHeight;
+
+    public int SelectedPage;
+
+    [Header("Collected Pages")]
+    public int currentPage = 0;
 
     void Start()
     {
@@ -58,6 +81,14 @@ public class InventoryManager : MonoBehaviour
         allowedToCloseInventory = false;
         allowedToView = false;
         pageContent.text = "";
+        pageLinesText.text = "";
+        pageInspection.SetActive(false);
+        additionalpageInspectionItem1.SetActive(false);
+        additionalpageInspectionItem2.SetActive(false);
+
+        viewPagesButtonText.color = currentViewButtonColor;
+        viewSettingsButtonText.color = canBeViewedTextButtonColor;
+
         ViewPages();
     }
 
@@ -79,7 +110,33 @@ public class InventoryManager : MonoBehaviour
 
         if (inventoryCanvas.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
-            CloseInventory();
+            if (pageInspection.activeSelf)
+            {
+                ClosePage();
+            }
+            else
+            {
+                CloseInventory();
+            }
+        }
+        if (inventoryCanvas.activeSelf && !pageInspection.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.E) && pagesCollection.activeSelf)
+            {
+                ViewSettings();
+            }
+            if (Input.GetKeyDown(KeyCode.Q) && !pagesCollection.activeSelf)
+            {
+                ViewPages();
+            }
+            if (Input.GetKeyDown(KeyCode.Q) && settingsMenu.activeSelf)
+            {
+                ViewPages();
+            }
+            if (Input.GetKeyDown(KeyCode.E) && !settingsMenu.activeSelf)
+            {
+                ViewSettings();
+            }
         }
     }
 
@@ -97,47 +154,144 @@ public class InventoryManager : MonoBehaviour
     {
         ResetScrollBars();
         viewPagesButton.color = currentViewButtonColor;
-        viewDialoguesButton.color = canBeViewButtonColor;
+        viewSettingsButton.color = canBeViewedButtonColor;
+        viewPagesButtonText.color = currentViewButtonColor;
+        viewSettingsButtonText.color = canBeViewedTextButtonColor;
 
         pagesCollection.SetActive(true);
-        dialoguesCollection.SetActive(false);
+        settingsMenu.SetActive(false);
     }
 
-    public void ViewDialogues()
+    public void ViewSettings()
     {
         if (allowedToView)
         {
             ResetScrollBars();
-            viewPagesButton.color = canBeViewButtonColor;
-            viewDialoguesButton.color = currentViewButtonColor;
+            viewPagesButton.color = canBeViewedButtonColor;
+            viewSettingsButton.color = currentViewButtonColor;
+            viewPagesButtonText.color = canBeViewedTextButtonColor;
+            viewSettingsButtonText.color = currentViewButtonColor;
 
             pagesCollection.SetActive(false);
-            dialoguesCollection.SetActive(true);
+            settingsMenu.SetActive(true);
         }       
     }
     public void ResetScrollBars()
     {
         pageScrollbar.value = 1;
-        dialogueScrollbar.value = 1;
+        settingsScrollbar.value = 1;
     }
 
-    public void ViewPageOne()
+    public void ViewSelectedPage(int viewSelectedPage)
     {
-        allowedToCloseInventory = true;
-        allowedToView = true;
-        Tutorial.Instance.requiredToOpenInventory = false;
-        DialogueManager.Instance.DisplayNextLine();
-    }
+        pageInspection.SetActive(true);
+        additionalpageInspectionItem1.SetActive(true);
+        additionalpageInspectionItem2.SetActive(true);
 
-    public void UpdatePageContent()
-    {
-        if (pageContent.text == "")
+        SelectedPage = viewSelectedPage;
+        if (!Tutorial.Instance.TutorialComplete)
         {
-            pageContent.text = "Chapter 3 - Page 16";
+            Tutorial.Instance.TutorialComplete = true;
+            allowedToCloseInventory = true;
+            allowedToView = true;
+            Tutorial.Instance.requiredToOpenInventory = false;
+            DialogueManager.Instance.DisplayNextLine();
+        }
+        pageLinesText.text = pageLines[SelectedPage];
+
+        Vector2 position = pageRectTransform.anchoredPosition;
+        position.y = newYPosition[SelectedPage];
+        pageRectTransform.anchoredPosition = position;
+
+        Vector2 size = pageRectTransform.sizeDelta;
+        size.y = newHeight[SelectedPage];
+        pageRectTransform.sizeDelta = size;
+    }
+
+    public void ClosePage()
+    {
+        inspectPageScrollbar.value = 1;
+        pageInspection.SetActive(false);
+        additionalpageInspectionItem1.SetActive(false);
+        additionalpageInspectionItem2.SetActive(false);
+
+        pageLinesText.text = "";
+    }
+
+    public void PageCollected()
+    {
+        if (currentPage <= pages.Length)
+        {
+            pages[currentPage].GetComponent<Button>().interactable = true;
+            currentPage++;
         }
         else
         {
-            pageContent.text = "";
+            Debug.Log("All pages have been collected.");
+        }
+    }
+    public void UpdatePageContent(int viewingPage)
+    {
+        if (pages[viewingPage].GetComponent<Button>().interactable)
+        {
+            if (pageContent.text == "" && viewingPage == 0)
+            {
+                pageContent.text = "Chapter 1 - Page 1";
+            }
+            else if (pageContent.text == "" && viewingPage == 1)
+            {
+                pageContent.text = "Chapter 1 - Page 2";
+            }
+            else if (pageContent.text == "" && viewingPage == 2)
+            {
+                pageContent.text = "Chapter 4 - Page 27";
+            }
+            else if (pageContent.text == "" && viewingPage == 3)
+            {
+                pageContent.text = "Chapter 3 - Page 80";
+            }
+            else if (pageContent.text == "" && viewingPage == 4)
+            {
+                pageContent.text = "Chapter 3 - Page 132";
+            }
+            else if (pageContent.text == "" && viewingPage == 5)
+            {
+                pageContent.text = "Chapter 9 - Page 153";
+            }
+            else
+            {
+                pageContent.text = "";
+            }
+        }       
+    }
+
+    public void HoverEnterPagesButton()
+    {
+        if (settingsMenu.activeSelf)
+        {
+            viewPagesButtonText.color = currentViewButtonColor;
+        }
+    }
+    public void HoverExitPagesButton()
+    {
+        if (settingsMenu.activeSelf)
+        {
+            viewPagesButtonText.color = canBeViewedTextButtonColor;
+        }
+    }
+    public void HoverEnterSettingsButton()
+    {
+        if (pagesCollection.activeSelf)
+        {
+            viewSettingsButtonText.color = currentViewButtonColor;
+        }
+    }
+
+    public void HoverExitSettingsButton()
+    {
+        if (pagesCollection.activeSelf)
+        {
+            viewSettingsButtonText.color = canBeViewedTextButtonColor;
         }
     }
 }
