@@ -30,15 +30,15 @@ public class ScrollbarController : MonoBehaviour
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0f)
         {
-            scrollbar.value += scroll * 0.1f;
+            scrollbar.value += scroll * 0.15f;
         }
 
         // Scroll with up/down arrow keys
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             scrollbar.value += 0.001f;
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             scrollbar.value -= 0.001f;
         }

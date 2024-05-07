@@ -188,6 +188,9 @@ public class InventoryManager : MonoBehaviour
     public void ViewSelectedPage(int viewSelectedPage)
     {
         pageScrollbar.interactable = false;
+        viewPagesButton.GetComponent<Button>().interactable = false;
+        viewSettingsButton.GetComponent<Button>().interactable = false;
+
         if (pageContent.text != "")
         {
             pageContent.text = "";
@@ -220,6 +223,8 @@ public class InventoryManager : MonoBehaviour
     public void ClosePage()
     {
         pageScrollbar.interactable = true;
+        viewPagesButton.GetComponent<Button>().interactable = true;
+        viewSettingsButton.GetComponent<Button>().interactable = true;
 
         inspectPageScrollbar.value = 1;
         pageInspection.SetActive(false);
@@ -256,21 +261,21 @@ public class InventoryManager : MonoBehaviour
 
     public void HoverEnterPagesButton()
     {
-        if (settingsMenu.activeSelf)
+        if (settingsMenu.activeSelf && viewPagesButton.GetComponent<Button>().interactable == true)
         {
             viewPagesButtonText.color = currentViewButtonColor;
         }
     }
     public void HoverExitPagesButton()
     {
-        if (settingsMenu.activeSelf)
+        if (settingsMenu.activeSelf && viewPagesButton.GetComponent<Button>().interactable == true)
         {
             viewPagesButtonText.color = canBeViewedTextButtonColor;
         }
     }
     public void HoverEnterSettingsButton()
     {
-        if (pagesCollection.activeSelf)
+        if (pagesCollection.activeSelf && viewSettingsButton.GetComponent<Button>().interactable == true)
         {
             viewSettingsButtonText.color = currentViewButtonColor;
         }
@@ -278,7 +283,7 @@ public class InventoryManager : MonoBehaviour
 
     public void HoverExitSettingsButton()
     {
-        if (pagesCollection.activeSelf)
+        if (pagesCollection.activeSelf && viewSettingsButton.GetComponent<Button>().interactable == true)
         {
             viewSettingsButtonText.color = canBeViewedTextButtonColor;
         }
