@@ -65,6 +65,9 @@ public class InventoryManager : MonoBehaviour
     public string[] pageLines;
     public TextMeshProUGUI pageLinesText;
     public RectTransform pageRectTransform;
+
+    [TextArea(1, 3)]
+    public string[] pageContentLine;
     public float[] newYPosition;
     public float[] newHeight;
 
@@ -184,6 +187,11 @@ public class InventoryManager : MonoBehaviour
 
     public void ViewSelectedPage(int viewSelectedPage)
     {
+        if (pageContent.text != "")
+        {
+            pageContent.text = "";
+        }
+
         pageInspection.SetActive(true);
         additionalpageInspectionItem1.SetActive(true);
         additionalpageInspectionItem2.SetActive(true);
@@ -230,39 +238,17 @@ public class InventoryManager : MonoBehaviour
             Debug.Log("All pages have been collected.");
         }
     }
-    public void UpdatePageContent(int viewingPage)
+    public void UpdatePageContentOnHoverEnter(int viewingPage)
     {
         if (pages[viewingPage].GetComponent<Button>().interactable)
         {
-            if (pageContent.text == "" && viewingPage == 0)
-            {
-                pageContent.text = "Chapter 1 - Page 1";
-            }
-            else if (pageContent.text == "" && viewingPage == 1)
-            {
-                pageContent.text = "Chapter 1 - Page 2";
-            }
-            else if (pageContent.text == "" && viewingPage == 2)
-            {
-                pageContent.text = "Chapter 4 - Page 27";
-            }
-            else if (pageContent.text == "" && viewingPage == 3)
-            {
-                pageContent.text = "Chapter 3 - Page 80";
-            }
-            else if (pageContent.text == "" && viewingPage == 4)
-            {
-                pageContent.text = "Chapter 3 - Page 132";
-            }
-            else if (pageContent.text == "" && viewingPage == 5)
-            {
-                pageContent.text = "Chapter 9 - Page 153";
-            }
-            else
-            {
-                pageContent.text = "";
-            }
-        }       
+            pageContent.text = pageContentLine[viewingPage];
+        }
+    }
+
+    public void UpdatePageContentOnHoverExit(int viewingPage)
+    {
+        pageContent.text = "";
     }
 
     public void HoverEnterPagesButton()
