@@ -187,6 +187,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ViewSelectedPage(int viewSelectedPage)
     {
+        pageScrollbar.interactable = false;
         if (pageContent.text != "")
         {
             pageContent.text = "";
@@ -218,6 +219,8 @@ public class InventoryManager : MonoBehaviour
 
     public void ClosePage()
     {
+        pageScrollbar.interactable = true;
+
         inspectPageScrollbar.value = 1;
         pageInspection.SetActive(false);
         additionalpageInspectionItem1.SetActive(false);
