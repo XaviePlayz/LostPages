@@ -32,6 +32,8 @@ public class Tutorial : MonoBehaviour
     public GameObject startTutorialDialogue;
     public GameObject showTutorialDialogueCanvas;
     public GameObject novelBackground;
+    public GameObject visualNovel;
+    public GameObject selectPlayerCustomization;
 
     public GameObject firstPage;
 
@@ -42,6 +44,7 @@ public class Tutorial : MonoBehaviour
     public int firstTimeOpeningInventoryCount;
     public bool requiredToOpenInventory;
     public bool TutorialComplete;
+    public bool allowedToDisplayNextLine;
 
     void Start()
     {
@@ -50,6 +53,7 @@ public class Tutorial : MonoBehaviour
         tutorialSequenceEnded = false;
         tutorialSentenceCount = 0;
         TutorialComplete = false;
+        allowedToDisplayNextLine = true;
     }
     private void Update()
     {
@@ -67,7 +71,7 @@ public class Tutorial : MonoBehaviour
             DialogueManager.Instance.DisplayNextLine();
         }
 
-        if (tutorialStarted && tutorialSentenceCount == 8)
+        if (tutorialStarted && tutorialSentenceCount == 6)
         {
             tutorialSequenceEnded = true;
         }
@@ -77,9 +81,16 @@ public class Tutorial : MonoBehaviour
     {
         if (tutorialStarted && tutorialSentenceCount == 2)
         {
+            visualNovel.SetActive(false);
+            selectPlayerCustomization.SetActive(true);
+
+            allowedToDisplayNextLine = false;
+        }
+        if (tutorialStarted && tutorialSentenceCount == 3)
+        {
             PlayerController.Instance.allowedToWalk = true;
         }
-        if (tutorialStarted && tutorialSentenceCount == 5)
+        if (tutorialStarted && tutorialSentenceCount == 6)
         {
             PlayerController.Instance.allowedToJump = true;
         }

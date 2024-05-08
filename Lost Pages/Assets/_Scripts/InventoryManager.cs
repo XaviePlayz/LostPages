@@ -35,6 +35,7 @@ public class InventoryManager : MonoBehaviour
     public bool inventoryAlreadyOpened;
     public bool allowedToCloseInventory;
     public bool allowedToView;
+    private bool allowedToNavigate;
 
     public Color currentViewButtonColor;
     public Color canBeViewedButtonColor;
@@ -83,6 +84,7 @@ public class InventoryManager : MonoBehaviour
         inventoryAlreadyOpened = false;
         allowedToCloseInventory = false;
         allowedToView = false;
+        allowedToNavigate = false;
         pageContent.text = "";
         pageLinesText.text = "";
         pageInspection.SetActive(false);
@@ -103,13 +105,24 @@ public class InventoryManager : MonoBehaviour
             {
                 ResetScrollBars();
                 inventoryCanvas.SetActive(true);
+                ViewPages();
                 inventoryAlreadyOpened = true;
+                allowedToNavigate = true;
             }
         }
         else
         {
             CloseInventory();
         }
+
+        //if (inventoryCanvas != null && Input.GetKeyDown(KeyCode.Escape) && !inventoryAlreadyOpened)
+        //{
+        //    Tutorial.Instance.visualNovel.GetComponent<Canvas>().sortingOrder = 0;
+        //    ResetScrollBars();
+        //    inventoryCanvas.SetActive(true);
+        //    ViewSettings();
+        //    inventoryAlreadyOpened = true;
+        //}
 
         if (inventoryCanvas.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
@@ -122,7 +135,8 @@ public class InventoryManager : MonoBehaviour
                 CloseInventory();
             }
         }
-        if (inventoryCanvas.activeSelf && !pageInspection.activeSelf)
+
+        if (inventoryCanvas.activeSelf && !pageInspection.activeSelf && allowedToNavigate && allowedToNavigate)
         {
             if (Input.GetKeyDown(KeyCode.E) && pagesCollection.activeSelf)
             {
@@ -151,18 +165,23 @@ public class InventoryManager : MonoBehaviour
             inventoryCanvas.SetActive(false);
             inventoryAlreadyOpened = false;
         }
+
+        //Tutorial.Instance.showTutorialDialogueCanvas.GetComponent<Canvas>().sortingOrder = 5;
     }
 
     public void ViewPages()
     {
-        ResetScrollBars();
-        viewPagesButton.color = currentViewButtonColor;
-        viewSettingsButton.color = canBeViewedButtonColor;
-        viewPagesButtonText.color = currentViewButtonColor;
-        viewSettingsButtonText.color = canBeViewedTextButtonColor;
+        if (allowedToNavigate)
+        {
+            ResetScrollBars();
+            viewPagesButton.color = currentViewButtonColor;
+            viewSettingsButton.color = canBeViewedButtonColor;
+            viewPagesButtonText.color = currentViewButtonColor;
+            viewSettingsButtonText.color = canBeViewedTextButtonColor;
 
-        pagesCollection.SetActive(true);
-        settingsMenu.SetActive(false);
+            pagesCollection.SetActive(true);
+            settingsMenu.SetActive(false);
+        }       
     }
 
     public void ViewSettings()
@@ -261,14 +280,14 @@ public class InventoryManager : MonoBehaviour
 
     public void HoverEnterPagesButton()
     {
-        if (settingsMenu.activeSelf && viewPagesButton.GetComponent<Button>().interactable == true)
+        if (settingsMenu.activeSelf && viewPagesButton.GetComponent<Button>().interactable == true && allowedToNavigate)
         {
             viewPagesButtonText.color = currentViewButtonColor;
         }
     }
     public void HoverExitPagesButton()
     {
-        if (settingsMenu.activeSelf && viewPagesButton.GetComponent<Button>().interactable == true)
+        if (settingsMenu.activeSelf && viewPagesButton.GetComponent<Button>().interactable == true && allowedToNavigate)
         {
             viewPagesButtonText.color = canBeViewedTextButtonColor;
         }

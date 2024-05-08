@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    private GameObject player;
+    public GameObject player;
     private Rigidbody2D rb;
 
     [Header("Movement / Player Settings")]

@@ -164,8 +164,11 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = false;
+            if (!Tutorial.Instance.selectPlayerCustomization.activeSelf)
+            {
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = false;
+            }
         }
 
         // Check for key press to advance dialogue for "Press LEFT MOUSE CLICK" dialogue
@@ -183,37 +186,40 @@ public class DialogueManager : MonoBehaviour
     {
         if (!Tutorial.Instance.requiredToOpenInventory)
         {
-            if (dialogueQueue.Count > 0)
+            if (Tutorial.Instance.allowedToDisplayNextLine)
             {
-                string line = dialogueQueue.Dequeue();
-                dialogueText.text = line;
-
-                Sprite characterShowcase = CharacterShowcaseQueue.Dequeue();
-                characterShowcaseImage.sprite = characterShowcase;
-
-                string Characterline = CharacterNameQueue.Dequeue();
-                characterNameText.text = Characterline;
-
-                Color DialogueBox = DialogueBoxColorAppearanceQueue.Dequeue();
-                dialogueHolder.GetComponent<Image>().color = DialogueBox;
-                characterNameHolder.GetComponent<Image>().color = DialogueBox;
-
-                if (Tutorial.Instance.tutorialStarted)
+                if (dialogueQueue.Count > 0)
                 {
-                    Tutorial.Instance.tutorialSentenceCount++;
-                    Tutorial.Instance.CheckForAllowedInputDuringTutorial();
-                }
+                    string line = dialogueQueue.Dequeue();
+                    dialogueText.text = line;
 
-                if (InventoryManager.Instance.hasAccessToInventory)
-                {
-                    Tutorial.Instance.firstTimeOpeningInventoryCount++;
-                    Tutorial.Instance.CheckForAllowedInputDuringInventoryExplanation();
+                    Sprite characterShowcase = CharacterShowcaseQueue.Dequeue();
+                    characterShowcaseImage.sprite = characterShowcase;
+
+                    string Characterline = CharacterNameQueue.Dequeue();
+                    characterNameText.text = Characterline;
+
+                    Color DialogueBox = DialogueBoxColorAppearanceQueue.Dequeue();
+                    dialogueHolder.GetComponent<Image>().color = DialogueBox;
+                    characterNameHolder.GetComponent<Image>().color = DialogueBox;
+
+                    if (Tutorial.Instance.tutorialStarted)
+                    {
+                        Tutorial.Instance.tutorialSentenceCount++;
+                        Tutorial.Instance.CheckForAllowedInputDuringTutorial();
+                    }
+
+                    if (InventoryManager.Instance.hasAccessToInventory)
+                    {
+                        Tutorial.Instance.firstTimeOpeningInventoryCount++;
+                        Tutorial.Instance.CheckForAllowedInputDuringInventoryExplanation();
+                    }
                 }
-            }
-            else
-            {
-                EndDialogue();
-            }
+                else
+                {
+                    EndDialogue();
+                }
+            }        
         }        
     }
 
