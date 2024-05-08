@@ -120,7 +120,7 @@ public class AudioVolumeController : MonoBehaviour
 
     public void AreYouSure()
     {
-        options.SetActive(false);
+        InventoryManager.Instance.settingsMenu.SetActive(false);
         areYouSureMenu.SetActive(true);
 
         InventoryManager.Instance.allowedToCloseInventory = false;
@@ -129,7 +129,7 @@ public class AudioVolumeController : MonoBehaviour
 
     public void ReturnToGame()
     {
-        options.SetActive(true);
+        InventoryManager.Instance.settingsMenu.SetActive(true);
         areYouSureMenu.SetActive(false);
 
         InventoryManager.Instance.allowedToCloseInventory = true;

@@ -87,6 +87,11 @@ public class Tutorial : MonoBehaviour
         {
             tutorialSequenceEnded = true;
         }
+
+        if (TutorialComplete)
+        {
+            InventoryManager.Instance.allowedToViewSettings = true;
+        }
     }
 
     public void CheckForAllowedInputDuringTutorial()

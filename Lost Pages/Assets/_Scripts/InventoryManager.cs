@@ -92,8 +92,8 @@ public class InventoryManager : MonoBehaviour
         additionalpageInspectionItem2.SetActive(false);
         viewPagesButton.GetComponent<Button>().interactable = false;
 
-        viewPagesButtonText.color = currentViewButtonColor;
-        viewSettingsButtonText.color = canBeViewedTextButtonColor;
+        viewPagesButtonText.color = canBeViewedTextButtonColor;
+        viewSettingsButtonText.color = currentViewButtonColor;
     }
 
     void Update()
@@ -131,6 +131,11 @@ public class InventoryManager : MonoBehaviour
             {
                 CloseInventory();
             }
+        }
+        
+        if ((inventoryAlreadyOpened && Input.GetKeyDown(KeyCode.Escape) && AudioVolumeController.Instance.areYouSureMenu.activeSelf))
+        {
+            AudioVolumeController.Instance.ReturnToGame();
         }
 
         if (inventoryCanvas.activeSelf && !pageInspection.activeSelf && allowedToNavigate)
@@ -189,7 +194,7 @@ public class InventoryManager : MonoBehaviour
     public void ViewSettings()
     {
         AudioVolumeController.Instance.OpenSettings();
-        if (allowedToViewSettings)
+        if (allowedToViewSettings && !AudioVolumeController.Instance.areYouSureMenu.activeSelf)
         {
             ResetScrollBars();
             viewPagesButton.color = canBeViewedButtonColor;
