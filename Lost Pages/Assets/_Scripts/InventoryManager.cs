@@ -34,8 +34,8 @@ public class InventoryManager : MonoBehaviour
     public bool hasAccessToInventory;
     public bool inventoryAlreadyOpened;
     public bool allowedToCloseInventory;
-    public bool allowedToView;
-    private bool allowedToNavigate;
+    public bool allowedToViewSettings;
+    public bool allowedToNavigate;
 
     public Color currentViewButtonColor;
     public Color canBeViewedButtonColor;
@@ -50,7 +50,6 @@ public class InventoryManager : MonoBehaviour
     public GameObject settingsMenu;
 
     public Scrollbar pageScrollbar;
-    public Scrollbar settingsScrollbar;
     public Scrollbar inspectPageScrollbar;
 
     [Header("PageContent")]
@@ -82,51 +81,47 @@ public class InventoryManager : MonoBehaviour
         inventoryCanvas.SetActive(false);
         hasAccessToInventory = false;
         inventoryAlreadyOpened = false;
-        allowedToCloseInventory = false;
-        allowedToView = false;
+        allowedToCloseInventory = true;
+        allowedToViewSettings = true;
         allowedToNavigate = false;
         pageContent.text = "";
         pageLinesText.text = "";
+        viewPagesButtonText.text = "LOCKED";
         pageInspection.SetActive(false);
         additionalpageInspectionItem1.SetActive(false);
         additionalpageInspectionItem2.SetActive(false);
+        viewPagesButton.GetComponent<Button>().interactable = false;
 
         viewPagesButtonText.color = currentViewButtonColor;
         viewSettingsButtonText.color = canBeViewedTextButtonColor;
-
-        ViewPages();
     }
 
     void Update()
     {
         if (hasAccessToInventory)
         {
-            if (inventoryCanvas != null && Input.GetKeyDown(KeyCode.Tab) && !inventoryAlreadyOpened && !DialogueManager.Instance.isDialogueActive)
+            if (Input.GetKeyDown(KeyCode.Tab) && !inventoryAlreadyOpened && !Tutorial.Instance.requiredToOpenInventory)
             {
+                Tutorial.Instance.showTutorialDialogueCanvas.SetActive(false);
+          
                 ResetScrollBars();
                 inventoryCanvas.SetActive(true);
-                ViewPages();
                 inventoryAlreadyOpened = true;
-                allowedToNavigate = true;
 
-
+                ViewPages();
             }
         }
-        else
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !inventoryAlreadyOpened)
         {
-            CloseInventory();
+            Tutorial.Instance.showTutorialDialogueCanvas.SetActive(false);
+            Tutorial.Instance.allowedToDisplayNextLine = false;
+            ResetScrollBars();
+            inventoryCanvas.SetActive(true);
+            ViewSettings();
+            inventoryAlreadyOpened = true;
         }
-
-        //if (inventoryCanvas != null && Input.GetKeyDown(KeyCode.Escape) && !inventoryAlreadyOpened)
-        //{
-        //    Tutorial.Instance.visualNovel.GetComponent<Canvas>().sortingOrder = 0;
-        //    ResetScrollBars();
-        //    inventoryCanvas.SetActive(true);
-        //    ViewSettings();
-        //    inventoryAlreadyOpened = true;
-        //}
-
-        if (inventoryCanvas.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        else if (inventoryAlreadyOpened && Input.GetKeyDown(KeyCode.Escape))
         {
             if (pageInspection.activeSelf)
             {
@@ -138,7 +133,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        if (inventoryCanvas.activeSelf && !pageInspection.activeSelf && allowedToNavigate && allowedToNavigate)
+        if (inventoryCanvas.activeSelf && !pageInspection.activeSelf && allowedToNavigate)
         {
             if (Input.GetKeyDown(KeyCode.E) && pagesCollection.activeSelf)
             {
@@ -161,14 +156,19 @@ public class InventoryManager : MonoBehaviour
 
     public void CloseInventory()
     {
+        AudioVolumeController.Instance.ConfirmSettings();
+
         if (allowedToCloseInventory)
         {
             ResetScrollBars();
             inventoryCanvas.SetActive(false);
             inventoryAlreadyOpened = false;
+            Tutorial.Instance.allowedToDisplayNextLine = true;
+            if (DialogueManager.Instance.isDialogueActive)
+            {
+                Tutorial.Instance.showTutorialDialogueCanvas.SetActive(true);
+            }
         }
-
-        //Tutorial.Instance.showTutorialDialogueCanvas.GetComponent<Canvas>().sortingOrder = 5;
     }
 
     public void ViewPages()
@@ -188,7 +188,8 @@ public class InventoryManager : MonoBehaviour
 
     public void ViewSettings()
     {
-        if (allowedToView)
+        AudioVolumeController.Instance.OpenSettings();
+        if (allowedToViewSettings)
         {
             ResetScrollBars();
             viewPagesButton.color = canBeViewedButtonColor;
@@ -203,7 +204,6 @@ public class InventoryManager : MonoBehaviour
     public void ResetScrollBars()
     {
         pageScrollbar.value = 1;
-        settingsScrollbar.value = 1;
     }
 
     public void ViewSelectedPage(int viewSelectedPage)
@@ -224,10 +224,11 @@ public class InventoryManager : MonoBehaviour
         SelectedPage = viewSelectedPage;
         if (!Tutorial.Instance.TutorialComplete)
         {
+            Tutorial.Instance.requiredToOpenInventory = false;
+            Tutorial.Instance.allowedToDisplayNextLine = true;
             Tutorial.Instance.TutorialComplete = true;
             allowedToCloseInventory = true;
-            allowedToView = true;
-            Tutorial.Instance.requiredToOpenInventory = false;
+            allowedToViewSettings = true;
             DialogueManager.Instance.DisplayNextLine();
         }
         pageLinesText.text = pageLines[SelectedPage];

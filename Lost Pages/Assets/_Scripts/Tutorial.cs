@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
@@ -64,11 +65,22 @@ public class Tutorial : MonoBehaviour
 
         if (requiredToOpenInventory && Input.GetKeyDown(KeyCode.Tab) && !InventoryManager.Instance.inventoryAlreadyOpened)
         {
+            InventoryManager.Instance.viewPagesButtonText.text = "Pages";
+
+            InventoryManager.Instance.allowedToNavigate = true;
+
+            allowedToDisplayNextLine = true;
             requiredToOpenInventory = false;
             InventoryManager.Instance.ResetScrollBars();
             InventoryManager.Instance.inventoryCanvas.SetActive(true);
             InventoryManager.Instance.inventoryAlreadyOpened = true;
             DialogueManager.Instance.DisplayNextLine();
+
+            InventoryManager.Instance.allowedToCloseInventory = false;
+            InventoryManager.Instance.allowedToViewSettings = false;
+            InventoryManager.Instance.viewPagesButton.GetComponent<Button>().interactable = true;
+
+            InventoryManager.Instance.ViewPages();
         }
 
         if (tutorialStarted && tutorialSentenceCount == 6)

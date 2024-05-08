@@ -4,20 +4,53 @@ using UnityEngine.SceneManagement;
 
 public class AudioVolumeController : MonoBehaviour
 {
+    #region Singleton
+
+    private static AudioVolumeController _instance;
+    public static AudioVolumeController Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<AudioVolumeController>();
+
+                if (_instance == null)
+                {
+                    GameObject obj = new GameObject();
+                    obj.name = typeof(AudioVolumeController).Name;
+                    _instance = obj.AddComponent<AudioVolumeController>();
+                }
+            }
+            return _instance;
+        }
+    }
+
+    #endregion
+
     [Header("Volume")]
     public Slider volumeSlider;
     private const string VolumeKey = "Volume";
 
     [Header("Scenes")]
-    public GameObject pauseMenu;
-    public GameObject mainMenu, options;
+    public GameObject mainMenu;
+    public GameObject options;
+    public GameObject areYouSureMenu;
     float gameVolume;
     public string url;
 
     private void Start()
     {
         // Load Game
-        options.SetActive(false);
+        if (options != null)
+        {
+            options.SetActive(false);
+        }
+
+        if (areYouSureMenu != null)
+        {
+            areYouSureMenu.SetActive(false);
+        }
 
         // Load the saved volume value
         float savedVolume = PlayerPrefs.GetFloat(VolumeKey, 0.05f);
@@ -30,8 +63,6 @@ public class AudioVolumeController : MonoBehaviour
 
     public void OpenSettings()
     {
-        pauseMenu.SetActive(false);
-        options.SetActive(true);
         SetVolume(gameVolume);
 
         // Load the saved volume value
@@ -42,8 +73,6 @@ public class AudioVolumeController : MonoBehaviour
 
     public void ConfirmSettings()
     {
-        pauseMenu.SetActive(true);
-        options.SetActive(false);
         SetVolume(gameVolume);
     }
 
@@ -86,6 +115,27 @@ public class AudioVolumeController : MonoBehaviour
         foreach (var audioSource in audioSources)
         {
             audioSource.volume = volume;
+        }
+    }
+
+    public void AreYouSure()
+    {
+        options.SetActive(false);
+        areYouSureMenu.SetActive(true);
+
+        InventoryManager.Instance.allowedToCloseInventory = false;
+        InventoryManager.Instance.allowedToNavigate = false;
+    }
+
+    public void ReturnToGame()
+    {
+        options.SetActive(true);
+        areYouSureMenu.SetActive(false);
+
+        InventoryManager.Instance.allowedToCloseInventory = true;
+        if (Tutorial.Instance.TutorialComplete)
+        {
+            InventoryManager.Instance.allowedToNavigate = true;
         }
     }
 

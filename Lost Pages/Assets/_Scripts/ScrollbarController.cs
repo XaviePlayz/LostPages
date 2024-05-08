@@ -16,10 +16,6 @@ public class ScrollbarController : MonoBehaviour
         {
             scrollbar = InventoryManager.Instance.pageScrollbar;
         }
-        if (InventoryManager.Instance.settingsMenu.activeSelf)
-        {
-            scrollbar = InventoryManager.Instance.settingsScrollbar;
-        }
         if (InventoryManager.Instance.pageInspection.activeSelf)
         {
             scrollbar = InventoryManager.Instance.inspectPageScrollbar;
