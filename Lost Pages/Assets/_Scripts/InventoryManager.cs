@@ -108,6 +108,8 @@ public class InventoryManager : MonoBehaviour
                 ViewPages();
                 inventoryAlreadyOpened = true;
                 allowedToNavigate = true;
+
+
             }
         }
         else

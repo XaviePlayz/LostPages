@@ -139,6 +139,15 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
+        if (InventoryManager.Instance.inventoryAlreadyOpened)
+        {
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+            anim.SetTrigger(idleAnimationTrigger);
+        }
+        else
+        {
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
         //Interact
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null && !isJumping)
         {
