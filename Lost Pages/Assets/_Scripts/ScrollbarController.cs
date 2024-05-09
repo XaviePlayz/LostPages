@@ -1,42 +1,62 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
+using System.Collections;
 
 public class ScrollbarController : MonoBehaviour
 {
-    public Scrollbar scrollbar;
+    public ScrollRect currentScrollRect;
+    public float scrollSpeed = 0.5f;
+
+    public ScrollRect pagesCollectionScrollRect;
+    public ScrollRect pageInspectionScrollRect;
+    private Coroutine smoothScrollCoroutine;
 
     void Start()
     {
-        scrollbar = InventoryManager.Instance.pageScrollbar;
+        currentScrollRect = pagesCollectionScrollRect;
     }
     void Update()
     {
         if (InventoryManager.Instance.pagesCollection.activeSelf)
         {
-            scrollbar = InventoryManager.Instance.pageScrollbar;
+            currentScrollRect = pagesCollectionScrollRect;
         }
         if (InventoryManager.Instance.pageInspection.activeSelf)
         {
-            scrollbar = InventoryManager.Instance.inspectPageScrollbar;
-        }
-
-
-        // Scroll with mouse wheel
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (scroll != 0f)
-        {
-            scrollbar.value += scroll * 0.15f;
+            currentScrollRect = pageInspectionScrollRect;
         }
 
         // Scroll with up/down arrow keys
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && (smoothScrollCoroutine == null))
         {
-            scrollbar.value += 0.001f;
+            smoothScrollCoroutine = StartCoroutine(SmoothScroll(currentScrollRect.verticalNormalizedPosition + scrollSpeed));
         }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        else if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && (smoothScrollCoroutine == null))
         {
-            scrollbar.value -= 0.001f;
+            smoothScrollCoroutine = StartCoroutine(SmoothScroll(currentScrollRect.verticalNormalizedPosition - scrollSpeed));
         }
+        else if (smoothScrollCoroutine != null)
+        {
+            StopCoroutine(smoothScrollCoroutine);
+            smoothScrollCoroutine = null;
+        }
+    }
+
+    IEnumerator SmoothScroll(float target)
+    {
+        float time = 0;
+        float start = currentScrollRect.verticalNormalizedPosition;
+
+        // Clamp the target value within the range of 0 to 1
+        target = Mathf.Clamp(target, 0f, 1f);
+
+        while (time < 0.01f)
+        {
+            time += Time.deltaTime / scrollSpeed;
+            currentScrollRect.verticalNormalizedPosition = Mathf.Lerp(start, target, time);
+            yield return null;
+        }
+
+        smoothScrollCoroutine = null;
     }
 }
