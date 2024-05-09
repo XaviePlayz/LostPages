@@ -9,11 +9,13 @@ TagManager:
   - Interactable_Object
   - DeathZone
   - Traps
+  - Music
+  - SFX
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 

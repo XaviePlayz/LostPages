@@ -48,6 +48,8 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> CharacterNameQueue;
     private Queue<Color> DialogueBoxColorAppearanceQueue;
 
+    public int totalSentenceCount;
+
     public bool isDialogueActive;
     private bool isPressToContinue;
     private bool isAutoDisplaying;
@@ -128,6 +130,16 @@ public class DialogueManager : MonoBehaviour
 
     public void Update()
     {
+        if (totalSentenceCount > 1 && totalSentenceCount < 7)
+        {
+            AudioController.Instance.PlayMusic(1);
+        }
+
+        if (totalSentenceCount > 11)
+        {
+            AudioController.Instance.PlayMusic(2);
+        }
+
         // Check for first line of dialogue
         if (isFirstLine)
         {
@@ -188,6 +200,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (Tutorial.Instance.allowedToDisplayNextLine)
             {
+                totalSentenceCount++;
                 if (dialogueQueue.Count > 0)
                 {
                     string line = dialogueQueue.Dequeue();

@@ -103,7 +103,9 @@ public class InventoryManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Tab) && !inventoryAlreadyOpened && !Tutorial.Instance.requiredToOpenInventory)
             {
                 Tutorial.Instance.showTutorialDialogueCanvas.SetActive(false);
-          
+
+                AudioController.Instance.PlaySFX(0);
+
                 ResetScrollBars();
                 inventoryCanvas.SetActive(true);
                 inventoryAlreadyOpened = true;
@@ -114,6 +116,8 @@ public class InventoryManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) && !inventoryAlreadyOpened)
         {
+            AudioController.Instance.PlaySFX(0);
+
             Tutorial.Instance.showTutorialDialogueCanvas.SetActive(false);
             Tutorial.Instance.allowedToDisplayNextLine = false;
             ResetScrollBars();
@@ -143,18 +147,12 @@ public class InventoryManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && pagesCollection.activeSelf)
             {
                 ViewSettings();
+                AudioController.Instance.PlaySFX(3);
             }
             if (Input.GetKeyDown(KeyCode.Q) && !pagesCollection.activeSelf)
             {
                 ViewPages();
-            }
-            if (Input.GetKeyDown(KeyCode.Q) && settingsMenu.activeSelf)
-            {
-                ViewPages();
-            }
-            if (Input.GetKeyDown(KeyCode.E) && !settingsMenu.activeSelf)
-            {
-                ViewSettings();
+                AudioController.Instance.PlaySFX(3);
             }
         }
     }
@@ -165,6 +163,8 @@ public class InventoryManager : MonoBehaviour
 
         if (allowedToCloseInventory)
         {
+            AudioController.Instance.PlaySFX(1);
+
             ResetScrollBars();
             inventoryCanvas.SetActive(false);
             inventoryAlreadyOpened = false;
@@ -180,6 +180,8 @@ public class InventoryManager : MonoBehaviour
     {
         if (allowedToNavigate)
         {
+            AudioVolumeController.Instance.SetMusicVolume(AudioVolumeController.Instance.musicGameVolume);
+
             ResetScrollBars();
             viewPagesButton.color = currentViewButtonColor;
             viewSettingsButton.color = canBeViewedButtonColor;
@@ -213,6 +215,8 @@ public class InventoryManager : MonoBehaviour
 
     public void ViewSelectedPage(int viewSelectedPage)
     {
+        AudioController.Instance.PlaySFX(2);
+
         pageScrollbar.interactable = false;
         viewPagesButton.GetComponent<Button>().interactable = false;
         viewSettingsButton.GetComponent<Button>().interactable = false;
@@ -249,6 +253,8 @@ public class InventoryManager : MonoBehaviour
 
     public void ClosePage()
     {
+        AudioController.Instance.PlaySFX(2);
+
         pageScrollbar.interactable = true;
         viewPagesButton.GetComponent<Button>().interactable = true;
         viewSettingsButton.GetComponent<Button>().interactable = true;

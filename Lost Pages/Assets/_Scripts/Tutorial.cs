@@ -66,6 +66,7 @@ public class Tutorial : MonoBehaviour
         if (requiredToOpenInventory && Input.GetKeyDown(KeyCode.Tab) && !InventoryManager.Instance.inventoryAlreadyOpened)
         {
             InventoryManager.Instance.viewPagesButtonText.text = "Pages";
+            AudioController.Instance.PlaySFX(0);
 
             InventoryManager.Instance.allowedToNavigate = true;
 

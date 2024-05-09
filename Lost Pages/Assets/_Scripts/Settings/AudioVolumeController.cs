@@ -28,15 +28,20 @@ public class AudioVolumeController : MonoBehaviour
 
     #endregion
 
-    [Header("Volume")]
-    public Slider volumeSlider;
-    private const string VolumeKey = "Volume";
+    [Header("Music Volume")]
+    public Slider musicVolumeSlider;
+    private const string musicVolumeKey = "Music Volume";
+    public float musicGameVolume;
+
+    [Header("SFX Volume")]
+    public Slider sfxVolumeSlider;
+    private const string sfxVolumeKey = "SFX Volume";
+    public float sfxGameVolume;
 
     [Header("Scenes")]
     public GameObject mainMenu;
     public GameObject options;
     public GameObject areYouSureMenu;
-    float gameVolume;
     public string url;
 
     private void Start()
@@ -53,73 +58,129 @@ public class AudioVolumeController : MonoBehaviour
         }
 
         // Load the saved volume value
-        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, 0.05f);
-        volumeSlider.value = savedVolume;
-        SetVolume(savedVolume);
+        float savedMusicVolume = PlayerPrefs.GetFloat(musicVolumeKey, 0.05f);
+        musicVolumeSlider.value = savedMusicVolume;
+        SetMusicVolume(savedMusicVolume);
+
+        musicGameVolume = savedMusicVolume;
+
+        // Load the saved volume value
+        float savedSFXVolume = PlayerPrefs.GetFloat(sfxVolumeKey, 0.05f);
+        sfxVolumeSlider.value = savedSFXVolume;
+        SetSFXVolume(savedSFXVolume);
+
+        sfxGameVolume = savedSFXVolume;
 
         // Attach a listener to the slider's OnValueChanged event
-        volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
+        musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
+        sfxVolumeSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
     }
 
     public void OpenSettings()
     {
-        SetVolume(gameVolume);
+        SetMusicVolume(musicGameVolume);
 
         // Load the saved volume value
-        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, 1f);
-        volumeSlider.value = savedVolume;
-        SetVolume(savedVolume);
+        float savedMusicVolume = PlayerPrefs.GetFloat(musicVolumeKey, 1f);
+        musicVolumeSlider.value = savedMusicVolume;
+        SetMusicVolume(savedMusicVolume);
+
+        float savedSFXVolume = PlayerPrefs.GetFloat(sfxVolumeKey, 1f);
+        sfxVolumeSlider.value = savedSFXVolume;
+        SetSFXVolume(savedSFXVolume);
     }
 
     public void ConfirmSettings()
     {
-        SetVolume(gameVolume);
+        SetMusicVolume(musicGameVolume);
+        SetSFXVolume(sfxGameVolume);
     }
 
     public void OpenSettingsInMainMenu()
     {
+        AudioController.Instance.PlaySFX(3);
+
         mainMenu.SetActive(false);
         options.SetActive(true);
-        SetVolume(gameVolume);
 
         // Load the saved volume value
-        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, 1f);
-        volumeSlider.value = savedVolume;
-        SetVolume(savedVolume);
+        float savedMusicVolume = PlayerPrefs.GetFloat(musicVolumeKey, 1f);
+        musicVolumeSlider.value = savedMusicVolume;
+        SetMusicVolume(savedMusicVolume);
+
+        float savedSFXVolume = PlayerPrefs.GetFloat(sfxVolumeKey, 1f);
+        sfxVolumeSlider.value = savedSFXVolume;
+        SetSFXVolume(savedSFXVolume);
     }
 
     public void ConfirmSettingsInMainMenu()
     {
+        AudioController.Instance.PlaySFX(3);
+
         mainMenu.SetActive(true);
         options.SetActive(false);
-        SetVolume(gameVolume);
+        SetMusicVolume(musicGameVolume);
+        SetSFXVolume(sfxGameVolume);
     }
 
-    public void OnVolumeChanged(float volume)
+    public void OnMusicVolumeChanged(float musicVolume)
     {
         // Set the volume for all audio sources
-        SetVolume(volume);
-        gameVolume = volume;
+        SetMusicVolume(musicVolume);
+        musicGameVolume = musicVolume;
 
         // Save the volume value
-        PlayerPrefs.SetFloat(VolumeKey, volume);
+        PlayerPrefs.SetFloat(musicVolumeKey, musicVolume);
         PlayerPrefs.Save();
     }
 
-    public void SetVolume(float volume)
+    public void OnSFXVolumeChanged(float sfxVolume)
     {
-        // Find all instances of AudioSource in the scene
-        AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
+        // Set the volume for all audio sources
+        SetSFXVolume(sfxVolume);
+        sfxGameVolume = sfxVolume;
+
+        // Save the volume value
+        PlayerPrefs.SetFloat(sfxVolumeKey, sfxVolume);
+        PlayerPrefs.Save();
+    }
+
+    public void SetMusicVolume(float musicVolume)
+    {
+        // Find all game objects with the tag "Ball" in the scene
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Music");
 
         // Set the volume for all audio sources
-        foreach (var audioSource in audioSources)
+        foreach (var gameObject in gameObjects)
         {
-            audioSource.volume = volume;
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            if (audioSource != null) // Check if the game object has an AudioSource component
+            {
+                audioSource.volume = musicVolume;
+            }
+        }
+    }
+
+    public void SetSFXVolume(float sfxVolume)
+    {
+        // Find all game objects with the tag "Ball" in the scene
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("SFX");
+
+        // Set the volume for all audio sources
+        foreach (var gameObject in gameObjects)
+        {
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            if (audioSource != null) // Check if the game object has an AudioSource component
+            {
+                audioSource.volume = sfxVolume;
+            }
         }
     }
 
     public void AreYouSure()
     {
+        AudioController.Instance.PlaySFX(3);
+
         InventoryManager.Instance.settingsMenu.SetActive(false);
         areYouSureMenu.SetActive(true);
 
@@ -129,6 +190,8 @@ public class AudioVolumeController : MonoBehaviour
 
     public void ReturnToGame()
     {
+        AudioController.Instance.PlaySFX(3);
+
         InventoryManager.Instance.settingsMenu.SetActive(true);
         areYouSureMenu.SetActive(false);
 
@@ -141,21 +204,29 @@ public class AudioVolumeController : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        AudioController.Instance.PlaySFX(3);
+
         // Load the MainMenu
         SceneManager.LoadScene(0);
     }
     public void RetryButton()
     {
+        AudioController.Instance.PlaySFX(3);
+
         SceneManager.LoadScene(1);
     }
 
     public void StartNewGame()
     {
+        AudioController.Instance.PlaySFX(3);
+
         SceneManager.LoadScene(1);
     }
 
     public void SeeMore()
     {
+        AudioController.Instance.PlaySFX(3);
+
         Application.OpenURL(url);
     }
 

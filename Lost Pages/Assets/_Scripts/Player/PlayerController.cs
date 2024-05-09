@@ -38,6 +38,11 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 5f;
     public Transform respawnPoint;
 
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask whatIsGround;
+    [SerializeField] private bool isGrounded;
+
     [Header("Animator")]
     private Animator anim;
     private string idleAnimationTrigger = "Idle";
@@ -47,7 +52,6 @@ public class PlayerController : MonoBehaviour
     private string hurtAnimationTrigger = "Hurt";
 
     [Header("Booleans")]
-    public bool isJumping = false;
     private bool isWalking = false;
     private bool isFacingRight = true;
     private bool isRespawning = false;
@@ -100,24 +104,24 @@ public class PlayerController : MonoBehaviour
                         FlipCharacter();
                     }
 
-                    if (moveX != 0 && !isJumping)
+                    if (moveX != 0 && isGrounded)
                     {
                         // Player is walking
                         anim.SetTrigger(walkAnimationTrigger);
                     }
-                    else if (!isJumping)
+                    else if (isGrounded)
                     {
                         // Player is idle and on the ground, trigger the Idle animation
                         anim.SetTrigger(idleAnimationTrigger);
                     }
 
+                    isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
                     if (allowedToJump)
                     {
-                        if (Input.GetButtonDown("Jump") && !isJumping || Input.GetKeyDown(KeyCode.W) && !isJumping || Input.GetKeyDown(KeyCode.UpArrow) && !isJumping)
+                        if (Input.GetButtonDown("Jump") && isGrounded || Input.GetKeyDown(KeyCode.W) && isGrounded || Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
                         {
                             // Jump when the Jump button is pressed
-                            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-                            isJumping = true;
+                            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                             anim.SetTrigger(jumpAnimationTrigger);
                         }
                     }
@@ -141,20 +145,21 @@ public class PlayerController : MonoBehaviour
 
         if (InventoryManager.Instance.inventoryAlreadyOpened)
         {
-            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             anim.SetTrigger(idleAnimationTrigger);
         }
         else
         {
             gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         }
+
         //Interact
-        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null && !isJumping)
+        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null && isGrounded)
         {
             currentInteractable.Interact();
         }
 
-        if (rb.velocity.y < 0 && isJumping)
+        if (rb.velocity.y < 0 && !isGrounded)
         {
             // Player is falling
             anim.SetTrigger(fallAnimationTrigger);
@@ -189,15 +194,6 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Interactable_Object"))
         {
             currentInteractable = null;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            // Reset jumping state when touching the ground
-            isJumping = false;
         }
     }
 

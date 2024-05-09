@@ -68,6 +68,7 @@ public class InteractableObject : MonoBehaviour
 
     public void Interact()
     {
+        AudioController.Instance.PlaySFX(4);
         TeleportPlayer();
     }
 
