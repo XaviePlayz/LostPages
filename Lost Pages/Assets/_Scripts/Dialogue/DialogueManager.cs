@@ -130,14 +130,9 @@ public class DialogueManager : MonoBehaviour
 
     public void Update()
     {
-        if (totalSentenceCount > 1 && totalSentenceCount < 7)
-        {
-            AudioController.Instance.PlayMusic(1);
-        }
-
         if (totalSentenceCount > 11)
         {
-            AudioController.Instance.PlayMusic(2);
+            AudioController.Instance.PlayMusic(1);
         }
 
         // Check for first line of dialogue
