@@ -78,22 +78,24 @@ public class InventoryManager : MonoBehaviour
 
     void Start()
     {
-        inventoryCanvas.SetActive(false);
         hasAccessToInventory = false;
         inventoryAlreadyOpened = false;
         allowedToCloseInventory = true;
         allowedToViewSettings = true;
         allowedToNavigate = false;
-        pageContent.text = "";
-        pageLinesText.text = "";
-        viewPagesButtonText.text = "LOCKED";
-        pageInspection.SetActive(false);
-        additionalpageInspectionItem1.SetActive(false);
-        additionalpageInspectionItem2.SetActive(false);
-        viewPagesButton.GetComponent<Button>().interactable = false;
-
-        viewPagesButtonText.color = canBeViewedTextButtonColor;
-        viewSettingsButtonText.color = currentViewButtonColor;
+        if (inventoryCanvas != null)
+        {
+            inventoryCanvas.SetActive(false);
+            pageContent.text = "";
+            pageLinesText.text = "";
+            viewPagesButtonText.text = "LOCKED";
+            pageInspection.SetActive(false);
+            additionalpageInspectionItem1.SetActive(false);
+            additionalpageInspectionItem2.SetActive(false);
+            viewPagesButton.GetComponent<Button>().interactable = false;
+            viewPagesButtonText.color = canBeViewedTextButtonColor;
+            viewSettingsButtonText.color = currentViewButtonColor;
+        }
     }
 
     void Update()
