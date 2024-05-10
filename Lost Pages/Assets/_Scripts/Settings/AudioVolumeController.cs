@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class AudioVolumeController : MonoBehaviour
 {
@@ -29,14 +30,14 @@ public class AudioVolumeController : MonoBehaviour
     #endregion
 
     [Header("Music Volume")]
-    public Slider musicVolumeSlider;
+    public UnityEngine.UI.Slider musicVolumeSlider;
     private const string musicVolumeKey = "Music Volume";
-    public float musicGameVolume;
+    public float musicGameVolume = 0.5f;
 
     [Header("SFX Volume")]
-    public Slider sfxVolumeSlider;
+    public UnityEngine.UI.Slider sfxVolumeSlider;
     private const string sfxVolumeKey = "SFX Volume";
-    public float sfxGameVolume;
+    public float sfxGameVolume = 0.5f;
 
     [Header("Scenes")]
     public GameObject mainMenu;
@@ -52,6 +53,7 @@ public class AudioVolumeController : MonoBehaviour
         SetMusicVolume(savedMusicVolume);
 
         musicGameVolume = savedMusicVolume;
+        musicGameVolume = musicVolumeSlider.value;
 
         // Load the saved volume value
         float savedSFXVolume = PlayerPrefs.GetFloat(sfxVolumeKey, 0.05f);
@@ -59,7 +61,7 @@ public class AudioVolumeController : MonoBehaviour
         SetSFXVolume(savedSFXVolume);
 
         sfxGameVolume = savedSFXVolume;
-
+        sfxVolumeSlider.value = sfxGameVolume;
         // Load Game
         if (options != null)
         {
@@ -98,6 +100,7 @@ public class AudioVolumeController : MonoBehaviour
 
     public void OpenSettingsInMainMenu()
     {
+        AnimatedBackground.Instance.OnHoverExit(1);
         AudioController.Instance.PlaySFX(3);
 
         mainMenu.SetActive(false);
