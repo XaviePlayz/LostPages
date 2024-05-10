@@ -34,12 +34,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     [Header("Movement / Player Settings")]
-    public float moveSpeed = 3.5f;
-    public float jumpForce = 5f;
-    public Transform respawnPoint;
+    private float moveSpeed;
+    private float jumpForce;
 
     public Transform groundCheck;
-    public float groundCheckRadius;
+    private float groundCheckRadius;
     public LayerMask whatIsGround;
     [SerializeField] private bool isGrounded;
 
@@ -49,31 +48,50 @@ public class PlayerController : MonoBehaviour
     private string walkAnimationTrigger = "Walk";
     private string jumpAnimationTrigger = "Jump";
     private string fallAnimationTrigger = "Fall";
-    private string hurtAnimationTrigger = "Hurt";
 
     [Header("Booleans")]
-    private bool isWalking = false;
-    private bool isFacingRight = true;
-    private bool isRespawning = false;
-    public bool isHurt = false;
+    private bool isWalking;
+    private bool isFacingRight;
+    private bool isRespawning;
+    public bool hasReachedTheEnd;
 
-    public bool allowedToWalk = false;
-    public bool allowedToJump = false;
+    public bool allowedToWalk;
+    public bool allowedToJump;
 
     public Transform currentRespawnPoint;
+
+    [Header("Keys")]
+    public GameObject keyHolder;
+    public Sprite newKeyHolderSprite;
+    public GameObject unlockPage;
 
     [Header("Scripts")]
     [SerializeField] private InteractableObject currentInteractable;
 
-    private void Awake()
+    void Awake()
     {
         player = this.gameObject;
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        unlockPage.SetActive(false);
     }
 
-    private void Update()
+    void Start()
+    {
+        moveSpeed = 3.5f;
+        jumpForce = 6f;
+        groundCheckRadius = 0.1f;
+        isWalking = false;
+        isFacingRight = true;
+        isRespawning = false;
+        hasReachedTheEnd = false;
+        allowedToWalk = false;
+        allowedToJump = false;
+    }
+
+    void Update()
     {
         isWalking = Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow);
 
@@ -135,22 +153,20 @@ public class PlayerController : MonoBehaviour
 
         if (DialogueManager.Instance.isDialogueActive && Tutorial.Instance.tutorialSequenceEnded)
         {
-            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
-            anim.SetTrigger(idleAnimationTrigger);
+            FreezePlayerX();
         }
         else
         {
-            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            UnFreezePlayer();
         }
 
         if (InventoryManager.Instance.inventoryAlreadyOpened)
         {
-            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            anim.SetTrigger(idleAnimationTrigger);
+            FreezePlayer();
         }
         else
         {
-            gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            UnFreezePlayer();
         }
 
         //Interact
@@ -170,6 +186,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Page"))
         {
+            AudioController.Instance.PlaySFX(6);
+
             Destroy(other.gameObject);
 
             if (InventoryManager.Instance.currentPage == 0)
@@ -178,6 +196,44 @@ public class PlayerController : MonoBehaviour
                 InventoryManager.Instance.hasAccessToInventory = true;
             }
             InventoryManager.Instance.PageCollected();
+        }
+
+        if (other.CompareTag("LookOut"))
+        {
+            PlayDialogue.Instance.PlayNewDialogue(2);
+            DialogueManager.Instance.visualNovelCanvas.SetActive(true);
+        }
+
+        if (other.CompareTag("Key"))
+        {
+            Destroy(other.gameObject);
+
+            AudioController.Instance.PlaySFX(5);
+
+            keyHolder.GetComponent<SpriteRenderer>().sprite = newKeyHolderSprite;
+            unlockPage.SetActive(true);
+        }
+
+        if (other.CompareTag("Ending"))
+        {
+            hasReachedTheEnd = true;
+
+            FreezePlayer();
+
+            if (InventoryManager.Instance.pages[11].GetComponent<Button>().interactable == true)
+            {
+                PlayDialogue.Instance.PlayNewDialogue(4);
+            }
+            else
+            {
+                PlayDialogue.Instance.PlayNewDialogue(3);
+            }
+
+            AudioController.Instance.PlaySFX(2);
+            AudioController.Instance.PlayMusic(0);
+
+            DialogueManager.Instance.visualNovelCanvas.SetActive(true);
+            Tutorial.Instance.novelBackground.SetActive(true);
         }
     }
 
@@ -205,52 +261,20 @@ public class PlayerController : MonoBehaviour
         transform.localScale = scale;
     }
 
-    public void TakeDamage()
+    public void FreezePlayerX()
     {
-        if (!isRespawning && !isHurt)
-        {
-            // Player takes damage (e.g., enemy collision)
-            isHurt = true;
-            isRespawning = true;
-            FreezePlayer();
-            anim.SetTrigger(hurtAnimationTrigger);
-            rb.velocity = Vector2.zero;
-            StartCoroutine(RespawnAfterDelay());
-        }
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+        anim.SetTrigger(idleAnimationTrigger);
     }
 
     public void FreezePlayer()
     {
-        rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        anim.SetTrigger(idleAnimationTrigger);
     }
 
     public void UnFreezePlayer()
     {
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-    }
-
-    private IEnumerator RespawnAfterDelay()
-    {
-        // Freeze player movement
-        rb.velocity = Vector2.zero;
-        isRespawning = true;
-
-        // Wait for the duration of the hurt animation
-        yield return new WaitForSeconds(GetAnimationDuration(anim, hurtAnimationTrigger));
-
-        // Respawn player
-        transform.position = respawnPoint.position;
-        UnFreezePlayer();
-        isRespawning = false;
-
-        yield return new WaitForSeconds(2);
-        isHurt = false;
-    }
-
-    private float GetAnimationDuration(Animator animator, string animationTrigger)
-    {
-        AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
-        AnimationClip clip = clipInfo[0].clip;
-        return clip.length;
     }
 }

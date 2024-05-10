@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject visualNovelCanvas;
     public GameObject introDialogue;
+    public GameObject badEndingDialogue;
+    public GameObject goodEndingDialogue;
 
     public GameObject clickToContinueMouse;
 
@@ -55,8 +58,9 @@ public class DialogueManager : MonoBehaviour
     private bool isAutoDisplaying;
     private bool isFirstLine;
 
-    private DialogueTrigger currentDialogueTrigger;
-    private DialogueTrigger findAvailableDialogueTrigger;
+    public string url;
+
+    public DialogueTrigger currentDialogueTrigger;
 
     void Awake()
     {
@@ -72,8 +76,10 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         visualNovelCanvas.SetActive(true);
-        findAvailableDialogueTrigger = FindObjectOfType<DialogueTrigger>();
-        PlayFoundDialogue();
+        badEndingDialogue.SetActive(false);
+        goodEndingDialogue.SetActive(false);
+
+        PlayDialogue.Instance.PlayNewDialogue(0);
     }
 
     public void StartDialogue(DialogueTrigger dialogueTrigger, DialogueData dialogueData, bool pressToContinue)
@@ -130,7 +136,7 @@ public class DialogueManager : MonoBehaviour
 
     public void Update()
     {
-        if (totalSentenceCount > 11)
+        if (totalSentenceCount > 11 && !PlayerController.Instance.hasReachedTheEnd)
         {
             AudioController.Instance.PlayMusic(1);
         }
@@ -166,15 +172,13 @@ public class DialogueManager : MonoBehaviour
 
         if (InventoryManager.Instance.inventoryAlreadyOpened)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            InventoryManager.Instance.ShowMouse();
         }
         else
         {
             if (!Tutorial.Instance.selectPlayerCustomization.activeSelf)
             {
-                Cursor.lockState = CursorLockMode.Confined;
-                Cursor.visible = false;
+                InventoryManager.Instance.HideMouse();
             }
         }
 
@@ -195,6 +199,8 @@ public class DialogueManager : MonoBehaviour
         {
             if (Tutorial.Instance.allowedToDisplayNextLine)
             {
+                AudioController.Instance.PlaySFX(3);
+
                 totalSentenceCount++;
                 if (dialogueQueue.Count > 0)
                 {
@@ -248,6 +254,12 @@ public class DialogueManager : MonoBehaviour
             DialogueManager.Instance.clickToContinueMouse.SetActive(true);
         }
 
+        if (PlayerController.Instance.hasReachedTheEnd)
+        {
+            Application.OpenURL(url);
+            AudioVolumeController.Instance.GoToMainMenu();
+        }
+
         RemoveCanvas();
     }
 
@@ -290,11 +302,5 @@ public class DialogueManager : MonoBehaviour
         }
 
         EndDialogue();
-    }
-
-    public void PlayFoundDialogue()
-    {
-        findAvailableDialogueTrigger = FindObjectOfType<DialogueTrigger>();
-        findAvailableDialogueTrigger.PlayDialogue();
     }
 }

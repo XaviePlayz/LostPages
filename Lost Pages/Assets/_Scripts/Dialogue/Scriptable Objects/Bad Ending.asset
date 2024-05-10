@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d34fda26bf48a4ebf82f4b9bbeb10b, type: 3}
+  m_Name: Bad Ending
+  m_EditorClassIdentifier: 
+  lines:
+  - "You walk up to the Entrance of \u2018Geulssugi-ui Hakgyo\u2019 and you hear
+    the sound of the closing bell as you approach Alexander, the incomplete story
+    in hand. He meets your gaze with a resigned yet understanding smile.\r"
+  - We gave it our best shot, didn't we? I guess this story will have a few mysteries
+    left unsolved.
+  - I'm really sorry, Alexander. We were so close. Maybe after class, we could try
+    again...
+  - Alexander interrupts with a gentle wave of his hand.
+  - Honestly, it's okay. You've done more than anyone could've asked for. And who
+    knows? Maybe those missing pages will inspire someone else's story, somewhere
+    out there.
+  - He reaches into his bag, pulling out a small box and hands it to you.
+  - Take this. It's not just a token of gratitude; it's a reminder to the fact that
+    every act of kindness writes its own story.
+  - Opening the small box, you find a voucher inside, promising a free copy of his
+    book once it's published.
+  - Wow, thanks!
+  - "2 Years Later...\r"
+  - "The familiar facade of \u2018Geulssugi-ui Hakgyo\u2019 greets you as you return
+    for another day of school after the summer break."
+  - He hands you a hardcover book, the title embossed in red. "Nightmoor"
+  - This is incredible, Alexander. I always knew you'd make it.
+  - "As you flip through the pages, you find a dedication inside the cover\u2014a
+    nod to the friend who helped make it all possible."
+  - Couldn't have done it without you. And hey, if you ever lose your pages, you
+    know who to call.
+  - 'Thank You For Playing "Lost Pages"!
+
+    You will get redirected to a link where
+    you can check out the full book of "Nightmoor"'
+  Character_Showcases:
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: 81cb38b92e0a7aa47b2cfe733aa014dd, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: f10414318308c79408d9b3fd9d77af1b, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: 954cc7ccbd81e4c49bcdc27107872fcb, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: 79554680cda72da499e37daae314ede7, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  CharacterNameline:
+  - Narrator
+  - Alexander
+  - You
+  - Narrator
+  - Alexander
+  - Narrator
+  - Alexander
+  - Narrator
+  - You
+  - 
+  - Narrator
+  - Narrator
+  - You
+  - Narrator
+  - Alexander
+  - XaviePlayz
+  DialogueBoxColorAppearance:
+  - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.8627451}
+  - {r: 0.3764706, g: 0.45490196, b: 0.6745098, a: 0.8627451}
+  - {r: 0.8862745, g: 0.7490196, b: 0.7019608, a: 0.8627451}
+  - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.8627451}
+  - {r: 0.37647063, g: 0.454902, b: 0.6745098, a: 0.8627451}
+  - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.8627451}
+  - {r: 0.37647063, g: 0.454902, b: 0.6745098, a: 0.8627451}
+  - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.8627451}
+  - {r: 0.8862746, g: 0.7490196, b: 0.7019608, a: 0.8627451}
+  - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.8627451}
+  - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.8627451}
+  - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.8627451}
+  - {r: 0.8862746, g: 0.7490196, b: 0.7019608, a: 0.8627451}
+  - {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0.8627451}
+  - {r: 0.37647063, g: 0.454902, b: 0.6745098, a: 0.8627451}
+  - {r: 0.78616345, g: 0.38319284, b: 0.38319284, a: 0.8627451}

@@ -11,6 +11,9 @@ TagManager:
   - Traps
   - Music
   - SFX
+  - Key
+  - Ending
+  - LookOut
   layers:
   - Default
   - TransparentFX

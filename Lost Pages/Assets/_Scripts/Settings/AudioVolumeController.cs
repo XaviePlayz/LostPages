@@ -46,17 +46,6 @@ public class AudioVolumeController : MonoBehaviour
 
     private void Start()
     {
-        // Load Game
-        if (options != null)
-        {
-            options.SetActive(false);
-        }
-
-        if (areYouSureMenu != null)
-        {
-            areYouSureMenu.SetActive(false);
-        }
-
         // Load the saved volume value
         float savedMusicVolume = PlayerPrefs.GetFloat(musicVolumeKey, 0.05f);
         musicVolumeSlider.value = savedMusicVolume;
@@ -70,6 +59,17 @@ public class AudioVolumeController : MonoBehaviour
         SetSFXVolume(savedSFXVolume);
 
         sfxGameVolume = savedSFXVolume;
+
+        // Load Game
+        if (options != null)
+        {
+            options.SetActive(false);
+        }
+
+        if (areYouSureMenu != null)
+        {
+            areYouSureMenu.SetActive(false);
+        }
 
         // Attach a listener to the slider's OnValueChanged event
         musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
@@ -205,20 +205,16 @@ public class AudioVolumeController : MonoBehaviour
     public void GoToMainMenu()
     {
         AudioController.Instance.PlaySFX(3);
+        InventoryManager.Instance.ShowMouse();
 
         // Load the MainMenu
         SceneManager.LoadScene(0);
-    }
-    public void RetryButton()
-    {
-        AudioController.Instance.PlaySFX(3);
-
-        SceneManager.LoadScene(1);
     }
 
     public void StartNewGame()
     {
         AudioController.Instance.PlaySFX(3);
+        InventoryManager.Instance.HideMouse();
 
         SceneManager.LoadScene(1);
     }
