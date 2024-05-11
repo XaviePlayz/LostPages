@@ -25,25 +25,28 @@ MonoBehaviour:
 '
   - Oh, right!
   - I'm Alexander, just another freshman like you.
-  - I wrote this cool story for class, but just as I was about to enter the building,
-    the wind decided to play a prank and sent my pages flying everywhere.
+  - I wrote this cool story for class, but just as I was about to enter the building...
+  - The wind decided to play a prank on me and sent my pages flying everywhere!
   - They can't have gone too far, and I've got like, 15 minutes before I need to
-    turn it in. Think you could help me track them down?
+    turn it in.
+  - Think you could help me track them down?
   - Of course, I'll help you! I've got some spare time before my class starts.
   - Oh, you're a lifesaver! Seriously, thank you so much!
   Character_Showcases:
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: 7a0ffdc1af9f7614cb182fe3a2e4f13a, type: 3}
-  - {fileID: 21300000, guid: 7a0ffdc1af9f7614cb182fe3a2e4f13a, type: 3}
-  - {fileID: 21300000, guid: 81cb38b92e0a7aa47b2cfe733aa014dd, type: 3}
+  - {fileID: 21300000, guid: cc534c794b3d9454faa5f9366c54992f, type: 3}
+  - {fileID: 21300000, guid: 8a1f49f210a36d34db2cadbfafa99ad0, type: 3}
+  - {fileID: 21300000, guid: cc534c794b3d9454faa5f9366c54992f, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: f10414318308c79408d9b3fd9d77af1b, type: 3}
-  - {fileID: 21300000, guid: 954cc7ccbd81e4c49bcdc27107872fcb, type: 3}
-  - {fileID: 21300000, guid: f10414318308c79408d9b3fd9d77af1b, type: 3}
-  - {fileID: 21300000, guid: 89b1226c27cd33042a225ac1d6c3fe39, type: 3}
+  - {fileID: 21300000, guid: 4191c8bb1940eff40b49bc3d87baa363, type: 3}
+  - {fileID: 21300000, guid: 7b4e0fc4e7bd1d540b3d4e82c7fcb7ec, type: 3}
+  - {fileID: 21300000, guid: d7b348c8022c4af48a33298bcc4821b7, type: 3}
+  - {fileID: 21300000, guid: 47bce1192e25d6e419a05cce4ca35f72, type: 3}
+  - {fileID: 21300000, guid: d7b348c8022c4af48a33298bcc4821b7, type: 3}
+  - {fileID: 21300000, guid: cc534c794b3d9454faa5f9366c54992f, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: 44b78ef6557f00947b4fdcbb55c31d2a, type: 3}
+  - {fileID: 21300000, guid: 7b4e0fc4e7bd1d540b3d4e82c7fcb7ec, type: 3}
   CharacterNameline:
   - Narrator
   - Narrator
@@ -52,6 +55,8 @@ MonoBehaviour:
   - 
   - You
   - 
+  - Alexander
+  - Alexander
   - Alexander
   - Alexander
   - Alexander
@@ -64,6 +69,8 @@ MonoBehaviour:
   - {r: 0.3764706, g: 0.45490196, b: 0.6745098, a: 0.8627451}
   - {r: 0.3764706, g: 0.45490196, b: 0.6745098, a: 0.8627451}
   - {r: 0.8862745, g: 0.7490196, b: 0.7019608, a: 0.8627451}
+  - {r: 0.3764706, g: 0.45490196, b: 0.6745098, a: 0.8627451}
+  - {r: 0.3764706, g: 0.45490196, b: 0.6745098, a: 0.8627451}
   - {r: 0.3764706, g: 0.45490196, b: 0.6745098, a: 0.8627451}
   - {r: 0.3764706, g: 0.45490196, b: 0.6745098, a: 0.8627451}
   - {r: 0.3764706, g: 0.45490196, b: 0.6745098, a: 0.8627451}
