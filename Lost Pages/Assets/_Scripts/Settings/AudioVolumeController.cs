@@ -39,6 +39,11 @@ public class AudioVolumeController : MonoBehaviour
     private const string sfxVolumeKey = "SFX Volume";
     public float sfxGameVolume = 0.5f;
 
+    [Header("Muffled Volume")]
+    public AudioLowPassFilter lowPassFilter;
+    public float normalFrequency = 22000f;
+    public float muffledCutoffFrequency = 550f;
+
     [Header("Scenes")]
     public GameObject mainMenu;
     public GameObject options;
@@ -62,6 +67,9 @@ public class AudioVolumeController : MonoBehaviour
 
         sfxGameVolume = savedSFXVolume;
         sfxVolumeSlider.value = sfxGameVolume;
+
+        normalFrequency = 22000f;
+        muffledCutoffFrequency = 550f;
         // Load Game
         if (options != null)
         {

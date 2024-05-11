@@ -219,6 +219,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ViewSelectedPage(int viewSelectedPage)
     {
+        AudioVolumeController.Instance.lowPassFilter.cutoffFrequency = AudioVolumeController.Instance.muffledCutoffFrequency;
         AudioController.Instance.PlaySFX(2);
 
         pageScrollbar.interactable = false;
@@ -257,6 +258,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ClosePage()
     {
+        AudioVolumeController.Instance.lowPassFilter.cutoffFrequency = AudioVolumeController.Instance.normalFrequency;
         AudioController.Instance.PlaySFX(2);
 
         pageScrollbar.interactable = true;

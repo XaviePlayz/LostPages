@@ -57,6 +57,7 @@ public class DialogueManager : MonoBehaviour
     private bool isPressToContinue;
     private bool isAutoDisplaying;
     private bool isFirstLine;
+    private bool introFinished;
 
     public string url;
 
@@ -136,11 +137,6 @@ public class DialogueManager : MonoBehaviour
 
     public void Update()
     {
-        if (totalSentenceCount > 11 && !PlayerController.Instance.hasReachedTheEnd)
-        {
-            AudioController.Instance.PlayMusic(1);
-        }
-
         // Check for first line of dialogue
         if (isFirstLine)
         {
@@ -258,6 +254,12 @@ public class DialogueManager : MonoBehaviour
         {
             Application.OpenURL(url);
             AudioVolumeController.Instance.GoToMainMenu();
+        }
+
+        if (!introFinished)
+        {
+            introFinished = true;
+            AudioController.Instance.PlayMusic(1);
         }
 
         RemoveCanvas();

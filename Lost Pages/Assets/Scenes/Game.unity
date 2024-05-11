@@ -940,7 +940,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1525, y: 703}
+  m_AnchoredPosition: {x: 1525, y: 701.92}
   m_SizeDelta: {x: 883, y: 1297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &159190454
@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 885508872}
   m_Direction: 2
   m_Value: 0.9999999
-  m_Size: 0.4208822
+  m_Size: 0.42088217
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -32362,6 +32362,9 @@ MonoBehaviour:
   musicGameVolume: 0
   sfxVolumeSlider: {fileID: 299490063}
   sfxGameVolume: 0
+  lowPassFilter: {fileID: 1909454196}
+  normalFrequency: 0
+  muffledCutoffFrequency: 550
   mainMenu: {fileID: 0}
   options: {fileID: 0}
   areYouSureMenu: {fileID: 983400500}
@@ -60274,6 +60277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1909454195}
   - component: {fileID: 1909454194}
+  - component: {fileID: 1909454196}
   m_Layer: 0
   m_Name: Music
   m_TagString: Music
@@ -60392,6 +60396,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1208841502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!169 &1909454196
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909454193}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1934320150
 GameObject:
   m_ObjectHideFlags: 0
