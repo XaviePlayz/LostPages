@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 57437463}
   - component: {fileID: 57437462}
   - component: {fileID: 57437465}
+  - component: {fileID: 57437467}
+  - component: {fileID: 57437466}
   m_Layer: 5
   m_Name: Save Options - Button
   m_TagString: Untagged
@@ -303,6 +305,63 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &57437466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57437460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea72d497b4f413b40a9c541f687a0077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &57437467
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57437460}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.594759, y: 31.379883}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 71.36755, y: 22.855309}
+  m_EdgeRadius: 0
 --- !u!1 &108354775
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,7 +1011,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2f11f84e7e6230740b2ced5cb641fc0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19da54079eaf2aa4faf854a53d687584, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1786,7 +1845,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e65bb2a88c7817642a25c84b846e8a9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 385502baca6119f4991a1d158e2560ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1909,6 +1968,8 @@ GameObject:
   - component: {fileID: 542905577}
   - component: {fileID: 542905576}
   - component: {fileID: 542905579}
+  - component: {fileID: 542905581}
+  - component: {fileID: 542905580}
   m_Layer: 5
   m_Name: New Game - Button
   m_TagString: Untagged
@@ -2076,6 +2137,63 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &542905580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542905574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea72d497b4f413b40a9c541f687a0077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &542905581
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542905574}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.305233, y: 31.59779}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 133.19199, y: 26.972778}
+  m_EdgeRadius: 0
 --- !u!1 &604405182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,7 +2368,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e65bb2a88c7817642a25c84b846e8a9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 385502baca6119f4991a1d158e2560ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2688,7 +2806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2f11f84e7e6230740b2ced5cb641fc0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19da54079eaf2aa4faf854a53d687584, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3580,6 +3698,8 @@ GameObject:
   - component: {fileID: 893370842}
   - component: {fileID: 893370841}
   - component: {fileID: 893370844}
+  - component: {fileID: 893370845}
+  - component: {fileID: 893370846}
   m_Layer: 5
   m_Name: Options - Button
   m_TagString: Untagged
@@ -3747,6 +3867,63 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!61 &893370845
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893370839}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.2558403, y: 30.546196}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 113.238686, y: 27.814476}
+  m_EdgeRadius: 0
+--- !u!114 &893370846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893370839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea72d497b4f413b40a9c541f687a0077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &903458715
 GameObject:
   m_ObjectHideFlags: 0
@@ -4421,7 +4598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sound Effects
+  m_text: SFX
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0dc10990684ba92408d37b5ed43fbb79, type: 2}
   m_sharedMaterial: {fileID: 3782963497945066622, guid: 0dc10990684ba92408d37b5ed43fbb79, type: 2}
@@ -4555,7 +4732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2f11f84e7e6230740b2ced5cb641fc0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19da54079eaf2aa4faf854a53d687584, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4709,6 +4886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioFiles:
   - {fileID: 8300000, guid: 6e75296adf3d7c440ab2bc9eeff6bcaa, type: 3}
+  - {fileID: 8300000, guid: 43b045bf7f01f0f41b66c19547111d24, type: 3}
   audioSource: {fileID: 733412360}
   soundEffects:
   - {fileID: 8300000, guid: 8243e103e7c032f4e8d6f394f721a9d5, type: 3}
@@ -5092,6 +5270,8 @@ GameObject:
   - component: {fileID: 1379317251}
   - component: {fileID: 1379317250}
   - component: {fileID: 1379317253}
+  - component: {fileID: 1379317254}
+  - component: {fileID: 1379317255}
   m_Layer: 5
   m_Name: Quit Game - Button
   m_TagString: Untagged
@@ -5259,6 +5439,63 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!61 &1379317254
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379317248}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.86530685, y: 30.549973}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 141.85886, y: 30.730865}
+  m_EdgeRadius: 0
+--- !u!114 &1379317255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379317248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea72d497b4f413b40a9c541f687a0077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1382729052
 GameObject:
   m_ObjectHideFlags: 0
@@ -5909,7 +6146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9f6f6bc2be077498182c838374a7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTextureDefault: {fileID: 2800000, guid: ede9f24548007da4286639ab6fc73677, type: 3}
+  cursorTextureDefault: {fileID: 2800000, guid: 9403ac95afd089040a203c1d8dd367c5, type: 3}
   clickPosition: {x: 0, y: 0}
 --- !u!4 &1592170901
 Transform:
@@ -7505,7 +7742,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2f11f84e7e6230740b2ced5cb641fc0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19da54079eaf2aa4faf854a53d687584, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

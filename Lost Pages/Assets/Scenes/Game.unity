@@ -23367,7 +23367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e65bb2a88c7817642a25c84b846e8a9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 385502baca6119f4991a1d158e2560ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -32858,7 +32858,7 @@ MonoBehaviour:
   sfxGameVolume: 0
   lowPassFilter: {fileID: 1909454196}
   normalFrequency: 0
-  muffledCutoffFrequency: 550
+  muffledCutoffFrequency: 350
 --- !u!4 &485422956
 Transform:
   m_ObjectHideFlags: 0
@@ -37359,7 +37359,7 @@ MonoBehaviour:
     little break from all the busyness.\r\n\n But just as I closed my eyes, enjoying
     the peacefulness, something caught my attention. I quickly opened my eyes and
     looked into the bathroom mirror. There, through the steam, I caught a glimpse
-    of a shadowy figure behind me. It sent a shiver down my spine, a spooky feeling
+    of a shadowy figure behind me. It sent a shiver down my spine, an eerie feeling
     that made me uneasy. The figure seemed to be staring at me with a mysterious
     intensity, making me wonder who or what it was. I blinked, hoping it was just
     a trick of the light, but the figure stayed there, a reminder that the mysterious
@@ -37449,7 +37449,7 @@ MonoBehaviour:
     of that day, when my mother's seat remained empty, was a sharp thorn in my heart.\r\n\n
     \"She agreed to,\" I continued, my tears flowing freely now, \"but when the day
     came, I never saw her...\"\r\n\n The anguish I felt as a young girl, her absence
-    echoing through the years, was a wound that had never truly healed.\r\n \"My
+    echoing through the years, was a wound that had never truly healed.\n\r\n \"My
     teacher was trying to keep it light,\" I said, \"and said she probably had a
     good reason not to show up.\"\r\n\n But the unspoken truth was that her absence
     had marked the beginning of my own inner struggles.\r\n\n \"I couldn't even go
@@ -37461,64 +37461,64 @@ MonoBehaviour:
     pen pals.\"\r\n\n The connection I had maintained with her, though strained by
     distance, had offered moments of solace.\r\n\n \"But it wasn't enough,\" I confessed,
     my tears flowing freely. \"I needed to see her. So I reached out. But she didn't
-    come.\"\r\n The pain of rejection, of a mother's absence by choice, had wounded
+    come.\"\n\r\n The pain of rejection, of a mother's absence by choice, had wounded
     me deeply.\r\n\n \"I've been thinking about it a lot,\" I said, my voice barely
     audible, \"although those were some of the toughest four years of my life, I
     managed.\"\r\n\n \"I came home one day,\" I continued, \"from school, and accidentally
     heard my father talking on the phone. I wanted to surprise him.\"\r\n\n The memories
     I had long buried resurfaced, and my voice wavered as I recounted the pivotal
-    moment that had shaken my world.\r\n\n \"I can't believe you even dared to say
-    that on her birthday,\" I recalled, the pain of that memory still fresh. \"She's
-    dead, please... just leave me! I heard my father on the phone.\"\r\n\n The devastating
-    truth had come crashing down, confirming my worst fears.\r\n\n \"I had just turned
-    15,\" I went on, my voice quivering, \"and my grandmother reached out to me.
-    She was holding a letter. At first, I didn't want anything to do with it, because
-    how could they hide my mother's death from me for so long? She's been dead for
-    2 whole years!? Without me knowing? How wrong is that!\"\r\n\n The shock and
-    betrayal of that discovery still resonated within me, even as I spoke the words
-    aloud.\r\n\n \"At first, I declined,\" I admitted, \"but my grandma said it was
-    from my mother. She left it on the stairs and walked out.\"\r\n\n The moment
-    of decision, standing on the precipice of a painful truth, was etched in my memory.\r\n\n
-    \"I stood still for a couple seconds before finally taking it,\" I said, my voice
-    a mere whisper.\r\n\n The letter had been a portal to my mother's final words,
-    a window into the past.\r\n\n \"As I walked upstairs, I started to read it,\"
-    I continued, my breath trembling. \"I couldn't control my breath.\"\r\n\n The
-    emotions that surged as I read her words, the revelations contained in that letter,
-    were overwhelming.\r\n\n \"She's been sick, cancer,\" I confessed, tears streaming
-    down my cheeks. \"She did come to my school musical. Just not on the seat I reserved
-    for her. She didn't want me to see her suffering.\"\r\n\n The love and sacrifice
-    in my mother's actions were a bittersweet revelation that tore at my heart.\r\n\n
-    \"It broke me,\" I admitted, my voice choked with emotion, \"knowing this four
-    years later. And as I was about to give in, wanting to go to my mother, I met
-    Blake. He just got transferred to high school. In my class.\"\r\n\n The unexpected
-    arrival of Blake in my life had been a turning point, offering hope amid the
-    shadows.\r\n\n \"That's when my heart stopped,\" I confessed, my eyes welling
-    with emotion. \"I thought, could this be? Could this be my second chance?\"\r\n\n
-    Blake's presence had been a lifeline, a chance at happiness when I needed it
-    most.\r\n\n I blinked away my tears and took a deep breath, regaining my composure.
-    As I returned to the present moment, I looked at Blake and Victoria, my dear
-    friends who had now become the keepers of my pain.\r\n\n \"You looked so handsome
-    the first day I met you,\" I said, attempting to lighten the mood. \"I couldn't
-    believe my eyes. You gave me hope through those tough days.\"\r\n\n A faint smile
-    graced my lips as I remembered our first meeting, a glimmer of joy amid the darkness.\r\n\n
-    However, the memory of my past was still heavy, and I felt a pang of guilt for
-    unloading it on Victoria in her moment of grief. I turned to her and the weight
-    of my own struggles was evident in my eyes.\r\n\n \"I'm sorry,\" I said, my voice
-    soft and filled with regret. \"I didn't mean to...\"\r\n\n Before I could finish
-    my sentence, Blake pulled me into a warm embrace, his voice gentle and understanding.
-    \"I... I didn't know any of this...\"\r\n\n His words were a soothing balm, and
-    I appreciated the depth of his empathy.\r\n\n \"I know,\" I replied, my voice
-    tinged with sadness. \"I just didn't want to remember it, but it's always been
-    inside of me. I cannot get rid of it. It gave me trauma, and I still struggle
-    to this day. But I'm just an amazing hider of my feelings.\"\r\n\n Victoria looked
-    at me, her eyes filled with compassion and understanding. She opened her arms
-    and pulled me close, offering the comfort that I had needed for so long.\r\n\n
-    \"I'm sorry you had to go through that,\" she whispered, her voice filled with
-    sincerity. \"I know the story was awful, but thank you for distracting me.\"\r\n\n
-    I chuckled lightly, grateful for her support. \"Once again, I'm sorry. It's just
-    been stuck in my head, wanting to come out.\"\n\r\n Blake's gaze locked with
-    mine, and he spoke softly, offering reassurance and understanding. \"It's okay,
-    darling. I\u2019m glad you told us....\"\r"
+    moment that had shaken my world.\r\n\n \" 'I can't believe you even dared to
+    say that on her birthday',\" I recalled, the pain of that memory still fresh.
+    \" 'She's dead, please... just leave me!' I heard my father on the phone.\"\r\n\n
+    The devastating truth had come crashing down, confirming my worst fears.\r\n\n
+    \"I had just turned 15,\" I went on, my voice quivering, \"and my grandmother
+    reached out to me. She was holding a letter. At first, I didn't want anything
+    to do with it, because how could they hide my mother's death from me for so long?
+    She's been dead for 2 whole years!? Without me knowing? How wrong is that!\"\r\n\n
+    The shock and betrayal of that discovery still resonated within me, even as I
+    spoke the words aloud.\r\n\n \"At first, I declined,\" I admitted, \"but my grandma
+    said it was from my mother. She left it on the stairs and walked out.\"\r\n\n
+    The moment of decision, standing on the precipice of a painful truth, was etched
+    in my memory.\r\n\n \"I stood still for a couple seconds before finally taking
+    it,\" I said, my voice a mere whisper.\r\n\n The letter had been a portal to
+    my mother's final words, a window into the past.\r\n\n \"As I walked upstairs,
+    I started to read it,\" I continued, my breath trembling. \"I couldn't control
+    my breath.\"\r\n\n The emotions that surged as I read her words, the revelations
+    contained in that letter, were overwhelming.\r\n\n \"She's been sick, cancer,\"
+    I confessed, tears streaming down my cheeks. \"She did come to my school musical.
+    Just not on the seat I reserved for her. She didn't want me to see her suffering.\"\r\n\n
+    The love and sacrifice in my mother's actions were a bittersweet revelation that
+    tore at my heart.\r\n\n \"It broke me,\" I admitted, my voice choked with emotion,
+    \"knowing this four years later. And as I was about to give in, wanting to go
+    to my mother, I met Blake. He just got transferred to high school. In my class.\"\r\n\n
+    The unexpected arrival of Blake in my life had been a turning point, offering
+    hope amidst the shadows.\r\n\n \"That's when my heart stopped,\" I confessed,
+    my eyes welling with emotion. \"I thought, could this be? Could this be my second
+    chance?\"\r\n\n Blake's presence had been a lifeline, a chance at happiness when
+    I needed it most.\r\n\n I blinked away my tears and took a deep breath, regaining
+    my composure. As I returned to the present moment, I looked at Blake and Victoria,
+    my dear friends who had now become the keepers of my pain.\r\n\n \"You looked
+    so handsome the first day I met you,\" I said, attempting to lighten the mood.
+    \"I couldn't believe my eyes. You gave me hope through those tough days.\"\r\n\n
+    A faint smile graced my lips as I remembered our first meeting, a glimmer of
+    joy amid the darkness.\r\n\n However, the memory of my past was still heavy,
+    and I felt a pang of guilt for unloading it on Victoria in her moment of grief.
+    I turned to her and the weight of my own struggles was evident in my eyes.\r\n\n
+    \"I'm sorry,\" I said, my voice soft and filled with regret. \"I didn't mean
+    to...\"\r\n\n Before I could finish my sentence, Blake pulled me into a warm
+    embrace, his voice gentle and understanding. \"I... I didn't know any of this...\"\r\n\n
+    His words were a soothing balm, and I appreciated the depth of his empathy.\r\n\n
+    \"I know,\" I replied, my voice tinged with sadness. \"I just didn't want to
+    remember it, but it's always been inside of me. I cannot get rid of it. It gave
+    me trauma, and I still struggle to this day. But I'm just an amazing hider of
+    my feelings.\"\r\n\n Victoria looked at me, her eyes filled with compassion and
+    understanding. She opened her arms and pulled me close, offering the comfort
+    that I had needed for so long.\r\n\n \"I'm sorry you had to go through that,\"
+    she whispered, her voice filled with sincerity. \"I know the story was awful,
+    but thank you for distracting me.\"\r\n\n I chuckled lightly, grateful for her
+    support. \"Once again, I'm sorry. It's just been stuck in my head, wanting to
+    come out.\"\n\r\n Blake's gaze locked with mine, and he spoke softly, offering
+    reassurance and understanding. \"It's okay, darling. I\u2019m glad you told us....\"\r"
   - "As my eyes flutter open, the harsh hospital lighting stings, and I find myself
     surveying the unfamiliar room. The dull ache in my body serves as a grim reminder
     of the accident.\r\n\n Reaching out for my phone, a gnawing worry prompts me
@@ -37542,9 +37542,9 @@ MonoBehaviour:
     as I navigate through the dimly lit corridor. \"Stairs, I need to find the stairs,\"
     I murmur, my voice offering little reassurance. The digital glow of my phone
     reveals a sign pointing left, guiding my uncertain steps.\r\n\n As I press forward
-    in the dimly lit corridor, shadows dance eerily, amplifying the unsettling quiet.
-    The sterile scent of the hospital mingles with a newfound unease as my footsteps
-    echo through the desolate halls.\r\n\n My phone's glow flickers intermittently,
+    in the dimly lit corridor, shadows dancing eerily, amplifying the unsettling
+    quiet. The sterile scent of the hospital mingles with a newfound unease as my
+    footsteps echo through the desolate halls.\r\n\n My phone's glow flickers intermittently,
     a feeble beacon against the engulfing darkness. The sign pointing left beckons
     me toward the stairs, a glimmer of hope in this lonely journey.\r\n\n Each step
     feels heavier, the silence more profound. My senses are on high alert, heightened
@@ -37565,7 +37565,7 @@ MonoBehaviour:
     they're unwilling to share.\r\n\n Pushing open the heavy glass door, I step into
     the predawn darkness outside. The cool night air bites at my skin, and I find
     myself standing on the threshold, caught between the unknown of the hospital
-    and the mysteries awaiting beyond its walls.\r\n\n I scan the surroundings, my
+    and the mysteries awaiting beyond its walls.\r\n\n I scan my surroundings, my
     breath visible in the cold night air. The streets appear as empty and abandoned
     as they always have in Nightmoor. The sense of desolation is unsettling, but
     nothing appears out of the ordinary for this peculiar town.\r\n\n I consult my
@@ -37619,40 +37619,40 @@ MonoBehaviour:
     a quick glance with Victoria before answering, \"It's complicated. We'll explain
     everything, but let's get you warmed up first.\" Sophia gives Hannah a blanket
     to cover herself up in the warmth, while Victoria heads to the kitchen to get
-    us some tea. Hannah quickly notices something is different inside the house;
-    they're both acting strangely.\r\n\n As Sophia drapes the blanket over me, I
-    shiver, partly from the residual cold and partly from the uncanny atmosphere
-    that envelops the room. Sophia's eyes seem distant, and Victoria's movements
-    toward the kitchen are deliberate yet oddly disconnected.\r\n\n \"Can you tell
-    me what has happened since the day I was out?\" I inquire, trying to make sense
-    of the surreal ambiance.\r\n\n Sophia scratches her head, her expression perplexed.
-    \"Day? It's been an entire year since I last saw you.\"\r\n\n Shocked, I quickly
-    grab my phone again to check the date, January 25th. I open the calendar app,
-    my eyes unable to believe what I see... 2026?!\r\n\n Victoria returns with a
-    tray holding steaming cups of tea. \n\"Here, drink this, dear,\" she says, offering
-    me a cup.\r\n\n \"W- what happened? Where are the others?\" I ask anxiously.\r\n\n
-    \"Don't worry, love, you're safe now,\" Sophia reassures me, echoing Victoria's
-    sentiments.\r\n\n I look up at both Sophia and Victoria, desperation in my eyes.
-    \"I asked you a question. Can you please answer?\"\r\n\n Once again, they say,
-    \"Don't worry, love, you're safe now,\" in unison. Sophia grabs Victoria's arm,
-    and they exchange an odd, knowing glance.\r\n\n \"Let us introduce you to someone
-    new,\" they say with strangely contorted smiles.\r\n\n With a growing sense of
-    unease, I put the untouched tea on the table. A new figure emerges from around
-    the corner, and my eyes widen in disbelief.\r\n\n \"Hello, dear.\"\r\n\n \"My
-    eyes cannot believe what I'm seeing. 'M- mom?\" I stammer, my voice barely audible.\r\n\n
-    The woman standing before me is an older version of my mother, but she carries
-    an otherworldly glow. It's as if time has treated her kindly, leaving behind
-    an ethereal beauty.\r\n\n \"It's me, Hannah. Your mother,\" she says, her voice
-    filled with warmth.\r\n\n I'm torn between skepticism and a profound desire for
-    this to be true. Sophia and Victoria watch me closely, their expressions a mix
-    of anticipation and something else, something I can't quite decipher.\r\n\n \"How
-    is this possible?\" I manage to utter, my mind struggling to comprehend the impossible.\r\n\n
-    Sophia and Victoria exchange glances again before Sophia speaks, \"We found a
-    way to bring her back, Hannah. A way to undo the past, to rewrite the timeline.\"\r\n\n
-    A surge of conflicting emotions washes over me\u2014joy, disbelief, and a lingering
-    sense of foreboding. My mother, or this apparition resembling her, reaches out
-    to me, and I tentatively accept her touch.\r\n\n \"Come, dear. There's much to
-    explain,\" she says, leading me further into the house.\r"
+    us some tea. Hannah quickly notices that something is different inside the house;
+    they're both acting strange.\r\n\n As Sophia drapes the blanket over me, I shiver,
+    partly from the residual cold and partly from the uncanny atmosphere that envelops
+    the room. Sophia's eyes seem distant, and Victoria's movements toward the kitchen
+    are deliberate yet oddly disconnected.\r\n\n \"Can you tell me what has happened
+    since the day I was out?\" I inquire, trying to make sense of the surreal ambiance.\r\n\n
+    Sophia scratches her head, her expression perplexed. \"Day? It's been an entire
+    year since I last saw you.\"\r\n\n Shocked, I quickly grab my phone again to
+    check the date, January 25th. I open the calendar app, my eyes unable to believe
+    what I see... 2026?!\r\n\n Victoria returns with a tray holding steaming cups
+    of tea. \n\n\"Here, drink this, dear,\" she says, offering me a cup.\r\n\n \"W-
+    what happened? Where are the others?\" I ask anxiously.\r\n\n \"Don't worry,
+    love, you're safe now,\" Sophia reassures me, echoing Victoria's sentiments.\r\n\n
+    I look up at both Sophia and Victoria, desperation in my eyes. \"I asked you
+    a question. Can you please answer?\"\r\n\n Once again, they say, \"Don't worry,
+    love, you're safe now,\" in unison. Sophia grabs Victoria's arm, and they exchange
+    an odd, knowing glance.\r\n\n \"Let us introduce you to someone new,\" they say
+    with strangely contorted smiles.\r\n\n With a growing sense of unease, I put
+    the untouched tea on the table. A new figure emerges from around the corner,
+    and my eyes widen in disbelief.\r\n\n \"Hello, dear.\"\r\n\n My eyes cannot believe
+    what I'm seeing. \"M- mom?\" I stammer, my voice barely audible.\r\n\n The woman
+    standing before me is an older version of my mother, but she carries an otherworldly
+    glow. It's as if time has treated her kindly, leaving behind an ethereal beauty.\r\n\n
+    \"It's me, Hannah. Your mother,\" she says, her voice filled with warmth.\r\n\n
+    I'm torn between skepticism and a profound desire for this to be true. Sophia
+    and Victoria watch me closely, their expressions a mix of anticipation and something
+    else, something I can't quite decipher.\r\n\n \"How is this possible?\" I manage
+    to utter, my mind struggling to comprehend the impossible.\r\n\n Sophia and Victoria
+    exchange glances again before Sophia speaks, \"We found a way to bring her back,
+    Hannah. A way to undo the past, to rewrite the timeline.\"\r\n\n A surge of conflicting
+    emotions washes over me\u2014joy, disbelief, and a lingering sense of foreboding.
+    My mother, or this apparition resembling her, reaches out to me, and I tentatively
+    accept her touch.\r\n\n \"Come, dear. There's much to explain,\" she says, leading
+    me further into the house.\r"
   pageLinesText: {fileID: 1444759988}
   pageRectTransform: {fileID: 63878331}
   newYPosition:
@@ -45544,6 +45544,7 @@ MonoBehaviour:
   audioFiles:
   - {fileID: 8300000, guid: 43b045bf7f01f0f41b66c19547111d24, type: 3}
   - {fileID: 8300000, guid: 89cc0827b6e1d2249b3e4a23d29ea210, type: 3}
+  - {fileID: 8300000, guid: fbc38223f9dbf3c4ba4ce80ef02a5437, type: 3}
   audioSource: {fileID: 1909454194}
   soundEffects:
   - {fileID: 8300000, guid: 8243e103e7c032f4e8d6f394f721a9d5, type: 3}
@@ -45631,7 +45632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e65bb2a88c7817642a25c84b846e8a9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 385502baca6119f4991a1d158e2560ca, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -47077,6 +47078,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 397, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 388, y: 1, z: 0}
     second:
       serializedVersion: 2
@@ -47163,7 +47174,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 10
+  - m_RefCount: 11
     m_Data: {fileID: 11400000, guid: 0a113d269a6838d449003d04a169d5ee, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -47184,14 +47195,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 10
+  - m_RefCount: 11
     m_Data: {fileID: -598399729, guid: d61a91a49da538b43b8b6c6c70c2e329, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 10
+  - m_RefCount: 11
     m_Data:
       e00: 1
       e01: 0
@@ -47210,7 +47221,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 10
+  - m_RefCount: 11
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -47510,7 +47521,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e65bb2a88c7817642a25c84b846e8a9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 385502baca6119f4991a1d158e2560ca, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -48437,9 +48448,9 @@ MonoBehaviour:
     as I navigate through the dimly lit corridor. \"Stairs, I need to find the stairs,\"
     I murmur, my voice offering little reassurance. The digital glow of my phone
     reveals a sign pointing left, guiding my uncertain steps.\r\n\n As I press forward
-    in the dimly lit corridor, shadows dance eerily, amplifying the unsettling quiet.
-    The sterile scent of the hospital mingles with a newfound unease as my footsteps
-    echo through the desolate halls.\r\n\n My phone's glow flickers intermittently,
+    in the dimly lit corridor, shadows dancing eerily, amplifying the unsettling
+    quiet. The sterile scent of the hospital mingles with a newfound unease as my
+    footsteps echo through the desolate halls.\r\n\n My phone's glow flickers intermittently,
     a feeble beacon against the engulfing darkness. The sign pointing left beckons
     me toward the stairs, a glimmer of hope in this lonely journey.\r\n\n Each step
     feels heavier, the silence more profound. My senses are on high alert, heightened
@@ -48451,7 +48462,7 @@ MonoBehaviour:
     my only choice is to move forward.\r\n\n Descending one step at a time, the echoes
     of my footsteps reverberate in the stairwell, creating an eerie symphony. The
     air grows colder as I venture further into the unknown, the stark contrast to
-    the warmth of the hospital unsettling.\r\n Reaching the ground floor, a faint
+    the warmth of the hospital unsettling.\r\n\n Reaching the ground floor, a faint
     glimmer of emergency lighting barely illuminates the vast emptiness before me.
     The once-familiar reception area now lies in disarray, devoid of life. Desolation
     paints a haunting picture, and a shiver runs down my spine.\r\n\n The exit sign
@@ -48460,7 +48471,7 @@ MonoBehaviour:
     they're unwilling to share.\r\n\n Pushing open the heavy glass door, I step into
     the predawn darkness outside. The cool night air bites at my skin, and I find
     myself standing on the threshold, caught between the unknown of the hospital
-    and the mysteries awaiting beyond its walls.\r\n\n I scan the surroundings, my
+    and the mysteries awaiting beyond its walls.\r\n\n I scan my surroundings, my
     breath visible in the cold night air. The streets appear as empty and abandoned
     as they always have in Nightmoor. The sense of desolation is unsettling, but
     nothing appears out of the ordinary for this peculiar town.\r\n\n I consult my
@@ -48514,40 +48525,40 @@ MonoBehaviour:
     a quick glance with Victoria before answering, \"It's complicated. We'll explain
     everything, but let's get you warmed up first.\" Sophia gives Hannah a blanket
     to cover herself up in the warmth, while Victoria heads to the kitchen to get
-    us some tea. Hannah quickly notices something is different inside the house;
-    they're both acting strangely.\r\n\n As Sophia drapes the blanket over me, I
-    shiver, partly from the residual cold and partly from the uncanny atmosphere
-    that envelops the room. Sophia's eyes seem distant, and Victoria's movements
-    toward the kitchen are deliberate yet oddly disconnected.\r\n\n \"Can you tell
-    me what has happened since the day I was out?\" I inquire, trying to make sense
-    of the surreal ambiance.\r\n\n Sophia scratches her head, her expression perplexed.
-    \"Day? It's been an entire year since I last saw you.\"\r\n\n Shocked, I quickly
-    grab my phone again to check the date, January 25th. I open the calendar app,
-    my eyes unable to believe what I see... 2026?!\r\n\n Victoria returns with a
-    tray holding steaming cups of tea. \n\"Here, drink this, dear,\" she says, offering
-    me a cup.\r\n\n \"W- what happened? Where are the others?\" I ask anxiously.\r\n\n
-    \"Don't worry, love, you're safe now,\" Sophia reassures me, echoing Victoria's
-    sentiments.\r\n\n I look up at both Sophia and Victoria, desperation in my eyes.
-    \"I asked you a question. Can you please answer?\"\r\n\n Once again, they say,
-    \"Don't worry, love, you're safe now,\" in unison. Sophia grabs Victoria's arm,
-    and they exchange an odd, knowing glance.\r\n\n \"Let us introduce you to someone
-    new,\" they say with strangely contorted smiles.\r\n\n With a growing sense of
-    unease, I put the untouched tea on the table. A new figure emerges from around
-    the corner, and my eyes widen in disbelief.\r\n\n \"Hello, dear.\"\r\n\n \"My
-    eyes cannot believe what I'm seeing. 'M- mom?\" I stammer, my voice barely audible.\r\n\n
-    The woman standing before me is an older version of my mother, but she carries
-    an otherworldly glow. It's as if time has treated her kindly, leaving behind
-    an ethereal beauty.\r\n\n \"It's me, Hannah. Your mother,\" she says, her voice
-    filled with warmth.\r\n\n I'm torn between skepticism and a profound desire for
-    this to be true. Sophia and Victoria watch me closely, their expressions a mix
-    of anticipation and something else, something I can't quite decipher.\r\n\n \"How
-    is this possible?\" I manage to utter, my mind struggling to comprehend the impossible.\r\n\n
-    Sophia and Victoria exchange glances again before Sophia speaks, \"We found a
-    way to bring her back, Hannah. A way to undo the past, to rewrite the timeline.\"\r\n\n
-    A surge of conflicting emotions washes over me\u2014joy, disbelief, and a lingering
-    sense of foreboding. My mother, or this apparition resembling her, reaches out
-    to me, and I tentatively accept her touch.\r\n\n \"Come, dear. There's much to
-    explain,\" she says, leading me further into the house.\r"
+    us some tea. Hannah quickly notices that something is different inside the house;
+    they're both acting strange.\r\n\n As Sophia drapes the blanket over me, I shiver,
+    partly from the residual cold and partly from the uncanny atmosphere that envelops
+    the room. Sophia's eyes seem distant, and Victoria's movements toward the kitchen
+    are deliberate yet oddly disconnected.\r\n\n \"Can you tell me what has happened
+    since the day I was out?\" I inquire, trying to make sense of the surreal ambiance.\r\n\n
+    Sophia scratches her head, her expression perplexed. \"Day? It's been an entire
+    year since I last saw you.\"\r\n\n Shocked, I quickly grab my phone again to
+    check the date, January 25th. I open the calendar app, my eyes unable to believe
+    what I see... 2026?!\r\n\n Victoria returns with a tray holding steaming cups
+    of tea. \n\n\"Here, drink this, dear,\" she says, offering me a cup.\r\n\n \"W-
+    what happened? Where are the others?\" I ask anxiously.\r\n\n \"Don't worry,
+    love, you're safe now,\" Sophia reassures me, echoing Victoria's sentiments.\r\n\n
+    I look up at both Sophia and Victoria, desperation in my eyes. \"I asked you
+    a question. Can you please answer?\"\r\n\n Once again, they say, \"Don't worry,
+    love, you're safe now,\" in unison. Sophia grabs Victoria's arm, and they exchange
+    an odd, knowing glance.\r\n\n \"Let us introduce you to someone new,\" they say
+    with strangely contorted smiles.\r\n\n With a growing sense of unease, I put
+    the untouched tea on the table. A new figure emerges from around the corner,
+    and my eyes widen in disbelief.\r\n\n \"Hello, dear.\"\r\n\n My eyes cannot believe
+    what I'm seeing. \"M- mom?\" I stammer, my voice barely audible.\r\n\n The woman
+    standing before me is an older version of my mother, but she carries an otherworldly
+    glow. It's as if time has treated her kindly, leaving behind an ethereal beauty.\r\n\n
+    \"It's me, Hannah. Your mother,\" she says, her voice filled with warmth.\r\n\n
+    I'm torn between skepticism and a profound desire for this to be true. Sophia
+    and Victoria watch me closely, their expressions a mix of anticipation and something
+    else, something I can't quite decipher.\r\n\n \"How is this possible?\" I manage
+    to utter, my mind struggling to comprehend the impossible.\r\n\n Sophia and Victoria
+    exchange glances again before Sophia speaks, \"We found a way to bring her back,
+    Hannah. A way to undo the past, to rewrite the timeline.\"\r\n\n A surge of conflicting
+    emotions washes over me\u2014joy, disbelief, and a lingering sense of foreboding.
+    My mother, or this apparition resembling her, reaches out to me, and I tentatively
+    accept her touch.\r\n\n \"Come, dear. There's much to explain,\" she says, leading
+    me further into the house.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0dc10990684ba92408d37b5ed43fbb79, type: 2}
   m_sharedMaterial: {fileID: 3782963497945066622, guid: 0dc10990684ba92408d37b5ed43fbb79, type: 2}
@@ -55529,16 +55540,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 397, y: 0, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 7
-      m_TileSpriteIndex: 42
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 402, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -56043,7 +56044,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 81
-      m_TileSpriteIndex: 39
+      m_TileSpriteIndex: 42
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -56083,7 +56084,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 12
-      m_TileSpriteIndex: 38
+      m_TileSpriteIndex: 39
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -56993,7 +56994,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 19
-      m_TileSpriteIndex: 37
+      m_TileSpriteIndex: 38
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -57003,7 +57004,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 11
-      m_TileSpriteIndex: 35
+      m_TileSpriteIndex: 37
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -57013,7 +57014,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 22
-      m_TileSpriteIndex: 34
+      m_TileSpriteIndex: 35
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -57023,7 +57024,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 18
-      m_TileSpriteIndex: 26
+      m_TileSpriteIndex: 34
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -57033,7 +57034,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 17
-      m_TileSpriteIndex: 25
+      m_TileSpriteIndex: 26
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -57353,7 +57354,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 13
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 25
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -58235,8 +58236,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 417ec98769b93cf429a591271f13cc0b, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 0a113d269a6838d449003d04a169d5ee, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 9f4dd2aa74260da40b4e83498396c7f7, type: 2}
   - m_RefCount: 7
@@ -58460,8 +58461,8 @@ Tilemap:
     m_Data: {fileID: 1427384468, guid: d61a91a49da538b43b8b6c6c70c2e329, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 1996020081, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 18
     m_Data: {fileID: 1940886914, guid: 6b11cb39dbdb94a4bbbc8b2fe3548e2e, type: 3}
   - m_RefCount: 8
@@ -58479,9 +58480,9 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 1024725684, guid: 6b11cb39dbdb94a4bbbc8b2fe3548e2e, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -833450251, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
+    m_Data: {fileID: 1996020081, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1028505764, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
+    m_Data: {fileID: -833450251, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: -1067782433, guid: 6b11cb39dbdb94a4bbbc8b2fe3548e2e, type: 3}
   - m_RefCount: 10
@@ -58497,23 +58498,23 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: -1934251880, guid: 6b11cb39dbdb94a4bbbc8b2fe3548e2e, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 2120955356, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
+    m_Data: {fileID: 1028505764, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -846308796, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
+    m_Data: {fileID: 2120955356, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 938775642, guid: d61a91a49da538b43b8b6c6c70c2e329, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -846308796, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1857340000, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1029327395, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1939935180, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1918644148, guid: d61a91a49da538b43b8b6c6c70c2e329, type: 3}
   - m_RefCount: 10
     m_Data: {fileID: 199805136, guid: d61a91a49da538b43b8b6c6c70c2e329, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -598399729, guid: d61a91a49da538b43b8b6c6c70c2e329, type: 3}
+    m_Data: {fileID: 1939935180, guid: 19b5b61b5b4f79d4399adcaa70e9d865, type: 3}
   - m_RefCount: 11
     m_Data: {fileID: 840364245, guid: 6b11cb39dbdb94a4bbbc8b2fe3548e2e, type: 3}
   - m_RefCount: 3
@@ -58635,7 +58636,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -450469436, guid: d61a91a49da538b43b8b6c6c70c2e329, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 490
+  - m_RefCount: 489
     m_Data:
       e00: 1
       e01: 0
@@ -58654,7 +58655,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 490
+  - m_RefCount: 489
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -60823,7 +60824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1732932664
 RectTransform:
   m_ObjectHideFlags: 0

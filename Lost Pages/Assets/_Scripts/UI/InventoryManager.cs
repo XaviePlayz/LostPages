@@ -223,6 +223,8 @@ public class InventoryManager : MonoBehaviour
 
     public void ViewSelectedPage(int viewSelectedPage)
     {
+        AudioController.Instance.PlayMusic(2);
+
         AudioVolumeController.Instance.lowPassFilter.cutoffFrequency = AudioVolumeController.Instance.muffledCutoffFrequency;
         ScrollbarController.Instance.mouseScrollSensitivity = 0f;
         AudioController.Instance.PlaySFX(2);
@@ -264,6 +266,8 @@ public class InventoryManager : MonoBehaviour
     {
         if (!Tutorial.Instance.backgroundDarkenerTutorial.activeSelf)
         {
+            AudioController.Instance.PlayMusic(1);
+
             AudioVolumeController.Instance.lowPassFilter.cutoffFrequency = AudioVolumeController.Instance.normalFrequency;
             ScrollbarController.Instance.mouseScrollSensitivity = 0.5f;
             AudioController.Instance.PlaySFX(2);

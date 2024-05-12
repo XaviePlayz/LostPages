@@ -40,7 +40,7 @@ public class AudioVolumeController : MonoBehaviour
     [Header("Muffled Volume")]
     public AudioLowPassFilter lowPassFilter;
     public float normalFrequency = 22000f;
-    public float muffledCutoffFrequency = 550f;
+    public float muffledCutoffFrequency = 350f;
 
     private void Start()
     {
@@ -61,7 +61,7 @@ public class AudioVolumeController : MonoBehaviour
         sfxVolumeSlider.value = sfxGameVolume;
 
         normalFrequency = 22000f;
-        muffledCutoffFrequency = 550f;
+        muffledCutoffFrequency = 350f;
 
         // Attach a listener to the slider's OnValueChanged event
         musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
