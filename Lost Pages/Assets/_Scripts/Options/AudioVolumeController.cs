@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 public class AudioVolumeController : MonoBehaviour
 {
@@ -30,12 +28,12 @@ public class AudioVolumeController : MonoBehaviour
     #endregion
 
     [Header("Music Volume")]
-    public UnityEngine.UI.Slider musicVolumeSlider;
+    public Slider musicVolumeSlider;
     private const string musicVolumeKey = "Music Volume";
     public float musicGameVolume = 0.5f;
 
     [Header("SFX Volume")]
-    public UnityEngine.UI.Slider sfxVolumeSlider;
+    public Slider sfxVolumeSlider;
     private const string sfxVolumeKey = "SFX Volume";
     public float sfxGameVolume = 0.5f;
 
@@ -44,24 +42,18 @@ public class AudioVolumeController : MonoBehaviour
     public float normalFrequency = 22000f;
     public float muffledCutoffFrequency = 550f;
 
-    [Header("Scenes")]
-    public GameObject mainMenu;
-    public GameObject options;
-    public GameObject areYouSureMenu;
-    public string url;
-
     private void Start()
     {
-        // Load the saved volume value
-        float savedMusicVolume = PlayerPrefs.GetFloat(musicVolumeKey, 0.05f);
+        // Load the saved MUSIC value
+        float savedMusicVolume = PlayerPrefs.GetFloat(musicVolumeKey, 0.5f);
         musicVolumeSlider.value = savedMusicVolume;
         SetMusicVolume(savedMusicVolume);
 
         musicGameVolume = savedMusicVolume;
         musicGameVolume = musicVolumeSlider.value;
 
-        // Load the saved volume value
-        float savedSFXVolume = PlayerPrefs.GetFloat(sfxVolumeKey, 0.05f);
+        // Load the saved SFX value
+        float savedSFXVolume = PlayerPrefs.GetFloat(sfxVolumeKey, 0.5f);
         sfxVolumeSlider.value = savedSFXVolume;
         SetSFXVolume(savedSFXVolume);
 
@@ -70,16 +62,6 @@ public class AudioVolumeController : MonoBehaviour
 
         normalFrequency = 22000f;
         muffledCutoffFrequency = 550f;
-        // Load Game
-        if (options != null)
-        {
-            options.SetActive(false);
-        }
-
-        if (areYouSureMenu != null)
-        {
-            areYouSureMenu.SetActive(false);
-        }
 
         // Attach a listener to the slider's OnValueChanged event
         musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
@@ -89,15 +71,7 @@ public class AudioVolumeController : MonoBehaviour
     public void OpenSettings()
     {
         SetMusicVolume(musicGameVolume);
-
-        // Load the saved volume value
-        float savedMusicVolume = PlayerPrefs.GetFloat(musicVolumeKey, 1f);
-        musicVolumeSlider.value = savedMusicVolume;
-        SetMusicVolume(savedMusicVolume);
-
-        float savedSFXVolume = PlayerPrefs.GetFloat(sfxVolumeKey, 1f);
-        sfxVolumeSlider.value = savedSFXVolume;
-        SetSFXVolume(savedSFXVolume);
+        GameOptionsManager.Instance.ShowGameOptions();
     }
 
     public void ConfirmSettings()
@@ -111,27 +85,45 @@ public class AudioVolumeController : MonoBehaviour
         AnimatedBackground.Instance.OnHoverExit(1);
         AudioController.Instance.PlaySFX(3);
 
-        mainMenu.SetActive(false);
-        options.SetActive(true);
-
-        // Load the saved volume value
-        float savedMusicVolume = PlayerPrefs.GetFloat(musicVolumeKey, 1f);
-        musicVolumeSlider.value = savedMusicVolume;
-        SetMusicVolume(savedMusicVolume);
-
-        float savedSFXVolume = PlayerPrefs.GetFloat(sfxVolumeKey, 1f);
-        sfxVolumeSlider.value = savedSFXVolume;
-        SetSFXVolume(savedSFXVolume);
+        GameOptionsManager.Instance.mainMenu.SetActive(false);
+        GameOptionsManager.Instance.options.SetActive(true);
     }
 
     public void ConfirmSettingsInMainMenu()
     {
+        GameOptionsManager.Instance.OnHoverExitMainMenu();
         AudioController.Instance.PlaySFX(3);
 
-        mainMenu.SetActive(true);
-        options.SetActive(false);
-        SetMusicVolume(musicGameVolume);
-        SetSFXVolume(sfxGameVolume);
+        GameOptionsManager.Instance.mainMenu.SetActive(true);
+        GameOptionsManager.Instance.options.SetActive(false);
+    }
+
+    public void ShowVolumeOptions()
+    {
+        GameOptionsManager.Instance.showGameOptions.SetActive(false);
+        GameOptionsManager.Instance.showVolumeOptions.SetActive(true);
+
+        GameOptionsManager.Instance.viewGameButton.color = GameOptionsManager.Instance.canBeViewedButtonColor;
+        GameOptionsManager.Instance.viewGameButtonText.color = GameOptionsManager.Instance.canBeViewedTextButtonColor;
+
+        GameOptionsManager.Instance.viewVolumeButton.color = GameOptionsManager.Instance.currentViewButtonColor;
+        GameOptionsManager.Instance.viewVolumeButtonText.color = GameOptionsManager.Instance.currentViewButtonColor;
+
+        // Load the saved MUSIC value
+        float savedMusicVolume = PlayerPrefs.GetFloat(musicVolumeKey, 0.5f);
+        musicVolumeSlider.value = savedMusicVolume;
+        SetMusicVolume(savedMusicVolume);
+
+        musicGameVolume = savedMusicVolume;
+        musicGameVolume = musicVolumeSlider.value;
+
+        // Load the saved SFX value
+        float savedSFXVolume = PlayerPrefs.GetFloat(sfxVolumeKey, 0.5f);
+        sfxVolumeSlider.value = savedSFXVolume;
+        SetSFXVolume(savedSFXVolume);
+
+        sfxGameVolume = savedSFXVolume;
+        sfxVolumeSlider.value = sfxGameVolume;
     }
 
     public void OnMusicVolumeChanged(float musicVolume)
@@ -186,63 +178,5 @@ public class AudioVolumeController : MonoBehaviour
                 audioSource.volume = sfxVolume;
             }
         }
-    }
-
-    public void AreYouSure()
-    {
-        AudioController.Instance.PlaySFX(3);
-
-        InventoryManager.Instance.settingsMenu.SetActive(false);
-        areYouSureMenu.SetActive(true);
-
-        InventoryManager.Instance.allowedToCloseInventory = false;
-        InventoryManager.Instance.allowedToNavigate = false;
-    }
-
-    public void ReturnToGame()
-    {
-        AudioController.Instance.PlaySFX(3);
-
-        InventoryManager.Instance.settingsMenu.SetActive(true);
-        areYouSureMenu.SetActive(false);
-
-        InventoryManager.Instance.allowedToCloseInventory = true;
-        if (Tutorial.Instance.TutorialComplete)
-        {
-            InventoryManager.Instance.allowedToNavigate = true;
-        }
-    }
-
-    public void GoToMainMenu()
-    {
-        AudioController.Instance.PlaySFX(3);
-        InventoryManager.Instance.ShowMouse();
-
-        // Load the MainMenu
-        SceneManager.LoadScene(0);
-    }
-
-    public void StartNewGame()
-    {
-        AudioController.Instance.PlaySFX(3);
-        InventoryManager.Instance.HideMouse();
-
-        SceneManager.LoadScene(1);
-    }
-
-    public void SeeMore()
-    {
-        AudioController.Instance.PlaySFX(3);
-
-        Application.OpenURL(url);
-    }
-
-    public void ExitGame()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
     }
 }

@@ -32,17 +32,17 @@ public class DialogueManager : MonoBehaviour
 
     #endregion
 
+    [Header("Dialogues")]
     public GameObject visualNovelCanvas;
     public GameObject introDialogue;
     public GameObject badEndingDialogue;
     public GameObject goodEndingDialogue;
 
-    public GameObject clickToContinueMouse;
-
+    [Header("Dialogue UI Canvas Elements")]
     public TextMeshProUGUI dialogueText;
     public Image characterShowcaseImage;
     public TextMeshProUGUI characterNameText;
-
+    public GameObject clickToContinueMouse;
     public GameObject characterNameHolder;
     public GameObject dialogueHolder;
 
@@ -51,16 +51,24 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> CharacterNameQueue;
     private Queue<Color> DialogueBoxColorAppearanceQueue;
 
+    [Header("The Total Amount of Sentences Displayed")]
     public int totalSentenceCount;
 
+    [Header("Typewriter Effect")]
+    private bool isLineComplete = false;
+    private string currentLine;
+
+    [Header("Booleans")]
     public bool isDialogueActive;
     private bool isPressToContinue;
     private bool isAutoDisplaying;
     private bool isFirstLine;
     private bool introFinished;
 
+    [Header("Link To The 'Nightmoor' Book")]
     public string url;
 
+    [Header("DialogueTrigger")]
     public DialogueTrigger currentDialogueTrigger;
 
     void Awake()
@@ -68,7 +76,6 @@ public class DialogueManager : MonoBehaviour
         dialogueQueue = new Queue<string>();
 
         CharacterShowcaseQueue = new Queue<Sprite>();
-        characterShowcaseImage.gameObject.SetActive(false);
 
         CharacterNameQueue = new Queue<string>();
         DialogueBoxColorAppearanceQueue = new Queue<Color>();
@@ -77,6 +84,8 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         visualNovelCanvas.SetActive(true);
+        characterShowcaseImage.gameObject.SetActive(false);
+
         badEndingDialogue.SetActive(false);
         goodEndingDialogue.SetActive(false);
 
@@ -142,7 +151,7 @@ public class DialogueManager : MonoBehaviour
         {
             isFirstLine = false;
             string line = dialogueQueue.Dequeue();
-            dialogueText.text = line;
+            StartCoroutine(TypeSentence(line));
 
             string Characterline = CharacterNameQueue.Dequeue();
             characterNameText.text = Characterline;
@@ -168,23 +177,33 @@ public class DialogueManager : MonoBehaviour
 
         if (InventoryManager.Instance.inventoryAlreadyOpened)
         {
-            InventoryManager.Instance.ShowMouse();
+            GameOptionsManager.Instance.ShowMouse();
         }
         else
         {
             if (!Tutorial.Instance.selectPlayerCustomization.activeSelf)
             {
-                InventoryManager.Instance.HideMouse();
+                GameOptionsManager.Instance.HideMouse();
             }
         }
 
-        // Check for key press to advance dialogue for "Press LEFT MOUSE CLICK" dialogue
+        // Check for key press to advance dialogue or show the full line
         if (isDialogueActive && isPressToContinue && Input.GetKeyDown(KeyCode.Mouse0))
         {
-
             if (!isAutoDisplaying)
             {
-                DisplayNextLine();
+                if (!isLineComplete && !Tutorial.Instance.selectPlayerCustomization.activeSelf)
+                {
+                    // If the line is not complete, show it immediately
+                    StopAllCoroutines();
+                    dialogueText.text = currentLine; // Show the full current line
+                    isLineComplete = true;
+                }
+                else
+                {
+                    // If the line is complete, display the next line
+                    DisplayNextLine();
+                }
             }
         }
     }
@@ -201,7 +220,9 @@ public class DialogueManager : MonoBehaviour
                 if (dialogueQueue.Count > 0)
                 {
                     string line = dialogueQueue.Dequeue();
-                    dialogueText.text = line;
+                    StopAllCoroutines(); // Stop any ongoing typewriter effect
+                    StartCoroutine(TypeSentence(line)); // Start a new typewriter effect
+                    isLineComplete = false; // Mark the new line as incomplete
 
                     Sprite characterShowcase = CharacterShowcaseQueue.Dequeue();
                     characterShowcaseImage.sprite = characterShowcase;
@@ -229,9 +250,34 @@ public class DialogueManager : MonoBehaviour
                 {
                     EndDialogue();
                 }
-            }        
-        }        
+            }
+        }
     }
+
+    // Coroutine to type the sentence letter by letter
+    private IEnumerator TypeSentence(string sentence)
+    {
+        isLineComplete = false;
+        currentLine = sentence;
+        dialogueText.text = "";
+
+        foreach (char letter in sentence.ToCharArray())
+        {
+            //Only waits for the next letter if the PlayerCustomization is visible,
+            //this is to prevent it from the full line already showing if you're slow at picking your appearance
+            if (Tutorial.Instance.selectPlayerCustomization.activeSelf)
+            {
+                yield return new WaitUntil(() => PlayerSelection.Instance.characterSelected);
+            }
+
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(GameOptionsManager.Instance.typingSpeed);
+        }
+
+        isLineComplete = true;
+    }
+
+
 
     public void EndDialogue()
     {
@@ -253,13 +299,19 @@ public class DialogueManager : MonoBehaviour
         if (PlayerController.Instance.hasReachedTheEnd)
         {
             Application.OpenURL(url);
-            AudioVolumeController.Instance.GoToMainMenu();
+            GameOptionsManager.Instance.GoToMainMenu();
         }
 
         if (!introFinished)
         {
             introFinished = true;
             AudioController.Instance.PlayMusic(1);
+        }
+
+        if (Tutorial.Instance.backgroundDarkenerTutorial.activeSelf && !Tutorial.Instance.TutorialComplete)
+        {
+            Tutorial.Instance.TutorialComplete = true;
+            Tutorial.Instance.backgroundDarkenerTutorial.SetActive(false);
         }
 
         RemoveCanvas();

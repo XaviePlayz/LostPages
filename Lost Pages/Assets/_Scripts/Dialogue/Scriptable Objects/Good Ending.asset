@@ -43,20 +43,20 @@ MonoBehaviour:
     you can check out the full book of "Nightmoor"'
   Character_Showcases:
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: 44b78ef6557f00947b4fdcbb55c31d2a, type: 3}
+  - {fileID: 21300000, guid: 7b4e0fc4e7bd1d540b3d4e82c7fcb7ec, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: 7a0ffdc1af9f7614cb182fe3a2e4f13a, type: 3}
+  - {fileID: 21300000, guid: 4191c8bb1940eff40b49bc3d87baa363, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: 954cc7ccbd81e4c49bcdc27107872fcb, type: 3}
-  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: 8a1f49f210a36d34db2cadbfafa99ad0, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
-  - {fileID: 21300000, guid: 79554680cda72da499e37daae314ede7, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
+  - {fileID: 21300000, guid: 7b4e0fc4e7bd1d540b3d4e82c7fcb7ec, type: 3}
   - {fileID: 21300000, guid: e5d1a4ee7152e66448cd494d17fa5b92, type: 3}
   CharacterNameline:
   - Narrator

@@ -30,48 +30,52 @@ public class InventoryManager : MonoBehaviour
 
     #endregion
 
+    [Header("Inventory Canvas")]
     public GameObject inventoryCanvas;
+
+    [Header("Booleans")]
     public bool hasAccessToInventory;
     public bool inventoryAlreadyOpened;
     public bool allowedToCloseInventory;
     public bool allowedToViewSettings;
     public bool allowedToNavigate;
 
-    public Color currentViewButtonColor;
-    public Color canBeViewedButtonColor;
-    public Color canBeViewedTextButtonColor;
-
+    [Header("Buttons")]
     public Image viewPagesButton;
     public Image viewSettingsButton;
     public TextMeshProUGUI viewPagesButtonText;
     public TextMeshProUGUI viewSettingsButtonText;
 
+    [Header("Inventory View")]
     public GameObject pagesCollection;
     public GameObject settingsMenu;
 
+    [Header("Inventory Scrollbars")]
     public Scrollbar pageScrollbar;
     public Scrollbar inspectPageScrollbar;
 
-    [Header("PageContent")]
+    [Header("Page Inspection")]
     public GameObject pageInspection;
     public GameObject additionalpageInspectionItem1;
     public GameObject additionalpageInspectionItem2;
-
-
-    public TextMeshProUGUI pageContent;
-    public GameObject[] pages;
+    public int SelectedPage;
 
     [TextArea(3, 10)]
     public string[] pageLines;
     public TextMeshProUGUI pageLinesText;
-    public RectTransform pageRectTransform;
 
-    [TextArea(1, 3)]
-    public string[] pageContentLine;
+    [Header("Page Inspection [Content Settings]")]
+    public RectTransform pageRectTransform;
     public float[] newYPosition;
     public float[] newHeight;
 
-    public int SelectedPage;
+    [Header("All Collectable Pages")]
+    public GameObject[] pages;
+
+    [Header("Page Chapters")]
+    [TextArea(1, 3)]
+    public string[] pageContentLine;
+    public TextMeshProUGUI pageContent;
 
     [Header("Collected Pages")]
     public int currentPage = 0;
@@ -93,8 +97,8 @@ public class InventoryManager : MonoBehaviour
             additionalpageInspectionItem1.SetActive(false);
             additionalpageInspectionItem2.SetActive(false);
             viewPagesButton.GetComponent<Button>().interactable = false;
-            viewPagesButtonText.color = canBeViewedTextButtonColor;
-            viewSettingsButtonText.color = currentViewButtonColor;
+            viewPagesButtonText.color = GameOptionsManager.Instance.canBeViewedTextButtonColor;
+            viewSettingsButtonText.color = GameOptionsManager.Instance.currentViewButtonColor;
         }
     }
 
@@ -139,9 +143,9 @@ public class InventoryManager : MonoBehaviour
             }
         }
         
-        if ((inventoryAlreadyOpened && Input.GetKeyDown(KeyCode.Escape) && AudioVolumeController.Instance.areYouSureMenu.activeSelf))
+        if ((inventoryAlreadyOpened && Input.GetKeyDown(KeyCode.Escape) && GameOptionsManager.Instance.areYouSureMenu.activeSelf))
         {
-            AudioVolumeController.Instance.ReturnToGame();
+            GameOptionsManager.Instance.ReturnToGame();
         }
 
         if (inventoryCanvas.activeSelf && !pageInspection.activeSelf && allowedToNavigate)
@@ -185,10 +189,10 @@ public class InventoryManager : MonoBehaviour
             AudioVolumeController.Instance.SetMusicVolume(AudioVolumeController.Instance.musicGameVolume);
 
             ResetScrollBars();
-            viewPagesButton.color = currentViewButtonColor;
-            viewSettingsButton.color = canBeViewedButtonColor;
-            viewPagesButtonText.color = currentViewButtonColor;
-            viewSettingsButtonText.color = canBeViewedTextButtonColor;
+            viewPagesButton.color = GameOptionsManager.Instance.currentViewButtonColor;
+            viewSettingsButton.color = GameOptionsManager.Instance.canBeViewedButtonColor;
+            viewPagesButtonText.color = GameOptionsManager.Instance.currentViewButtonColor;
+            viewSettingsButtonText.color = GameOptionsManager.Instance.canBeViewedTextButtonColor;
 
             pagesCollection.SetActive(true);
             settingsMenu.SetActive(false);
@@ -198,15 +202,15 @@ public class InventoryManager : MonoBehaviour
     public void ViewSettings()
     {
         AudioVolumeController.Instance.OpenSettings();
-        if (allowedToViewSettings && !AudioVolumeController.Instance.areYouSureMenu.activeSelf)
+        if (allowedToViewSettings && !GameOptionsManager.Instance.areYouSureMenu.activeSelf)
         {
             pageContent.text = "";
 
             ResetScrollBars();
-            viewPagesButton.color = canBeViewedButtonColor;
-            viewSettingsButton.color = currentViewButtonColor;
-            viewPagesButtonText.color = canBeViewedTextButtonColor;
-            viewSettingsButtonText.color = currentViewButtonColor;
+            viewPagesButton.color = GameOptionsManager.Instance.canBeViewedButtonColor;
+            viewSettingsButton.color = GameOptionsManager.Instance.currentViewButtonColor;
+            viewPagesButtonText.color = GameOptionsManager.Instance.canBeViewedTextButtonColor;
+            viewSettingsButtonText.color = GameOptionsManager.Instance.currentViewButtonColor;
 
             pagesCollection.SetActive(false);
             settingsMenu.SetActive(true);
@@ -220,6 +224,7 @@ public class InventoryManager : MonoBehaviour
     public void ViewSelectedPage(int viewSelectedPage)
     {
         AudioVolumeController.Instance.lowPassFilter.cutoffFrequency = AudioVolumeController.Instance.muffledCutoffFrequency;
+        ScrollbarController.Instance.mouseScrollSensitivity = 0f;
         AudioController.Instance.PlaySFX(2);
 
         pageScrollbar.interactable = false;
@@ -240,7 +245,6 @@ public class InventoryManager : MonoBehaviour
         {
             Tutorial.Instance.requiredToOpenInventory = false;
             Tutorial.Instance.allowedToDisplayNextLine = true;
-            Tutorial.Instance.TutorialComplete = true;
             allowedToCloseInventory = true;
             allowedToViewSettings = true;
             DialogueManager.Instance.DisplayNextLine();
@@ -258,19 +262,23 @@ public class InventoryManager : MonoBehaviour
 
     public void ClosePage()
     {
-        AudioVolumeController.Instance.lowPassFilter.cutoffFrequency = AudioVolumeController.Instance.normalFrequency;
-        AudioController.Instance.PlaySFX(2);
+        if (!Tutorial.Instance.backgroundDarkenerTutorial.activeSelf)
+        {
+            AudioVolumeController.Instance.lowPassFilter.cutoffFrequency = AudioVolumeController.Instance.normalFrequency;
+            ScrollbarController.Instance.mouseScrollSensitivity = 0.5f;
+            AudioController.Instance.PlaySFX(2);
 
-        pageScrollbar.interactable = true;
-        viewPagesButton.GetComponent<Button>().interactable = true;
-        viewSettingsButton.GetComponent<Button>().interactable = true;
+            pageScrollbar.interactable = true;
+            viewPagesButton.GetComponent<Button>().interactable = true;
+            viewSettingsButton.GetComponent<Button>().interactable = true;
 
-        inspectPageScrollbar.value = 1;
-        pageInspection.SetActive(false);
-        additionalpageInspectionItem1.SetActive(false);
-        additionalpageInspectionItem2.SetActive(false);
+            inspectPageScrollbar.value = 1;
+            pageInspection.SetActive(false);
+            additionalpageInspectionItem1.SetActive(false);
+            additionalpageInspectionItem2.SetActive(false);
 
-        pageLinesText.text = "";
+            pageLinesText.text = "";
+        }       
     }
 
     public void PageCollected()
@@ -284,17 +292,6 @@ public class InventoryManager : MonoBehaviour
         {
             Debug.Log("All pages have been collected.");
         }
-    }
-
-    public void ShowMouse()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
-    public void HideMouse()
-    {
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
     }
     public void UpdatePageContentOnHoverEnter(int viewingPage)
     {
@@ -313,21 +310,21 @@ public class InventoryManager : MonoBehaviour
     {
         if (settingsMenu.activeSelf && viewPagesButton.GetComponent<Button>().interactable == true && allowedToNavigate)
         {
-            viewPagesButtonText.color = currentViewButtonColor;
+            viewPagesButtonText.color = GameOptionsManager.Instance.currentViewButtonColor;
         }
     }
     public void HoverExitPagesButton()
     {
         if (settingsMenu.activeSelf && viewPagesButton.GetComponent<Button>().interactable == true && allowedToNavigate)
         {
-            viewPagesButtonText.color = canBeViewedTextButtonColor;
+            viewPagesButtonText.color = GameOptionsManager.Instance.canBeViewedTextButtonColor;
         }
     }
     public void HoverEnterSettingsButton()
     {
         if (pagesCollection.activeSelf && viewSettingsButton.GetComponent<Button>().interactable == true)
         {
-            viewSettingsButtonText.color = currentViewButtonColor;
+            viewSettingsButtonText.color = GameOptionsManager.Instance.currentViewButtonColor;
         }
     }
 
@@ -335,7 +332,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (pagesCollection.activeSelf && viewSettingsButton.GetComponent<Button>().interactable == true)
         {
-            viewSettingsButtonText.color = canBeViewedTextButtonColor;
+            viewSettingsButtonText.color = GameOptionsManager.Instance.canBeViewedTextButtonColor;
         }
     }
 }

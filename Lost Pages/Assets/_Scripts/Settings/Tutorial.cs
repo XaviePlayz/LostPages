@@ -30,26 +30,37 @@ public class Tutorial : MonoBehaviour
 
     #endregion
 
+    [Header("Visual Novel")]
     public GameObject startTutorialDialogue;
     public GameObject showTutorialDialogueCanvas;
     public GameObject novelBackground;
     public GameObject visualNovel;
+
+    [Header("Player Customization")]
     public GameObject selectPlayerCustomization;
 
+    [Header("Page Inspection")]
+    public GameObject backgroundDarkenerTutorial;
+
+    [Header("First Collectible Page")]
     public GameObject firstPage;
 
+    [Header("Booleans")]
     public bool tutorialStarted;
     public bool tutorialSequenceEnded;
-    public int tutorialSentenceCount;
-
-    public int firstTimeOpeningInventoryCount;
     public bool requiredToOpenInventory;
     public bool TutorialComplete;
     public bool allowedToDisplayNextLine;
 
+    [Header("Counter")]
+    public int tutorialSentenceCount;
+    public int firstTimeOpeningInventoryCount;
+
+
     void Start()
     {
         startTutorialDialogue.SetActive(false);
+        backgroundDarkenerTutorial.SetActive(false);
         tutorialStarted = false;
         tutorialSequenceEnded = false;
         tutorialSentenceCount = 0;
@@ -130,8 +141,9 @@ public class Tutorial : MonoBehaviour
             {
                 requiredToOpenInventory = true;
             }
-            if (InventoryManager.Instance.hasAccessToInventory && firstTimeOpeningInventoryCount == 3)
+            if (InventoryManager.Instance.hasAccessToInventory && firstTimeOpeningInventoryCount > 2)
             {
+                backgroundDarkenerTutorial.SetActive(true);
                 DialogueManager.Instance.clickToContinueMouse.SetActive(true);
             }
         }      
