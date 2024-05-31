@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     private bool isFacingRight;
     private bool isRespawning;
     public bool hasReachedTheEnd;
+    private bool lookOut = false;
 
     public bool allowedToWalk;
     public bool allowedToJump;
@@ -200,8 +201,12 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("LookOut"))
         {
-            PlayDialogue.Instance.PlayNewDialogue(2);
-            DialogueManager.Instance.visualNovelCanvas.SetActive(true);
+            if (!lookOut)
+            {
+                lookOut = true;
+                PlayDialogue.Instance.PlayNewDialogue(2);
+                DialogueManager.Instance.visualNovelCanvas.SetActive(true);
+            }
         }
 
         if (other.CompareTag("Key"))

@@ -125,7 +125,7 @@ public class DialogueManager : MonoBehaviour
                 DialogueBoxColorAppearanceQueue.Enqueue(dialogueBoxColorAppearance);
             }
 
-            // Set the boolean for "Press E" dialogue
+            // Set the boolean for "Mouse Click" dialogue
             isPressToContinue = pressToContinue;
 
             // Set the current DialogueTrigger
@@ -276,8 +276,6 @@ public class DialogueManager : MonoBehaviour
 
         isLineComplete = true;
     }
-
-
 
     public void EndDialogue()
     {

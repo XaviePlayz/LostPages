@@ -780,8 +780,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -3668.9082}
-  m_SizeDelta: {x: 533.7144, y: 7485.0654}
+  m_AnchoredPosition: {x: 0, y: -1390.1146}
+  m_SizeDelta: {x: 533.7144, y: 2927.4775}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &90039598
 GameObject:
@@ -36044,7 +36044,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 360214160}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.98032767}
+  m_AnchorMin: {x: 0, y: 0.94970113}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 20}
@@ -37310,41 +37310,58 @@ MonoBehaviour:
     with prickliness and annoyance.\r"
   - "Suddenly, the atmosphere in the room shifted. The haunting melody transformed
     into an eerie chant, resonating with an otherworldly power. Blake's eyes glowed
-    with an intensity that mirrored the ethereal force that held him captive.\n\r\n
+    with an intensity that mirrored the ethereal force that held him captive.\r\n\r\n
     As Elaine continued to question Blake about his situation, a deep sense of foreboding
     filled the room. Blake's expression shifted, a flicker of discomfort crossing
-    his features.\n\r\n \"I'm only half myself,\" Blake began, his voice strained.
+    his features.\r\n\r\n \"I'm only half myself,\" Blake began, his voice strained.
     \"Azruleth has a grip on my body, making me do things without my permission.
     It can happen at any moment, and that's why I need you all to leave immediately
-    before I lose control.\"\n\r\n Elaine nodded, but before deciding to leave, unable
-    to contain her curiosity and concern any longer, turned to Erin with a stern
-    expression.\n\r\n \"Erin, what is going on? Why haven't you told me about Blake?
+    before I lose control.\"\r\n\r\n Elaine nodded, but before deciding to leave,
+    unable to contain her curiosity and concern any longer, turned to Erin with a
+    stern expression. \"Erin, what is going on? Why haven't you told me about Blake?
     He's been here all this time, and you've been keeping it from me?\" Elaine's
-    voice quivered with a mix of hurt and frustration.\n\r\n Erin hesitated, glancing
+    voice quivered with a mix of hurt and frustration.\r\n\r\n Erin hesitated, glancing
     at Blake, who wore a pained expression. \"Elaine, I wanted to protect you. Blake
-    made me promise not to tell you. He thought it would keep you safe.\"\n\r\n Elaine's
-    eyes widened with disbelief. \"Protect me? From what? And for how long? Blake,
-    you're my husband. How could you keep this from me?\"\n\r\n Blake lowered his
-    gaze, the weight of guilt evident on his features. \"Elaine, I thought it was
-    for the best. The less you knew, the less danger you'd be in. I didn't want you
-    to get involved in this nightmare.\"\n\r\n Tears welled up in Elaine's eyes as
-    she processed the revelation. \"So, all these years, I've been mourning you,
-    thinking you were gone, while you were here, trapped in some curse?\"\n\r\n Erin
-    reached out to comfort Elaine, but the room's atmosphere shifted. The haunting
-    melody grew louder, and Blake's eyes glowed with an unsettling intensity. The
-    grip of Azruleth's influence tightened.\n\r\n As Elaine began to open her mouth
-    to respond, Blake suddenly twitched. His face contorted into a forced smile,
-    and his once innocent green eyes started to illuminate with a red glow. \"I -
-    U... L-leave!\" Blake tried to say, his smile forced.\n\r\n Suddenly, Blake rose
-    from the floor. \"We should really leave now, guys!\" Hannah said, fear evident
-    in her voice.\n\r\n As we turned toward the door, a bone-chilling cry echoed,
-    sending shivers down our spines. Blake lifted higher from the ground and started
-    moving straight toward us.\r\n \"Blake! I know you're still in there!\" Elaine
-    shouted.\n\r\n Blake closed his eyes and re-opened them, his innocent green eyes
-    shining through. \"I-I can't hold it much longer. Go now!\"\n\r\n Elaine nodded,
-    a tear falling on the ground. As we reached the doorknob, the torches suddenly
-    extinguished, and I felt myself being thrown through the room. No, not just me.
-    We were all thrown into the center of the chamber.\r\n"
+    made me promise not to tell you. He thought it would keep you safe.\"\r\n\r\n
+    Elaine's eyes widened with disbelief. \"Protect me? From what? And for how long?
+    Blake, you're my husband. How could you keep this from me?\"\r\n\r\n Blake lowered
+    his gaze, the weight of guilt evident on his features. \"Elaine, I thought it
+    was for the best. The less you knew, the less danger you'd be in. I didn't want
+    you to get involved in this nightmare.\"\r\n\r\n Tears welled up in Elaine's
+    eyes as she processed the revelation. \"So, all these years, I've been mourning
+    you, thinking you were gone, while you were here, trapped in some curse?\"\r\n\r\n
+    Erin reached out to comfort Elaine, but the room's atmosphere shifted again.
+    Blake's eyes glowed with an unsettling intensity, and he began to contort, his
+    body twisting unnaturally. A dark presence seemed to envelop him, and his features
+    morphed into something monstrous.\r\n\r\n Elaine took a step back, her eyes widening
+    in horror. \"Blake?\"\r\n\r\n Blake's voice changed, deepening into a sinister
+    growl. \"My dear ones, did you really think I was Blake?\" A chilling grin spread
+    across his twisted face. \"Azruleth!\" Elaine gasped, realization dawning on
+    her.\r\n\r\n Erin suddenly collapsed to the floor, her body convulsing. \"Erin?\"
+    Elaine asked, rushing to her side.\r\n\r\n Blake, now fully transformed into
+    Azruleth, began to speak with a sinister voice. \"Yes, Azruleth. And I have been
+    waiting for this moment.\"\r\n\r\n Erin snapped back into reality, her eyes wide
+    with terror. \"W-we have to get out of here!\"\r\n\r\n Elaine looked at her with
+    a mix of confusion and betrayal. \"You're the one that brought us here!\"\r\n\r\n
+    \"T-that wasn't me... Azruleth took control. We have to go. Now!\" Erin's voice
+    was desperate.\r\n\r\n Azruleth chuckled, a low, menacing sound. \"How did it
+    feel, Erin? Being out of control of your own body?\"\r\n\r\n \"Enough!\" Erin
+    shouted, struggling to stand. \"Kids, come on. We have to go, now!\"\r\n\r\n
+    I looked up at Erin, fear gripping my heart, and quickly ran to her, Hannah following
+    close behind me. \"Sister? I'm sorry for what happened, but you have to trust
+    me!\"\r\n\r\n \"I've trusted you for my entire life, and look where that got
+    me... You abandoned me when I needed you the most all those years ago!\" Elaine's
+    voice was filled with pain and anger.\r\n\r\n \"I-I'm sorry, but you do not get
+    to take your anger out on me. You don't know the full story here!\"\r\n\r\n \"Whatever,
+    let's get out\u2014\" Elaine's words were cut off as the ground beneath us trembled.
+    Azruleth's laughter filled the chamber.\r\n\r\n \"Enough!\" Azruleth screeched,
+    the floor beneath us cracking and freezing our feet to the spot. \"Now it's time
+    for you to do something for me.\"\r\n\r\n Elaine turned around, defiance in her
+    eyes. \"Are you talking to me?\"\r\n\r\n Azruleth grinned, and with a flick of
+    his wrist, I felt myself being thrown across the room. No, not just me. We were
+    all thrown into the center of the chamber, the force of the impact knocking the
+    wind out of me. As we struggled to stand, the room darkened, and Azruleth's presence
+    loomed over us, his power suffocating.\r"
   - "\rChapter XI\r\n\n The echoes of the explosion still reverberated in my mind
     as I grappled with the enormity of the day's events. The rescue mission, the
     discovery of the mortuary\u2014all had unfolded in a sequence that felt surreal.\r\n\r\n
@@ -37422,103 +37439,105 @@ MonoBehaviour:
     if we could uncover any more information.\r"
   - "I reached out to gently touch her shoulder, offering support in the face of
     her overwhelming grief. \"You don't have to go through this alone. You will always
-    have us, and Jay. Just don't lose hope.\"\r\n\n Victoria's trembling shoulders
-    bore the weight of her sorrow as she sobbed against my chest.\r\n\n \"You're
-    about to become a mother yourself,\" I continued, my voice a soft murmur. \"Just
-    try to stay positive. I know it's hard. I've just gotten out of one of the deepest
-    depressions I've ever been through.\"\r\n\n My attempt to share a glimpse of
-    my own struggles was meant to convey understanding and solidarity in these difficult
-    moments.\r\n\n \"Victoria, Blake, there's something I need to tell you,\" I began,
-    my voice barely above a whisper. \"My parents... they were constantly fighting
-    when I was a child. I witnessed everything, and it left me deeply traumatized.\"\r\n\n
-    Victoria's tearful gaze met mine, and I felt the weight of my past experiences
-    pressing down on me.\r\n\n \"Eventually, my mother couldn't stand it anymore,\"
-    I continued, tears brimming in my eyes. \"So she left. My father has always been
-    so cold towards her, always taking his job before her. All their plans were always
-    canceled at the last second due to a sudden meeting or event happening inside
-    the company.\"\r\n\n The pain of those days, the relentless strife of my parents,
-    was a heavy burden I had long carried.\r\n\n \"And not long after my mother left,\"
-    I admitted, \"my father got a promotion. He only got busier and busier, forgetting
-    about me. I had to start learning how to cook my own meals, since my father was
-    never around.\"\r\n\n Above all that,\" I confessed, \"my mother and I had an
-    unbreakable bond. At first, I didn't understand why she didn't take me away with
-    her.\"\r\n\n I recalled the unfulfilled promise of a mother's love and presence,
-    the ache of her absence.\r\n\n \"I had my school musical,\" I explained, my voice
-    cracking, \"which was two years since I last saw my mother. I called and reached
-    out to her, asking if she could join in, watching me perform.\"\r\n\n The disappointment
-    of that day, when my mother's seat remained empty, was a sharp thorn in my heart.\r\n\n
-    \"She agreed to,\" I continued, my tears flowing freely now, \"but when the day
-    came, I never saw her...\"\r\n\n The anguish I felt as a young girl, her absence
-    echoing through the years, was a wound that had never truly healed.\n\r\n \"My
-    teacher was trying to keep it light,\" I said, \"and said she probably had a
-    good reason not to show up.\"\r\n\n But the unspoken truth was that her absence
-    had marked the beginning of my own inner struggles.\r\n\n \"I couldn't even go
-    to school anymore,\" I admitted, my voice quivering. \"I just didn't see the
-    point anymore. It only got worse later on.\"\r\n\n The darkness of depression
-    had enveloped me, and I had struggled to find my way back into the light.\r\n\n
-    \"My mother always told me to reach out if there was anything wrong,\" I said,
-    \"she even sent me so many letters. I sent a few back. It felt like we were old-school
-    pen pals.\"\r\n\n The connection I had maintained with her, though strained by
-    distance, had offered moments of solace.\r\n\n \"But it wasn't enough,\" I confessed,
-    my tears flowing freely. \"I needed to see her. So I reached out. But she didn't
-    come.\"\n\r\n The pain of rejection, of a mother's absence by choice, had wounded
-    me deeply.\r\n\n \"I've been thinking about it a lot,\" I said, my voice barely
-    audible, \"although those were some of the toughest four years of my life, I
-    managed.\"\r\n\n \"I came home one day,\" I continued, \"from school, and accidentally
-    heard my father talking on the phone. I wanted to surprise him.\"\r\n\n The memories
-    I had long buried resurfaced, and my voice wavered as I recounted the pivotal
-    moment that had shaken my world.\r\n\n \" 'I can't believe you even dared to
-    say that on her birthday',\" I recalled, the pain of that memory still fresh.
-    \" 'She's dead, please... just leave me!' I heard my father on the phone.\"\r\n\n
-    The devastating truth had come crashing down, confirming my worst fears.\r\n\n
-    \"I had just turned 15,\" I went on, my voice quivering, \"and my grandmother
-    reached out to me. She was holding a letter. At first, I didn't want anything
-    to do with it, because how could they hide my mother's death from me for so long?
-    She's been dead for 2 whole years!? Without me knowing? How wrong is that!\"\r\n\n
-    The shock and betrayal of that discovery still resonated within me, even as I
-    spoke the words aloud.\r\n\n \"At first, I declined,\" I admitted, \"but my grandma
-    said it was from my mother. She left it on the stairs and walked out.\"\r\n\n
-    The moment of decision, standing on the precipice of a painful truth, was etched
-    in my memory.\r\n\n \"I stood still for a couple seconds before finally taking
-    it,\" I said, my voice a mere whisper.\r\n\n The letter had been a portal to
-    my mother's final words, a window into the past.\r\n\n \"As I walked upstairs,
-    I started to read it,\" I continued, my breath trembling. \"I couldn't control
-    my breath.\"\r\n\n The emotions that surged as I read her words, the revelations
-    contained in that letter, were overwhelming.\r\n\n \"She's been sick, cancer,\"
-    I confessed, tears streaming down my cheeks. \"She did come to my school musical.
-    Just not on the seat I reserved for her. She didn't want me to see her suffering.\"\r\n\n
-    The love and sacrifice in my mother's actions were a bittersweet revelation that
-    tore at my heart.\r\n\n \"It broke me,\" I admitted, my voice choked with emotion,
-    \"knowing this four years later. And as I was about to give in, wanting to go
-    to my mother, I met Blake. He just got transferred to high school. In my class.\"\r\n\n
-    The unexpected arrival of Blake in my life had been a turning point, offering
-    hope amidst the shadows.\r\n\n \"That's when my heart stopped,\" I confessed,
-    my eyes welling with emotion. \"I thought, could this be? Could this be my second
-    chance?\"\r\n\n Blake's presence had been a lifeline, a chance at happiness when
-    I needed it most.\r\n\n I blinked away my tears and took a deep breath, regaining
-    my composure. As I returned to the present moment, I looked at Blake and Victoria,
-    my dear friends who had now become the keepers of my pain.\r\n\n \"You looked
-    so handsome the first day I met you,\" I said, attempting to lighten the mood.
-    \"I couldn't believe my eyes. You gave me hope through those tough days.\"\r\n\n
-    A faint smile graced my lips as I remembered our first meeting, a glimmer of
-    joy amid the darkness.\r\n\n However, the memory of my past was still heavy,
-    and I felt a pang of guilt for unloading it on Victoria in her moment of grief.
-    I turned to her and the weight of my own struggles was evident in my eyes.\r\n\n
-    \"I'm sorry,\" I said, my voice soft and filled with regret. \"I didn't mean
-    to...\"\r\n\n Before I could finish my sentence, Blake pulled me into a warm
-    embrace, his voice gentle and understanding. \"I... I didn't know any of this...\"\r\n\n
-    His words were a soothing balm, and I appreciated the depth of his empathy.\r\n\n
-    \"I know,\" I replied, my voice tinged with sadness. \"I just didn't want to
-    remember it, but it's always been inside of me. I cannot get rid of it. It gave
-    me trauma, and I still struggle to this day. But I'm just an amazing hider of
-    my feelings.\"\r\n\n Victoria looked at me, her eyes filled with compassion and
-    understanding. She opened her arms and pulled me close, offering the comfort
-    that I had needed for so long.\r\n\n \"I'm sorry you had to go through that,\"
-    she whispered, her voice filled with sincerity. \"I know the story was awful,
-    but thank you for distracting me.\"\r\n\n I chuckled lightly, grateful for her
-    support. \"Once again, I'm sorry. It's just been stuck in my head, wanting to
-    come out.\"\n\r\n Blake's gaze locked with mine, and he spoke softly, offering
-    reassurance and understanding. \"It's okay, darling. I\u2019m glad you told us....\"\r"
+    have us, and Jay. Just don't lose hope.\"\r\n\r\n Victoria's trembling shoulders
+    bore the weight of her sorrow as she sobbed against my chest. \"But it feels
+    like everything is falling apart,\" she cried. \"How do you stay positive when
+    everything seems so dark?\"\r\n\r\n I took a deep breath, my heart aching for
+    her. \"You're about to become a mother yourself,\" I continued, my voice a soft
+    murmur. \"Just try to stay positive. I know it's hard. I've just gotten out of
+    one of the deepest depressions I've ever been through.\"\r\n\r\n Victoria pulled
+    back slightly, looking at me with tear-streaked eyes. \"How did you do it?\"
+    she asked, her voice filled with desperation.\r\n\r\n I hesitated for a moment,
+    knowing that sharing my own pain could be a double-edged sword. But seeing Victoria
+    in such despair made me realize that sometimes, hearing someone else's struggles
+    can offer a glimmer of hope.\r\n\r\n I took a deep breath, gathering my thoughts.
+    \"After my mother left, things got worse at home. My father was hardly ever there,
+    and when he was, he was like a ghost. He would come home late, often drunk, and
+    we barely spoke. I felt like I was living with a stranger.\"\r\n\r\n Victoria's
+    eyes widened with empathy. \"That sounds so lonely.\"\r\n\r\n \"It was,\" I admitted.
+    \"I spent most of my time alone in my room, burying myself in books and music.
+    Anything to escape the silence of the house. My sister was out of the house living
+    her own life. So it was mostly just me and my father. When we would have dinner
+    together, it was like we were in different worlds. He'd barely look at me, and
+    when he did, his eyes were filled with this... emptiness.\"\r\n\r\n I paused,
+    trying to hold back the tears threatening to spill over. \"One night, when I
+    was about twelve, I overheard a phone call. My father was arguing with someone,
+    shouting about my mother. He blamed her for everything\u2014for his career setbacks,
+    for his unhappiness. He said he wished she'd never come into his life.\"\r\n\r\n
+    Blake's hand tightened around mine, offering silent support. \"That must have
+    been devastating to hear.\"\r\n\r\n \"It was,\" I whispered. \"I felt like I
+    was losing both of my parents at once. My mother had physically left, and my
+    father had emotionally abandoned me. I started having nightmares, reliving their
+    fights, waking up in a cold sweat. School was no escape either. I became withdrawn,
+    my grades slipped, and I started getting into trouble.\"\r\n\r\n Victoria\u2019s
+    eyes widened, brimming with understanding. \"It must have been so hard to keep
+    going.\"\r\n\r\n \"It was,\" I said softly. By the time I was fourteen, I was
+    struggling with severe depression. I started cutting myself, just to feel something
+    other than the numbness.\"\r\n\r\n Blake's eyes filled with tears, and he pulled
+    me closer. \"I had no idea... I'm so sorry.\"\r\n\r\n I nodded softly, \u201Cbut
+    it only got worse. Turning fifteen, my mother left us exactly three years ago.
+    We always kept writing letters to each other. It felt like having a pen-pal,
+    which was quite exciting, although I would\u2019ve preferred my mother to just
+    take care of me. But suddenly, these letters stopped. I didn\u2019t receive any
+    back. Why did she break contact so suddenly?\"\r\n\r\n I went up to my dad, asking
+    if anything had happened. He shook his head and closed the door. I thought it
+    wasn\u2019t anything, since he\u2019s always been like this. I tried contacting
+    my grandmother, but she was out of reach.\r\n\r\n Another year passed. I was
+    sixteen, and the cuts I gave myself... they started to become visible outside
+    my clothes. My father noticed it during our oh-so-enjoyable dinner. He then picked
+    up a knife and pointed it towards me. \u2018Is that how you think about your
+    life?!\u2019 I looked up at my father, tears starting to form in my eyes. For
+    once, my sister finally slammed the table and spoke up for me. \u2018No, you
+    should be ashamed of yourself, look at how you\u2019re treating us!\u2019 my
+    sister shouted, storming off. I quickly got up and followed close behind her.
+    \u2018What are you doing?\u2019 I asked her. \u2018I\u2019m getting out of here,
+    immediately!\u2019 \u2018B- but what about me?\u2019 Erin looked at me, \u2018You\u2019ve
+    always been the tougher sister, you'll manage.\u2019\r\n\r\n The moment she said
+    that, my emotions went out of control and I slammed her suitcase shut with her
+    hands in between. \u2018You little -\u2019 she began.\r\n\r\n I headed straight
+    into my room, locked my door, and sat on my bed. A few minutes passed and I heard
+    my sister start her scooter. I looked through the window as she faded down the
+    street, out of vision.\r\n\r\n I looked back at myself, moved my sweater up,
+    and saw the scars on my body. \u2018It\u2019s time to leave this dumpster place
+    too!\u2019 I sneaked into my father\u2019s room and grabbed his suitcase. I stuffed
+    all my important items in it and sneaked out the window.\r\n\r\n I took a few
+    steps away from the house when I suddenly heard a heavy thump, followed by a
+    large shout.\r\n\r\n I sneaked back and peered through the window. He was talking
+    on the phone again.\r\n\r\n My curiosity got the better of me and I sneaked back
+    through the window. I slowly made my way to the hallway and listened. \u2018Leave
+    me alone! She\u2019s not here, stop bothering me!\u2019\r\n\r\n \u2018Who is
+    he talking about?\u2019 I took a few steps closer and sat on the floor.\r\n\r\n
+    \u2018Don\u2019t you even dare to bring that up again!\u2019 He slammed the phone
+    onto the floor, steaming off into the kitchen.\r\n\r\n I carefully decided to
+    pick up the phone. \u2018H- hello? Who\u2019s this?\u2019 I whispered. \u2018Who
+    am I talking to?\u2019 the other person asked.\r\n\r\n \u2018E- Elaine...\u2019
+    I responded quietly. \u2018Elaine! It\u2019s me, your grandmother. I\u2019ve
+    tried to reach you but your father removed any contact possible.\u2019\r\n\r\n
+    \u2018I- is there anything you wanted to tell me?\u2019 I asked, scared. \u2018It\u2019s
+    about your mother. This might be difficult to hear, so listen carefully. She
+    adored you, she loved you with all her might. But the universe wasn\u2019t as
+    kind to her, she got sick. That\u2019s why she left. This wasn\u2019t about you,
+    my child. She just had to get out.\u2019\r\n\r\n \u2018B- but why didn\u2019t
+    you do anything against my father?\u2019\r\n\r\n \u2018Your father is a very
+    powerful man, he can do what he wants.\u2019\r\n\r\n I looked around, \u2018I
+    think he\u2019s coming back!\u2019 I quickly whispered back. \u2018I\u2019ll
+    tell you this quickly, you have to know the reason why your mother stopped responding
+    altogether...\u2019 my father suddenly snatched the phone away from me, \u2018Give
+    that back!\u2019 I said aggressively.\r\n\r\n My father looked into my eyes,
+    \u2018Just get out of my sight.\u2019 I quickly ran back into the hallway and
+    pretended to enter my room by opening and closing the door. \u2018Don\u2019t
+    contact us again, I do not want to hear another word out of you, do you hear
+    me?\u2019 he said, and he firmly hung up the phone, breaking the connection.\r\n\r\n
+    I carefully opened my door again, trying not to let my father know I was sneaking
+    around. But he suddenly grabbed me by the waist. \u2018You never learn now, do
+    you?\u2019 He locked me in the basement.\u201D\r\n\r\n Victoria looked at me
+    with a disgusted expression. \u201CWhat even is this childhood!? Who does something
+    like this!\u201D Blake stood up, \u201CNo! I cannot accept this, it\u2019s not
+    human!\u201D I nodded carefully. Victoria also stood up. \u201CWhere is he? He
+    deserves what\u2019s coming for him!\u201D Blake smiled creepily and nodded.
+    \u201CDon\u2019t worry guys, he\u2019s dead,\u201D I said with relief. \u201CW-
+    what happened to him?\u201D Victoria asked.\r\n\r\n I looked at them, we exchanged
+    glances. \u201CI killed him.\u201D\r"
   - "As my eyes flutter open, the harsh hospital lighting stings, and I find myself
     surveying the unfamiliar room. The dull ache in my body serves as a grim reminder
     of the accident.\r\n\n Reaching out for my phone, a gnawing worry prompts me
@@ -37662,11 +37681,11 @@ MonoBehaviour:
   - -418.7555
   - -334.753
   - -370.8972
-  - -893.8436
+  - -1390.115
   - -357.3486
   - -689.0388
   - -653.2924
-  - -2787.949
+  - -2426.631
   - -3668.908
   newHeight:
   - 816.4876
@@ -37675,11 +37694,11 @@ MonoBehaviour:
   - 984.7601
   - 816.7551
   - 889.0435
-  - 1934.936
+  - 2927.478
   - 861.9464
   - 1525.327
   - 1453.834
-  - 5723.148
+  - 5000.51
   - 7485.065
   pages:
   - {fileID: 1147892841}
@@ -37697,16 +37716,16 @@ MonoBehaviour:
   pageContentLine:
   - Chapter I - Page 1
   - Chapter I - Page 2
+  - Chapter IV - Page 25
   - Chapter IV - Page 27
-  - Chapter IV - Page 29
-  - Chapter V - Page 44
-  - Chapter VI - Page 47
-  - Chapter VI - Page 50
-  - Chapter XI - Page 77
-  - Chapter XII - Page 89
-  - Chapter XVII - Page 119
-  - Chapter XVIII - Page 135
-  - Chapter XXII - Page 164
+  - Chapter V - Page 41
+  - Chapter VI - Page 45
+  - Chapter VI - Page 48
+  - Chapter XI - Page 75
+  - Chapter XII - Page 86
+  - Chapter XVII - Page 115
+  - Chapter XVIII - Page 126
+  - Chapter XXII - Page 155
   pageContent: {fileID: 1732932665}
   currentPage: 0
 --- !u!1 &932363977
@@ -44602,7 +44621,7 @@ TilemapCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.18}
+  m_Offset: {x: 0, y: -0.25}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
@@ -46986,7 +47005,7 @@ TilemapCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.18}
+  m_Offset: {x: 0, y: -0.25}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
@@ -48425,140 +48444,60 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "As my eyes flutter open, the harsh hospital lighting stings, and I find
-    myself surveying the unfamiliar room. The dull ache in my body serves as a grim
-    reminder of the accident.\r\n\n Reaching out for my phone, a gnawing worry prompts
-    me to call Janessa, my guardian. The robotic voice echoes, \"The number you have
-    dialed has been disconnected or is no longer in service.\"\r\n\n I persist, hoping
-    it's a mistake, but the disheartening message repeats. Desperation creeps in
-    as I scroll through my contacts, finding Sophia's name. Dialing her number, I
-    hear her lively voicemail, a stark contrast to the disquiet in my surroundings.\r\n\n
-    Curiosity intertwines with concern. How long have I been confined to this sterile
-    room? A glance at the phone's date assures me it's only been a day, but the eerie
-    emptiness of the hospital raises unsettling questions.\r\n\n Taking a deep breath,
-    I shed the hospital attachments and step into the vacant hallway. \"Hello? Is
-    anyone here?\" My voice echoes, swallowed by the silence.\r\n\n The hospital,
-    once a bustling hive of activity, now lies dormant, casting an unsettling stillness.
-    Dialing Sophia again yields only voicemail, amplifying my disquiet. \"Sophia,
-    something's wrong. I just woke up, and the hospital feels deserted. Did something
-    happen at Manor House? Please, call me back.\"\r\n\n Growing uneasy, I search
-    for signs leading to the exit. The walls provide guidance, but a sudden power
-    outage plunges the hallway into darkness. Instinctively, my phone's flashlight
-    pierces the black, casting long shadows on the sterile walls.\r\n\n Fear intensifies
-    as I navigate through the dimly lit corridor. \"Stairs, I need to find the stairs,\"
-    I murmur, my voice offering little reassurance. The digital glow of my phone
-    reveals a sign pointing left, guiding my uncertain steps.\r\n\n As I press forward
-    in the dimly lit corridor, shadows dancing eerily, amplifying the unsettling
-    quiet. The sterile scent of the hospital mingles with a newfound unease as my
-    footsteps echo through the desolate halls.\r\n\n My phone's glow flickers intermittently,
-    a feeble beacon against the engulfing darkness. The sign pointing left beckons
-    me toward the stairs, a glimmer of hope in this lonely journey.\r\n\n Each step
-    feels heavier, the silence more profound. My senses are on high alert, heightened
-    by the ominous stillness that clings to the air. I can't shake the feeling that
-    something is amiss, a subtle undercurrent of unease that tugs at the edges of
-    my consciousness.\r\n\n As I round a corner, the stairwell door emerges from
-    the shadows. Pushing it open cautiously, a creak breaks the silence, resonating
-    through the hollow space. The stairs descend into an abyss of uncertainty, but
-    my only choice is to move forward.\r\n\n Descending one step at a time, the echoes
-    of my footsteps reverberate in the stairwell, creating an eerie symphony. The
-    air grows colder as I venture further into the unknown, the stark contrast to
-    the warmth of the hospital unsettling.\r\n\n Reaching the ground floor, a faint
-    glimmer of emergency lighting barely illuminates the vast emptiness before me.
-    The once-familiar reception area now lies in disarray, devoid of life. Desolation
-    paints a haunting picture, and a shiver runs down my spine.\r\n\n The exit sign
-    flickers weakly overhead, a distant beacon urging me forward. With each step,
-    the atmosphere becomes increasingly oppressive, as if the very walls harbor secrets
-    they're unwilling to share.\r\n\n Pushing open the heavy glass door, I step into
-    the predawn darkness outside. The cool night air bites at my skin, and I find
-    myself standing on the threshold, caught between the unknown of the hospital
-    and the mysteries awaiting beyond its walls.\r\n\n I scan my surroundings, my
-    breath visible in the cold night air. The streets appear as empty and abandoned
-    as they always have in Nightmoor. The sense of desolation is unsettling, but
-    nothing appears out of the ordinary for this peculiar town.\r\n\n I consult my
-    phone, punching in Manor House on the navigation. A 40-minute walk looms ahead.
-    I let out a tired groan; the prospect of navigating the dark streets in the biting
-    cold isn't appealing.\r\n\n Turning to look back at the hospital building, I
-    contemplate my options. The chill in the air prompts a change of heart, and I
-    decide to head back inside. The hospital's dimly lit corridors offer a refuge
-    from the wintry night.\r\n\n As I re-enter the hospital, my footsteps echo through
-    the empty halls. Retrieving my phone's flashlight, I scour the area for any signs
-    of warmth. A nearby storage room catches my attention, and I cautiously push
-    open the door. Inside, I find a stash of blankets and spare clothing. Grateful
-    for the discovery, I layer myself in warmth.\r\n\n \"Ahh, this feels so, so much
-    better!\" I say excitedly to myself, reveling in the warmth of the newfound clothes.
-    They're a little too big for me, but the oversized sweater still feels cozy and
-    comforting. I grab the jacket I spotted at the reception desk before heading
-    back outside.\r\n\n As I open the glass door, the cold winter air hits me anew,
-    but now I'm better prepared. I activate the navigation towards Manor Street 8
-    on my phone, the glow illuminating my determined face.\r\n\n \"Time to walk for
-    40 minutes, yay...\" I mutter sarcastically, taking the first steps into the
-    deserted night. The hospital's glow fades behind me as I venture into the dark
-    streets of Nightmoor.\r\n\n The journey is eerie, with only the faint glow of
-    streetlights guiding my way. The silence is palpable, broken only by the occasional
-    rustle of leaves or distant creak of a door.\r\n\n I pull the jacket tighter
-    around me, shielding myself from the biting cold. The dimly lit streets stretch
-    ahead like a winding maze, each turn leading me deeper into the enigmatic heart
-    of Nightmoor.\r\n\n As minutes pass, I find myself lost in thought, contemplating
-    the strange events that brought me to this point. The hospital, the deserted
-    streets, the peculiar nature of the town \u2014 it all weaves together into a
-    tapestry of mysteries that refuse to unravel.\r\n\n The imposing structure of
-    Manor Street 8 looms ahead as I approach the dimly lit entrance. My hand reaches
-    for the doorknob, but before I can make contact, the door swings open abruptly,
-    crashing into me. Startled, I hear a familiar voice calling my name.\r\n\n \"Hannah?!\"\r\n\n
-    I find myself on the ground, a bit disoriented from the unexpected collision.
-    Opening my eyes, I see Sophia on my left, her concerned face hovering above me.
-    A smile forms on my lips as I realize where I am.\r\n\n \"I feel something else...\"
-    I murmur, turning my gaze to the right. Alisha's mother, Victoria, stands there,
-    her presence bringing a mix of relief and surprise.\r\n\n Before I can fully
-    comprehend the situation, Sophia and Victoria are helping me to my feet, their
-    supportive arms steadying me.\r\n\n \"Are you okay?\" Sophia's worry is evident.
-    \"Yeah, you startled us, dear,\" Victoria adds with a chuckle.\r\n\n \"I'm fine,
-    just a bit disoriented,\" I reply, attempting to sit up.\r\n\n \"How did you
-    end up here?\" Sophia questions, her forehead creased with concern.\r\n\n \"I
-    woke up in the hospital. It was empty, and I didn't know what was happening.
-    So, I decided to come here,\" I explain, my mind still foggy from the surreal
-    experience.\r\n\n \"Well, you scared us half to death,\" Victoria says with a
-    light chuckle. \"Let's get inside and talk. It's freezing out here.\"\r\n\n We
-    enter Manor Street 8, and the familiar surroundings provide a sense of comfort.
-    The dimly lit hallway feels more welcoming than the cold night outside.\r\n\n
-    \"Did something happen in Nightmoor?\" I ask, curiosity growing. Sophia shares
-    a quick glance with Victoria before answering, \"It's complicated. We'll explain
-    everything, but let's get you warmed up first.\" Sophia gives Hannah a blanket
-    to cover herself up in the warmth, while Victoria heads to the kitchen to get
-    us some tea. Hannah quickly notices that something is different inside the house;
-    they're both acting strange.\r\n\n As Sophia drapes the blanket over me, I shiver,
-    partly from the residual cold and partly from the uncanny atmosphere that envelops
-    the room. Sophia's eyes seem distant, and Victoria's movements toward the kitchen
-    are deliberate yet oddly disconnected.\r\n\n \"Can you tell me what has happened
-    since the day I was out?\" I inquire, trying to make sense of the surreal ambiance.\r\n\n
-    Sophia scratches her head, her expression perplexed. \"Day? It's been an entire
-    year since I last saw you.\"\r\n\n Shocked, I quickly grab my phone again to
-    check the date, January 25th. I open the calendar app, my eyes unable to believe
-    what I see... 2026?!\r\n\n Victoria returns with a tray holding steaming cups
-    of tea. \n\n\"Here, drink this, dear,\" she says, offering me a cup.\r\n\n \"W-
-    what happened? Where are the others?\" I ask anxiously.\r\n\n \"Don't worry,
-    love, you're safe now,\" Sophia reassures me, echoing Victoria's sentiments.\r\n\n
-    I look up at both Sophia and Victoria, desperation in my eyes. \"I asked you
-    a question. Can you please answer?\"\r\n\n Once again, they say, \"Don't worry,
-    love, you're safe now,\" in unison. Sophia grabs Victoria's arm, and they exchange
-    an odd, knowing glance.\r\n\n \"Let us introduce you to someone new,\" they say
-    with strangely contorted smiles.\r\n\n With a growing sense of unease, I put
-    the untouched tea on the table. A new figure emerges from around the corner,
-    and my eyes widen in disbelief.\r\n\n \"Hello, dear.\"\r\n\n My eyes cannot believe
-    what I'm seeing. \"M- mom?\" I stammer, my voice barely audible.\r\n\n The woman
-    standing before me is an older version of my mother, but she carries an otherworldly
-    glow. It's as if time has treated her kindly, leaving behind an ethereal beauty.\r\n\n
-    \"It's me, Hannah. Your mother,\" she says, her voice filled with warmth.\r\n\n
-    I'm torn between skepticism and a profound desire for this to be true. Sophia
-    and Victoria watch me closely, their expressions a mix of anticipation and something
-    else, something I can't quite decipher.\r\n\n \"How is this possible?\" I manage
-    to utter, my mind struggling to comprehend the impossible.\r\n\n Sophia and Victoria
-    exchange glances again before Sophia speaks, \"We found a way to bring her back,
-    Hannah. A way to undo the past, to rewrite the timeline.\"\r\n\n A surge of conflicting
-    emotions washes over me\u2014joy, disbelief, and a lingering sense of foreboding.
-    My mother, or this apparition resembling her, reaches out to me, and I tentatively
-    accept her touch.\r\n\n \"Come, dear. There's much to explain,\" she says, leading
-    me further into the house.\r"
+  m_text: "Suddenly, the atmosphere in the room shifted. The haunting melody transformed
+    into an eerie chant, resonating with an otherworldly power. Blake's eyes glowed
+    with an intensity that mirrored the ethereal force that held him captive.\r\n\r\n
+    As Elaine continued to question Blake about his situation, a deep sense of foreboding
+    filled the room. Blake's expression shifted, a flicker of discomfort crossing
+    his features.\r\n\r\n \"I'm only half myself,\" Blake began, his voice strained.
+    \"Azruleth has a grip on my body, making me do things without my permission.
+    It can happen at any moment, and that's why I need you all to leave immediately
+    before I lose control.\"\r\n\r\n Elaine nodded, but before deciding to leave,
+    unable to contain her curiosity and concern any longer, turned to Erin with a
+    stern expression. \"Erin, what is going on? Why haven't you told me about Blake?
+    He's been here all this time, and you've been keeping it from me?\" Elaine's
+    voice quivered with a mix of hurt and frustration.\r\n\r\n Erin hesitated, glancing
+    at Blake, who wore a pained expression. \"Elaine, I wanted to protect you. Blake
+    made me promise not to tell you. He thought it would keep you safe.\"\r\n\r\n
+    Elaine's eyes widened with disbelief. \"Protect me? From what? And for how long?
+    Blake, you're my husband. How could you keep this from me?\"\r\n\r\n Blake lowered
+    his gaze, the weight of guilt evident on his features. \"Elaine, I thought it
+    was for the best. The less you knew, the less danger you'd be in. I didn't want
+    you to get involved in this nightmare.\"\r\n\r\n Tears welled up in Elaine's
+    eyes as she processed the revelation. \"So, all these years, I've been mourning
+    you, thinking you were gone, while you were here, trapped in some curse?\"\r\n\r\n
+    Erin reached out to comfort Elaine, but the room's atmosphere shifted again.
+    Blake's eyes glowed with an unsettling intensity, and he began to contort, his
+    body twisting unnaturally. A dark presence seemed to envelop him, and his features
+    morphed into something monstrous.\r\n\r\n Elaine took a step back, her eyes widening
+    in horror. \"Blake?\"\r\n\r\n Blake's voice changed, deepening into a sinister
+    growl. \"My dear ones, did you really think I was Blake?\" A chilling grin spread
+    across his twisted face. \"Azruleth!\" Elaine gasped, realization dawning on
+    her.\r\n\r\n Erin suddenly collapsed to the floor, her body convulsing. \"Erin?\"
+    Elaine asked, rushing to her side.\r\n\r\n Blake, now fully transformed into
+    Azruleth, began to speak with a sinister voice. \"Yes, Azruleth. And I have been
+    waiting for this moment.\"\r\n\r\n Erin snapped back into reality, her eyes wide
+    with terror. \"W-we have to get out of here!\"\r\n\r\n Elaine looked at her with
+    a mix of confusion and betrayal. \"You're the one that brought us here!\"\r\n\r\n
+    \"T-that wasn't me... Azruleth took control. We have to go. Now!\" Erin's voice
+    was desperate.\r\n\r\n Azruleth chuckled, a low, menacing sound. \"How did it
+    feel, Erin? Being out of control of your own body?\"\r\n\r\n \"Enough!\" Erin
+    shouted, struggling to stand. \"Kids, come on. We have to go, now!\"\r\n\r\n
+    I looked up at Erin, fear gripping my heart, and quickly ran to her, Hannah following
+    close behind me. \"Sister? I'm sorry for what happened, but you have to trust
+    me!\"\r\n\r\n \"I've trusted you for my entire life, and look where that got
+    me... You abandoned me when I needed you the most all those years ago!\" Elaine's
+    voice was filled with pain and anger.\r\n\r\n \"I-I'm sorry, but you do not get
+    to take your anger out on me. You don't know the full story here!\"\r\n\r\n \"Whatever,
+    let's get out\u2014\" Elaine's words were cut off as the ground beneath us trembled.
+    Azruleth's laughter filled the chamber.\r\n\r\n \"Enough!\" Azruleth screeched,
+    the floor beneath us cracking and freezing our feet to the spot. \"Now it's time
+    for you to do something for me.\"\r\n\r\n Elaine turned around, defiance in her
+    eyes. \"Are you talking to me?\"\r\n\r\n Azruleth grinned, and with a flick of
+    his wrist, I felt myself being thrown across the room. No, not just me. We were
+    all thrown into the center of the chamber, the force of the impact knocking the
+    wind out of me. As we struggled to stand, the room darkened, and Azruleth's presence
+    loomed over us, his power suffocating."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0dc10990684ba92408d37b5ed43fbb79, type: 2}
   m_sharedMaterial: {fileID: 3782963497945066622, guid: 0dc10990684ba92408d37b5ed43fbb79, type: 2}
@@ -53560,6 +53499,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 60, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 16
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 61, y: -3, z: 0}
     second:
       serializedVersion: 2
@@ -53581,6 +53530,16 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 63, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 16
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 64, y: -3, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 16
@@ -58254,7 +58213,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: efc913d4151ef804d90c0aacfd61ac81, type: 2}
   - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: 4a1325773c239b54db748c8359b89e15, type: 2}
-  - m_RefCount: 9
+  - m_RefCount: 11
     m_Data: {fileID: 11400000, guid: 8c245983c97afc948a01ce0c139c11de, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: c51a84962ed3c4d4aa433017ffefda01, type: 2}
@@ -58431,7 +58390,7 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 13
     m_Data: {fileID: 979856917, guid: d61a91a49da538b43b8b6c6c70c2e329, type: 3}
-  - m_RefCount: 9
+  - m_RefCount: 11
     m_Data: {fileID: -1396181836, guid: d61a91a49da538b43b8b6c6c70c2e329, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -1653355350, guid: d61a91a49da538b43b8b6c6c70c2e329, type: 3}
@@ -58636,7 +58595,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -450469436, guid: d61a91a49da538b43b8b6c6c70c2e329, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 489
+  - m_RefCount: 491
     m_Data:
       e00: 1
       e01: 0
@@ -58655,7 +58614,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 489
+  - m_RefCount: 491
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -60348,7 +60307,7 @@ TilemapCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.18}
+  m_Offset: {x: 0, y: -0.25}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
@@ -62672,7 +62631,7 @@ TilemapCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.18}
+  m_Offset: {x: 0, y: -0.25}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
@@ -63507,7 +63466,7 @@ TilemapCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.18}
+  m_Offset: {x: 0, y: -0.25}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
@@ -64145,7 +64104,7 @@ TilemapCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.18}
+  m_Offset: {x: 0, y: -0.25}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
@@ -65182,8 +65141,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2096761934}
   m_HandleRect: {fileID: 858133902}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.019672358
+  m_Value: 1.0000001
+  m_Size: 0.050298896
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
